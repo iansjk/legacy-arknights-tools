@@ -57,10 +57,9 @@ const recruitmentStrings = recruitDetail
   .split(/★+/);
 const recruitableOperators = recruitmentStrings.map((line) =>
   line
-    .replace(/(\\n)|(<[^>]+>)|-{2,}/g, "")
-    .replace("Feater", "FEater")
-    .trim()
-    .split(/\s?\/\s?/)
+    .replace(/\n|-{2,}/g, "")
+    .split(/(?:\s\/\s)|(?:<@rc\.eml>([^/]+)<\/>)/)
+    .filter((item) => !!item && item.trim())
 );
 
 const recruitment = recruitableOperators.flatMap((opNames, rarity) =>
