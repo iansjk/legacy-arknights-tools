@@ -26,7 +26,9 @@ const operatorNameOverride: Record<string, string> = {
   Роса: "Rosa",
 };
 
-const itemNameOverride: Record<string, string> = {};
+const itemNameOverride: Record<string, string> = {
+  "30145": "Crystalline Electroassembly",
+};
 
 export function getOperatorName(operatorId: string): string | null {
   if (operatorId === "char_1001_amiya2") {
@@ -44,7 +46,7 @@ export function getOperatorName(operatorId: string): string | null {
 
 export function getItemName(itemId: string): string {
   const entry = enItemTable[itemId as keyof typeof enItemTable];
-  const name = entry?.name ?? itemNameOverride[itemId];
+  const name = itemNameOverride[itemId] ?? entry?.name;
   return name;
 }
 
