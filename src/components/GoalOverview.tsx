@@ -14,12 +14,11 @@ import {
 import ClearAllIcon from "@material-ui/icons/ClearAll";
 import RotateLeftIcon from "@material-ui/icons/RotateLeft";
 import { useStaticQuery, graphql } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import { Ingredient, Item, OperatorGoal } from "../types";
 import ItemNeeded from "./ItemNeeded";
 import OperatorGoalCard from "./OperatorGoalCard";
 import lmdIcon from "../data/images/lmd.png";
-import usePersistence from "../hooks/usePersistence";
 
 const useStyles = makeStyles((theme) => ({
   lmdIcon: {
@@ -72,12 +71,10 @@ const GoalOverview = React.memo(function GoalOverview(
     data.allItemsJson.nodes.map((node: { name: string }) => [node.name, node])
   );
   const { goals, onGoalDeleted, onClearAllGoals } = props;
-  const {
-    materialsOwned,
-    setMaterialsOwned,
-    itemsToCraft,
-    setItemsToCraft,
-  } = usePersistence();
+  const [materialsOwned, setMaterialsOwned] = useState<
+    Record<string, number | null>
+  >({});
+  const [itemsToCraft, setItemsToCraft] = useState<Record<string, Item>>({});
   const theme = useTheme();
   const isXSmallScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
