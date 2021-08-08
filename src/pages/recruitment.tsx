@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   Box,
