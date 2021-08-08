@@ -21,8 +21,10 @@ import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import { Link as GatsbyLink } from "gatsby-theme-material-ui";
+import { Provider } from "react-redux";
 import AppFooter from "../components/AppFooter";
 import favicon from "../data/images/favicon.ico";
+import { store } from "../store/store";
 
 const drawerWidth = 220;
 
@@ -169,7 +171,7 @@ function Layout(props: LayoutProps): React.ReactElement {
     typeof window !== "undefined" ? window.document.body : undefined;
 
   return (
-    <>
+    <Provider store={store}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -243,7 +245,7 @@ function Layout(props: LayoutProps): React.ReactElement {
         <Box flexGrow={1} />
         <AppFooter className={classes.headerFooter} />
       </div>
-    </>
+    </Provider>
   );
 }
 export default Layout;
