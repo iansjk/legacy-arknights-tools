@@ -5,8 +5,9 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended",
+    "plugin:react-redux/recommended",
   ],
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "react-redux", "@typescript-eslint"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: ["./tsconfig.json"],
@@ -35,7 +36,7 @@ module.exports = {
       },
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         endOfLine: "auto",
       },
