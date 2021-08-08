@@ -27,27 +27,27 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
   and so on.
 */
 
-enum OperatorGoalType {
-  Elite1 = 0, // yes this is the default but let's be explicit
-  Elite2,
-  Skill1Mastery1,
-  Skill1Mastery2,
-  Skill1Mastery3,
-  Skill2Mastery1,
-  Skill2Mastery2,
-  Skill2Mastery3,
-  Skill3Mastery1,
-  Skill3Mastery2,
-  Skill3Mastery3,
-  SkillLevel2,
-  SkillLevel3,
-  SkillLevel4,
-  SkillLevel5,
-  SkillLevel6,
-  SkillLevel7,
+export enum OperatorGoalType {
+  "Elite 1" = 0, // yes this is the default but let's be explicit
+  "Elite 2",
+  "Skill 1 Mastery 1",
+  "Skill 1 Mastery 2",
+  "Skill 1 Mastery 3",
+  "Skill 2 Mastery 1",
+  "Skill 2 Mastery 2",
+  "Skill 2 Mastery 3",
+  "Skill 3 Mastery 1",
+  "Skill 3 Mastery 2",
+  "Skill 3 Mastery 3",
+  "Skill Level 1 → 2",
+  "Skill Level 2 → 3",
+  "Skill Level 3 → 4",
+  "Skill Level 4 → 5",
+  "Skill Level 5 → 6",
+  "Skill Level 6 → 7",
   // so in the future, if e.g. the term "mastery" gets renamed to "specialization",
   // we could just edit the symbol here while the backing state values should stay the same
-  // (e.g. Skill1Mastery1 would be renamed to Skill1Specialization1, but its state value should still be 2)
+  // (e.g. Skill 1 Mastery 1 would be renamed to Skill 1 Specialization 1, but its state value should still be 2)
   // working with these enums will be pretty annoying but maybe it's worth it?
 }
 
