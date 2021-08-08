@@ -13,18 +13,9 @@ import AddIcon from "@material-ui/icons/Add";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import GoalOverview from "../components/GoalOverview";
-import OperatorGoalIconography from "../components/OperatorGoalIconography";
-import {
-  isEliteGoal,
-  isMasteryGoal,
-  Operator,
-  OperatorSkill,
-  OperatorGoal,
-  Goal,
-} from "../types";
 import { addGoal, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
+import { Operator } from "../types";
 
 const possibleGoalsForOperator = (
   rarity: number,
@@ -79,43 +70,6 @@ const Planner: React.VFC = () => {
             id
             name
             rarity
-            elite {
-              eliteLevel
-              goalCategory
-              goalName
-              ingredients {
-                name
-                tier
-                quantity
-              }
-            }
-            skillLevels {
-              goalCategory
-              goalName
-              goalShortName
-              skillLevel
-              ingredients {
-                name
-                tier
-                quantity
-              }
-            }
-            skills {
-              iconId
-              masteries {
-                goalCategory
-                goalName
-                goalShortName
-                ingredients {
-                  name
-                  tier
-                  quantity
-                }
-                masteryLevel
-              }
-              skillId
-              skillName
-            }
           }
         }
       }
