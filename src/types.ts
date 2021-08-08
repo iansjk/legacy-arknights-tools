@@ -12,6 +12,7 @@ export interface Ingredient {
 }
 
 export interface Operator {
+  id: string;
   name: string;
   class: string;
   rarity: number;
