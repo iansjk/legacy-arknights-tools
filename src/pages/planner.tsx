@@ -63,7 +63,11 @@ const possibleGoalsForOperator = (
   return possible.sort((a, b) => a - b);
 };
 
-function Planner(): React.ReactElement {
+const toMenuItem = (goal: OperatorGoalType) => (
+  <MenuItem key={goal}>{OperatorGoalType[goal]}</MenuItem>
+);
+
+const Planner: React.VFC = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -192,9 +196,32 @@ function Planner(): React.ReactElement {
                 onChange={handleSelectedGoalsChanged}
                 value={selectedGoals}
               >
-                {possibleGoals.map((type) => (
-                  <MenuItem value={type}>{OperatorGoalType[type]}</MenuItem>
-                ))}
+                <ListSubheader key="elite">Elite Levels</ListSubheader>
+                {possibleGoals
+                  .filter(
+                    (goal) =>
+                      goal === OperatorGoalType["Elite 1"] ||
+                      goal === OperatorGoalType["Elite 2"]
+                  )
+                  .map(toMenuItem)}
+                {possibleGoals.includes(
+                  OperatorGoalType["Skill 1 Mastery 1"]
+                ) && <ListSubheader key="masteries">Masteries</ListSubheader>}
+                {possibleGoals
+                  .filter(
+                    (goal) =>
+                      goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
+                      goal <= OperatorGoalType["Skill 3 Mastery 3"]
+                  )
+                  .map(toMenuItem)}
+                <ListSubheader key="skillLevels">Skill Levels</ListSubheader>
+                {possibleGoals
+                  .filter(
+                    (goal) =>
+                      goal >= OperatorGoalType["Skill Level 1 → 2"] &&
+                      goal <= OperatorGoalType["Skill Level 6 → 7"]
+                  )
+                  .map(toMenuItem)}
               </Select>
             </FormControl>
           </Box>
@@ -217,5 +244,5 @@ function Planner(): React.ReactElement {
       </Grid>
     </Grid>
   );
-}
+};
 export default Planner;
