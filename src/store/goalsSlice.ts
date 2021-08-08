@@ -71,12 +71,19 @@ export const goalsSlice = createSlice({
   initialState,
   reducers: {
     addGoal: (state, action: PayloadAction<GoalPayload>) => {
-      state.operators[action.payload.operatorId].push(action.payload.goal);
+      const { goal, operatorId } = action.payload;
+      state.operators[operatorId] = [
+        ...(state.operators[operatorId] || []),
+        goal,
+      ];
     },
     deleteGoal: (state, action: PayloadAction<GoalPayload>) => {
-      state.operators[action.payload.operatorId] = state.operators[
-        action.payload.operatorId
-      ].filter((goal) => goal !== action.payload.goal);
+      const { goal: toDelete, operatorId } = action.payload;
+      if (state.operators[operatorId]?.length > 0) {
+        state.operators[operatorId] = state.operators[operatorId].filter(
+          (goal) => goal !== toDelete
+        );
+      }
     },
     deleteAllGoals: (state) => {
       state = initialState;
