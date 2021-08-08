@@ -16,7 +16,7 @@
     "ak:update:items": "git submodule update --remote && ts-node-script scripts/items.ts",
     "ak:update:recruitment": "git submodule update --remote && ts-node-script -r esm scripts/recruitment.ts",
     "ak:update:leveling": "git submodule update --remote && ts-node-script -r esm scripts/leveling.ts",
-    "netlify:deploy": "yarn ak:update && yarn build && mv public arknights && mkdir public && mv arknights public && mv public/arknights/_* public",
+    "netlify:deploy": "yarn build && mv public arknights && mkdir public && mv arknights public && mv public/arknights/_* public",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
