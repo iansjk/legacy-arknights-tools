@@ -16,7 +16,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import clsx from "clsx";
+import cx from "clsx";
 import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
@@ -144,7 +144,7 @@ function Layout(props: LayoutProps): React.ReactElement {
   const drawer = (
     <>
       <Typography
-        className={clsx(classes.toolbar, classes.siteHeader)}
+        className={cx(classes.toolbar, classes.siteHeader)}
         component="h1"
         variant="h5"
       >

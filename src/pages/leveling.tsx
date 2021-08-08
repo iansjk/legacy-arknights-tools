@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
 import { Autocomplete } from "@material-ui/lab";
-import cx from "classnames";
+import cx from "clsx";
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
 import { Operator } from "../types";
