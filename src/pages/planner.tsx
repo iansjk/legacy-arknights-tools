@@ -23,6 +23,45 @@ import {
   OperatorGoal,
   Goal,
 } from "../types";
+import { addGoal, OperatorGoalType } from "../store/goalsSlice";
+import { useAppDispatch } from "../store/store";
+
+const possibleGoalsForOperator = (
+  rarity: number,
+  id: string
+): OperatorGoalType[] => {
+  const possible: OperatorGoalType[] = [];
+  if (rarity === 6 || id === "char_002_amiya") {
+    possible.push(
+      OperatorGoalType["Skill 3 Mastery 1"],
+      OperatorGoalType["Skill 3 Mastery 2"],
+      OperatorGoalType["Skill 3 Mastery 3"]
+    );
+  }
+  if (rarity >= 4) {
+    possible.push(
+      OperatorGoalType["Elite 2"],
+      OperatorGoalType["Skill 1 Mastery 1"],
+      OperatorGoalType["Skill 1 Mastery 2"],
+      OperatorGoalType["Skill 1 Mastery 3"],
+      OperatorGoalType["Skill 2 Mastery 1"],
+      OperatorGoalType["Skill 2 Mastery 2"],
+      OperatorGoalType["Skill 2 Mastery 3"]
+    );
+  }
+  if (rarity >= 3) {
+    possible.push(
+      OperatorGoalType["Elite 1"],
+      OperatorGoalType["Skill Level 1 → 2"],
+      OperatorGoalType["Skill Level 2 → 3"],
+      OperatorGoalType["Skill Level 3 → 4"],
+      OperatorGoalType["Skill Level 4 → 5"],
+      OperatorGoalType["Skill Level 5 → 6"],
+      OperatorGoalType["Skill Level 6 → 7"]
+    );
+  }
+  return possible.sort((a, b) => a - b);
+};
 
 function Planner(): React.ReactElement {
   const data = useStaticQuery(
@@ -33,6 +72,7 @@ function Planner(): React.ReactElement {
           filter: { rarity: { gte: 3 } }
         ) {
           nodes {
+            id
             name
             rarity
             elite {
@@ -78,197 +118,34 @@ function Planner(): React.ReactElement {
     `
   );
   const operators: Operator[] = data.allOperatorsJson.nodes;
-  const [operatorName, setOperatorName] = useState<string | null>(null);
-  const [goalNames, setGoalNames] = useState<string[]>([] as string[]);
-  const [operatorGoals, setOperatorGoals] = useState<OperatorGoal[]>([]);
+  const dispatch = useAppDispatch();
+  const [operatorName, setOperatorName] = useState<string>("");
   const operator = operators.find((op) => op.name === operatorName);
-  const goalSelectMenuProps = {
-    getContentAnchorEl: null,
-    anchorOrigin: {
-      vertical: "bottom" as const,
-      horizontal: "left" as const,
-    },
-    transformOrigin: {
-      vertical: "top" as const,
-      horizontal: "left" as const,
-    },
+  const [selectedGoals, setSelectedGoals] = useState<OperatorGoalType[]>([]);
+
+  const handleOperatorNameChanged = (_: unknown, value: string | null) => {
+    if (value) {
+      setOperatorName(value);
+      setSelectedGoals([]);
+    }
   };
 
-  const operatorPresets: string[] = [];
-  if (operator) {
-    if (operator.elite.length > 0 && operator.skillLevels.length > 0) {
-      operatorPresets.push("Elite 1, Skill Level 1 → 7");
-    }
-    if (
-      operator.skills.length === 3 &&
-      operator.skills[2].masteries.length === 3
-    ) {
-      operatorPresets.push("Skill 3 Mastery 1 → 3");
-    }
-    operatorPresets.push("Everything");
-  }
-
-  const expandPreset = (presetName: string) => {
-    if (operator) {
-      let goals: Goal[] = [];
-      if (presetName === "Elite 1, Skill Level 1 → 7") {
-        goals = [operator.elite[0], ...operator.skillLevels];
-      } else if (presetName === "Skill 3 Mastery 1 → 3") {
-        goals = operator.skills[2].masteries;
-      } else if (presetName === "Everything") {
-        goals = [
-          ...operator.elite,
-          ...operator.skills.flatMap((skill) => skill.masteries),
-          ...operator.skillLevels,
-        ];
-      }
-      return goals.map((goal) => goal.goalName);
-    }
-    return [];
+  const handleSelectedGoalsChanged = (e: { target: { value: unknown } }) => {
+    setSelectedGoals(e.target.value as OperatorGoalType[]);
   };
 
   const handleAddGoals = () => {
-    if (!operator) {
-      return;
-    }
-    setOperatorGoals((prevOperatorGoals) => {
-      const goalNamesSet = new Set(goalNames);
-      const masteries = operator.skills.flatMap((skill) => skill.masteries);
-      const goalsToAdd = [
-        ...operator.elite,
-        ...masteries,
-        ...operator.skillLevels,
-      ].filter((goal) => goalNamesSet.has(goal.goalName));
-      const deduplicated = Object.fromEntries([
-        ...prevOperatorGoals.map((opGoal) => [
-          `${opGoal.operatorName}${opGoal.goalName}`,
-          opGoal,
-        ]),
-        ...goalsToAdd.map((goal) => {
-          const key = `${operatorName}${goal.goalName}`;
-          const goalObject = { operatorName, ...goal };
-          if (isMasteryGoal(goal)) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const slot = parseInt(goal.goalShortName!.charAt(1), 10); // FIXME hacky
-            return [
-              key,
-              Object.assign(goalObject, {
-                skill: operator.skills[slot - 1],
-              }),
-            ];
-          }
-          return [key, goalObject];
-        }),
-      ]);
-      return Object.values(deduplicated);
-    });
-    setGoalNames([]);
-  };
-
-  const handleGoalDeleted = (toDelete: OperatorGoal) => {
-    setOperatorGoals((prevOperatorGoals) =>
-      prevOperatorGoals.filter(
-        (opGoal) =>
-          !(
-            opGoal.goalName === toDelete.goalName &&
-            opGoal.operatorName === toDelete.operatorName
-          )
-      )
-    );
-  };
-
-  const handleClearAllGoals = () => {
-    setOperatorGoals([]);
-  };
-
-  const handleGoalsChanged = (
-    e: React.ChangeEvent<{ name?: string; value: unknown }>
-  ) => {
-    setGoalNames((oldGoalNames) => {
-      const rawValues = (e.target.value as string[]).filter((name) => !!name);
-      const newPresets = rawValues.filter((value) =>
-        operatorPresets.find((preset) => preset === value)
+    if (operator) {
+      selectedGoals.forEach((goal) =>
+        dispatch(addGoal({ goal, operatorId: operator.id }))
       );
-      if (newPresets.length > 0) {
-        return [...new Set([...oldGoalNames, ...expandPreset(newPresets[0])])];
-      }
-      return rawValues;
-    });
-  };
-
-  const handleOperatorNameChanged = (_: unknown, value: string | null) => {
-    setOperatorName(value);
-    setGoalNames([]);
-  };
-
-  const renderGoalMenuItem = (goal: Goal, skill?: OperatorSkill) => {
-    let child: React.ReactElement | null = null;
-    if (isEliteGoal(goal)) {
-      child = (
-        <OperatorGoalIconography
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          goal={{ ...goal, operatorName: operatorName! }}
-        />
-      );
-    } else if (isMasteryGoal(goal)) {
-      child = (
-        <OperatorGoalIconography
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          goal={{ ...goal, operatorName: operatorName! }}
-          skill={skill}
-        />
-      );
+      setSelectedGoals([]);
     }
-    return (
-      <MenuItem key={goal.goalName} value={goal.goalName} data-cy="goalOption">
-        {child}
-        {goal.goalName}
-      </MenuItem>
-    );
   };
 
-  const renderGoalSelectOptions = () => {
-    if (!operatorName || !operator) {
-      return <MenuItem>Please select an operator first.</MenuItem>;
-    }
-
-    const presets =
-      operatorPresets.length > 0
-        ? [
-            <ListSubheader key="presets">Presets</ListSubheader>,
-            ...operatorPresets.map((presetName) => (
-              <MenuItem key={presetName} value={presetName} data-cy="preset">
-                {presetName}
-              </MenuItem>
-            )),
-          ]
-        : [];
-
-    const elite =
-      operator.elite.length > 0
-        ? [
-            <ListSubheader key="elite">Elite Levels</ListSubheader>,
-            ...operator.elite.map((goal) => renderGoalMenuItem(goal)),
-          ]
-        : [];
-    const masteries =
-      operator.skills.length > 0 && operator.skills[0].masteries.length > 0
-        ? [
-            <ListSubheader key="masteries">Masteries</ListSubheader>,
-            ...operator.skills.map((skill) =>
-              skill.masteries.map((goal) => renderGoalMenuItem(goal, skill))
-            ),
-          ]
-        : [];
-    const skillLevels =
-      operator.skillLevels.length > 0
-        ? [
-            <ListSubheader key="skillLevels">Skill Levels</ListSubheader>,
-            ...operator.skillLevels.map((goal) => renderGoalMenuItem(goal)),
-          ]
-        : [];
-    return [...presets, ...elite, ...masteries, ...skillLevels];
-  };
+  const possibleGoals = operator
+    ? possibleGoalsForOperator(operator.rarity, operator.id)
+    : [];
 
   return (
     <Grid container spacing={2}>
@@ -301,16 +178,23 @@ function Planner(): React.ReactElement {
                 autoWidth
                 multiple
                 displayEmpty
-                value={goalNames}
-                MenuProps={goalSelectMenuProps}
-                renderValue={(selected: unknown) =>
-                  (selected as string[])
-                    .sort((a, b) => a.localeCompare(b))
-                    .join(", ")
-                }
-                onChange={handleGoalsChanged}
+                MenuProps={{
+                  getContentAnchorEl: null,
+                  anchorOrigin: {
+                    vertical: "bottom" as const,
+                    horizontal: "left" as const,
+                  },
+                  transformOrigin: {
+                    vertical: "top" as const,
+                    horizontal: "left" as const,
+                  },
+                }}
+                onChange={handleSelectedGoalsChanged}
+                value={selectedGoals}
               >
-                {renderGoalSelectOptions()}
+                {possibleGoals.map((type) => (
+                  <MenuItem value={type}>{OperatorGoalType[type]}</MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Box>
@@ -325,11 +209,11 @@ function Planner(): React.ReactElement {
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <GoalOverview
+        {/* <GoalOverview
           goals={operatorGoals}
           onGoalDeleted={handleGoalDeleted}
           onClearAllGoals={handleClearAllGoals}
-        />
+        /> */}
       </Grid>
     </Grid>
   );
