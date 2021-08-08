@@ -49,4 +49,12 @@ export const depotSlice = createSlice({
   },
 });
 
+export const {
+  incrementItemQuantity,
+  decrementItemQuantity,
+  resetAllQuantities,
+  setItemQuantity,
+  toggleItemCrafting,
+} = depotSlice.actions;
+
 export default depotSlice.reducer;

@@ -90,4 +90,6 @@ export const goalsSlice = createSlice({
   },
 });
 
+export const { addGoal, deleteGoal, deleteAllGoals } = goalsSlice.actions;
+
 export default goalsSlice.reducer;
