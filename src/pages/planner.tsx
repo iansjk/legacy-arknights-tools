@@ -55,7 +55,9 @@ const possibleGoalsForOperator = (
 };
 
 const toMenuItem = (goal: OperatorGoalType) => (
-  <MenuItem key={goal}>{OperatorGoalType[goal]}</MenuItem>
+  <MenuItem key={goal} value={goal}>
+    {OperatorGoalType[goal]}
+  </MenuItem>
 );
 
 const Planner: React.VFC = () => {
@@ -77,7 +79,7 @@ const Planner: React.VFC = () => {
   );
   const operators: Operator[] = data.allOperatorsJson.nodes;
   const dispatch = useAppDispatch();
-  const [operatorName, setOperatorName] = useState<string>("");
+  const [operatorName, setOperatorName] = useState<string | null>(null);
   const operator = operators.find((op) => op.name === operatorName);
   const [selectedGoals, setSelectedGoals] = useState<OperatorGoalType[]>([]);
 
