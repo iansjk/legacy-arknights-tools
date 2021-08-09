@@ -16,6 +16,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { addGoals, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
 import { Operator } from "../types";
+import GoalList from "../components/GoalList";
 
 const possibleGoalsForOperator = (
   rarity: number,
@@ -198,6 +199,7 @@ const Planner: React.VFC = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
+        <GoalList />
         {/* <GoalOverview
           goals={operatorGoals}
           onGoalDeleted={handleGoalDeleted}
