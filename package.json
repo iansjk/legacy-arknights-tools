@@ -5,7 +5,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "start": "npx --node-arg=--inspect netlify dev",
+    "start": "gatsby develop",
     "develop": "gatsby develop",
     "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
@@ -70,6 +70,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-redux": "^3.3.2",
     "esm": "^3.2.25",
     "prettier": "^2.2.1",
     "typescript": "^4.1"
