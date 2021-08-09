@@ -13,7 +13,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { addGoal, OperatorGoalType } from "../store/goalsSlice";
+import { addGoals, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
 import { Operator } from "../types";
 
@@ -96,8 +96,10 @@ const Planner: React.VFC = () => {
 
   const handleAddGoals = () => {
     if (operator) {
-      selectedGoals.forEach((goal) =>
-        dispatch(addGoal({ goal, operatorId: operator.id }))
+      dispatch(
+        addGoals(
+          selectedGoals.map((goal) => ({ goal, operatorId: operator.id }))
+        )
       );
       setSelectedGoals([]);
     }

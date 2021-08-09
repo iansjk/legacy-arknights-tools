@@ -25,6 +25,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
   "elite" or "mastery" being renamed, elite 3 being added (!), etc.
   we could also expand it with Modules if we end up needing materials for those...
   and so on.
+
+  8/8: I think we have to rethink this approach, if we're planning on eventually letting users
+  rearrange their goals, then we need to persist that ordering in the store.
+  and if we're persisting the ordering, then we need to persist it as an array of operatorids and goaltypes,
+  at which point, why are we even keeping an object?
+
+  now the question is, how would we handle a future scenario where we add e.g. a BaseGoal or something?
+  though, if we have redux-persist and migrations, maybe I shouldn't be too worried about it
 */
 
 export enum OperatorGoalType {
@@ -51,39 +59,28 @@ export enum OperatorGoalType {
   // working with these enums will be pretty annoying but maybe it's worth it?
 }
 
-export interface GoalsState {
-  operators: {
-    [operatorId: string]: OperatorGoalType[];
-  };
-}
-
-const initialState: GoalsState = {
-  operators: {},
-};
-
-interface GoalPayload {
+interface OperatorGoal {
   operatorId: string;
   goal: OperatorGoalType;
 }
+
+export interface GoalsState {
+  operators: OperatorGoal[];
+}
+
+const initialState: GoalsState = {
+  operators: [],
+};
 
 export const goalsSlice = createSlice({
   name: "goals",
   initialState,
   reducers: {
-    addGoal: (state, action: PayloadAction<GoalPayload>) => {
-      const { goal, operatorId } = action.payload;
-      state.operators[operatorId] = [
-        ...(state.operators[operatorId] || []),
-        goal,
-      ];
+    addGoals: (state, action: PayloadAction<OperatorGoal[]>) => {
+      state.operators.push(...action.payload);
     },
-    deleteGoal: (state, action: PayloadAction<GoalPayload>) => {
-      const { goal: toDelete, operatorId } = action.payload;
-      if (state.operators[operatorId]?.length > 0) {
-        state.operators[operatorId] = state.operators[operatorId].filter(
-          (goal) => goal !== toDelete
-        );
-      }
+    deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
+      state.operators = state.operators.filter((opGoal) => !(opGoal.goal !== action.payload.goal && opGoal.operatorId !== action.payload.operatorId));
     },
     deleteAllGoals: (state) => {
       state = initialState;
@@ -97,6 +94,6 @@ export const goalsSlice = createSlice({
   },
 });
 
-export const { addGoal, deleteGoal, deleteAllGoals } = goalsSlice.actions;
+export const { addGoals, deleteGoal, deleteAllGoals } = goalsSlice.actions;
 
 export default goalsSlice.reducer;
