@@ -77,11 +77,24 @@ export const goalsSlice = createSlice({
   initialState,
   reducers: {
     addGoals: (state, action: PayloadAction<OperatorGoal[]>) => {
-      const newGoals = action.payload.filter((newGoal) => !state.operators.find((existing) => existing.goal === newGoal.goal && existing.operatorId === newGoal.operatorId));
+      const newGoals = action.payload.filter(
+        (newGoal) =>
+          !state.operators.find(
+            (existing) =>
+              existing.goal === newGoal.goal &&
+              existing.operatorId === newGoal.operatorId
+          )
+      );
       state.operators.push(...newGoals);
     },
     deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
-      state.operators = state.operators.filter((opGoal) => !(opGoal.goal !== action.payload.goal && opGoal.operatorId !== action.payload.operatorId));
+      state.operators = state.operators.filter(
+        (opGoal) =>
+          !(
+            opGoal.goal !== action.payload.goal &&
+            opGoal.operatorId !== action.payload.operatorId
+          )
+      );
     },
     deleteAllGoals: (state) => {
       state = initialState;
