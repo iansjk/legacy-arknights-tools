@@ -91,7 +91,11 @@ const Planner: React.VFC = () => {
   };
 
   const handleSelectedGoalsChanged = (e: { target: { value: unknown } }) => {
-    setSelectedGoals(e.target.value as OperatorGoalType[]);
+    setSelectedGoals(
+      (e.target.value as unknown[]).filter(
+        (value) => value != null
+      ) as OperatorGoalType[]
+    );
   };
 
   const handleAddGoals = () => {
