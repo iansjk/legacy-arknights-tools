@@ -42,8 +42,16 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     operatorGoalIngredients(opGoal, operatorMap).forEach((ingr) => {
       const { id, quantity } = ingr;
       materialsNeeded[id] = (materialsNeeded[id] ?? 0) + quantity;
+      if (itemsBeingCrafted[id]) {
+        itemMap[id].ingredients.forEach((subIngr) => {
+          const { id: subIngrId, quantity: subIngrQuantity } = subIngr;
+          materialsNeeded[subIngrId] =
+            (materialsNeeded[subIngrId] ?? 0) + subIngrQuantity * quantity;
+        });
+      }
     });
   });
+
   return (
     <ul>
       {Object.entries(materialsNeeded).map(([id, needed]) => (
