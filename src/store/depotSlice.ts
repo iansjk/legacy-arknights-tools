@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AppThunk } from "./store";
+import { Ingredient } from "../types";
 
 interface DepotState {
   quantities: { [itemId: string]: number };
@@ -41,9 +43,6 @@ export const depotSlice = createSlice({
         action.payload
       ];
     },
-    // craftItemOnce: (state, action: PayloadAction<string>) => {
-    // TODO
-    // },
   },
 });
 
@@ -54,5 +53,24 @@ export const {
   setItemQuantity,
   toggleItemCrafting,
 } = depotSlice.actions;
+
+export const craftItemOnce = (
+  itemId: string,
+  ingredients: Ingredient[]
+): AppThunk => (dispatch, getState) => {
+  const { quantities } = getState().depot;
+  ingredients.forEach((ingredient) => {
+    dispatch(
+      setItemQuantity({
+        itemId: ingredient.id,
+        quantity: Math.max(
+          (quantities[ingredient.id] ?? 0) - ingredient.quantity,
+          0
+        ),
+      })
+    );
+  });
+  dispatch(incrementItemQuantity(itemId));
+};
 
 export default depotSlice.reducer;

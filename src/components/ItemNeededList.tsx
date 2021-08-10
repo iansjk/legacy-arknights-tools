@@ -1,6 +1,7 @@
 import React from "react";
 import { operatorGoalIngredients } from "../pages/planner";
 import {
+  craftItemOnce,
   decrementItemQuantity,
   incrementItemQuantity,
   setItemQuantity,
@@ -35,6 +36,10 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
 
   const handleToggleCrafting = (itemId: string) => {
     dispatch(toggleItemCrafting(itemId));
+  };
+
+  const handleCraftOne = (itemId: string) => {
+    dispatch(craftItemOnce(itemId, itemMap[itemId].ingredients));
   };
 
   const materialsNeeded: Record<string, number> = {};
