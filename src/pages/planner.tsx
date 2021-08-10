@@ -73,6 +73,43 @@ const Planner: React.VFC = () => {
             id
             name
             rarity
+            elite {
+              eliteLevel
+              goalCategory
+              goalName
+              ingredients {
+                name
+                tier
+                quantity
+              }
+            }
+            skillLevels {
+              goalCategory
+              goalName
+              goalShortName
+              skillLevel
+              ingredients {
+                name
+                tier
+                quantity
+              }
+            }
+            skills {
+              iconId
+              masteries {
+                goalCategory
+                goalName
+                goalShortName
+                ingredients {
+                  name
+                  tier
+                  quantity
+                }
+                masteryLevel
+              }
+              skillId
+              skillName
+            }
           }
         }
       }
