@@ -3,12 +3,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DepotState {
   quantities: { [itemId: string]: number };
-  itemsBeingCrafted: string[];
+  itemsBeingCrafted: { [itemId: string]: boolean };
 }
 
 const initialState: DepotState = {
   quantities: {},
-  itemsBeingCrafted: [],
+  itemsBeingCrafted: {},
 };
 
 interface QuantityPayload {
@@ -37,13 +37,9 @@ export const depotSlice = createSlice({
       state.quantities = {};
     },
     toggleItemCrafting: (state, action: PayloadAction<string>) => {
-      if (state.itemsBeingCrafted.includes(action.payload)) {
-        state.itemsBeingCrafted = state.itemsBeingCrafted.filter(
-          (itemId) => itemId !== action.payload
-        );
-      } else {
-        state.itemsBeingCrafted.push(action.payload);
-      }
+      state.itemsBeingCrafted[action.payload] = !state.itemsBeingCrafted[
+        action.payload
+      ];
     },
     // craftItemOnce: (state, action: PayloadAction<string>) => {
     // TODO
