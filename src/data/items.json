@@ -31,6 +31,7 @@
     "name": "Strategic Battle Record",
     "tier": 5,
     "sortId": 70001,
+    "ingredients": [],
     "sanityValue": 6.07
   },
   {
@@ -77,7 +78,7 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-C-2",
-        "itemSanityCost": 73.36,
+        "itemSanityCost": 73.24,
         "dropRate": 0.5
       }
     },
@@ -521,7 +522,7 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-C-2",
-        "itemSanityCost": 70.69,
+        "itemSanityCost": 70.8,
         "dropRate": 0.5
       }
     },
@@ -630,6 +631,7 @@
     "name": "Skill Summary - 1",
     "tier": 2,
     "sortId": 80003,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 15,
@@ -665,7 +667,7 @@
       "mostEfficient": {
         "stageSanityCost": 30,
         "stageName": "CA-5",
-        "itemSanityCost": 19.94,
+        "itemSanityCost": 19.95,
         "dropRate": 1.5
       }
     },
@@ -701,6 +703,7 @@
     "name": "LMD",
     "tier": 4,
     "sortId": 10004,
+    "ingredients": [],
     "sanityValue": 0.004
   },
   {
@@ -708,6 +711,7 @@
     "name": "Orirock",
     "tier": 1,
     "sortId": 100015,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 12,
@@ -811,6 +815,7 @@
     "name": "Sugar Substitute",
     "tier": 1,
     "sortId": 100027,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 12,
@@ -847,7 +852,7 @@
       "leastSanity": {
         "stageSanityCost": 15,
         "stageName": "S3-1",
-        "itemSanityCost": 9.88,
+        "itemSanityCost": 9.89,
         "dropRate": 1.52
       }
     },
@@ -934,6 +939,7 @@
     "name": "Ester",
     "tier": 1,
     "sortId": 100023,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 12,
@@ -1051,6 +1057,7 @@
     "name": "Oriron Shard",
     "tier": 1,
     "sortId": 100031,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 6,
@@ -1174,6 +1181,7 @@
     "name": "Diketon",
     "tier": 1,
     "sortId": 100035,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 12,
@@ -1210,7 +1218,7 @@
       "leastSanity": {
         "stageSanityCost": 15,
         "stageName": "3-7",
-        "itemSanityCost": 12.23,
+        "itemSanityCost": 12.24,
         "dropRate": 1.23
       }
     },
@@ -1291,6 +1299,7 @@
     "name": "Damaged Device",
     "tier": 1,
     "sortId": 100019,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 6,
@@ -1408,11 +1417,12 @@
     "name": "Loxic Kohl",
     "tier": 3,
     "sortId": 100005,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 21,
         "stageName": "6-11",
-        "itemSanityCost": 42.59,
+        "itemSanityCost": 42.58,
         "dropRate": 0.49
       },
       "mostEfficient": {
@@ -1467,6 +1477,7 @@
     "name": "Manganese Ore",
     "tier": 3,
     "sortId": 100007,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 15,
@@ -1526,6 +1537,7 @@
     "name": "Grindstone",
     "tier": 3,
     "sortId": 100009,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 15,
@@ -1585,11 +1597,12 @@
     "name": "RMA70-12",
     "tier": 3,
     "sortId": 100011,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 18,
         "stageName": "R8-9",
-        "itemSanityCost": 51.62,
+        "itemSanityCost": 51.63,
         "dropRate": 0.35
       },
       "mostEfficient": {
@@ -1789,11 +1802,12 @@
     "name": "Coagulating Gel",
     "tier": 3,
     "sortId": 100037,
+    "ingredients": [],
     "stages": {
       "mostEfficient": {
         "stageSanityCost": 21,
         "stageName": "JT8-2",
-        "itemSanityCost": 62.99,
+        "itemSanityCost": 63,
         "dropRate": 0.33
       }
     },
@@ -1842,17 +1856,18 @@
     "name": "Incandescent Alloy",
     "tier": 3,
     "sortId": 100039,
+    "ingredients": [],
     "stages": {
       "leastSanity": {
         "stageSanityCost": 15,
         "stageName": "S3-6",
-        "itemSanityCost": 37.71,
+        "itemSanityCost": 37.7,
         "dropRate": 0.4
       },
       "mostEfficient": {
         "stageSanityCost": 18,
         "stageName": "R8-7",
-        "itemSanityCost": 54.71,
+        "itemSanityCost": 54.69,
         "dropRate": 0.33
       }
     },
@@ -1901,6 +1916,7 @@
     "name": "Crystalline Component",
     "tier": 3,
     "sortId": 100042,
+    "ingredients": [],
     "stages": {
       "mostEfficient": {
         "stageSanityCost": 21,
@@ -1954,13 +1970,15 @@
     "name": "Chip Catalyst",
     "tier": 4,
     "sortId": 400001,
+    "ingredients": [],
     "sanityValue": 0
   },
   {
     "id": "Crystal Component",
     "name": "Crystal Component",
     "tier": 3,
-    "sortId": 100042
+    "sortId": 100042,
+    "ingredients": []
   },
   {
     "id": "Crystal Circuit",

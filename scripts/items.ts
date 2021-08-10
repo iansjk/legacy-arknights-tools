@@ -125,6 +125,7 @@ const items = Object.keys(cnItemTable)
       name,
       tier,
       sortId,
+      ingredients: [],
     };
     const workshopFormulaId = entry.buildingProductList.find(
       ({ roomType }) => roomType === "WORKSHOP"
@@ -325,7 +326,10 @@ function buildFarmingStage(itemId: string, stageItem: StageItem): FarmingStage {
   };
 }
 
-function shouldAddStageRecommendation(item: Item): boolean {
+function shouldAddStageRecommendation(item: {
+  name: string;
+  tier: number;
+}): boolean {
   if (item.name === "LMD" || item.name.endsWith("Battle Record")) return false;
   return (
     item.tier < 4 ||
