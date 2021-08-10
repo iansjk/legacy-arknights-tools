@@ -1,9 +1,22 @@
+interface RecommendedStage {
+  stageSanityCost: number;
+  stageName: string;
+  itemSanityCost: number;
+  dropRate: number;
+}
+
 export interface Item {
   id: string;
   name: string;
   tier: number;
-  ingredients?: Ingredient[];
-  yield?: number;
+  sortId: number;
+  ingredients: Ingredient[];
+  yield: number;
+  stages?: Partial<{
+    mostEfficient: RecommendedStage;
+    leastSanity: RecommendedStage;
+  }>;
+  sanityValue: number;
 }
 
 export interface Ingredient {
