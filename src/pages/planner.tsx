@@ -121,15 +121,13 @@ const Planner: React.VFC = () => {
     [operators]
   );
   const dispatch = useAppDispatch();
-  const [operatorName, setOperatorName] = useState<string | null>(null);
-  const operator = operators.find((op) => op.name === operatorName);
+  const [operatorId, setOperatorId] = useState<string | null>(null);
+  const operator = operatorId == null ? null : operatorMap[operatorId];
   const [selectedGoals, setSelectedGoals] = useState<OperatorGoalType[]>([]);
 
-  const handleOperatorNameChanged = (_: unknown, value: string | null) => {
-    if (value) {
-      setOperatorName(value);
-      setSelectedGoals([]);
-    }
+  const handleOperatorChanged = (_: unknown, value: Operator | null) => {
+    setOperatorId(value?.id ?? null);
+    setSelectedGoals([]);
   };
 
   const handleSelectedGoalsChanged = (e: { target: { value: unknown } }) => {
@@ -159,11 +157,12 @@ const Planner: React.VFC = () => {
     <Grid container spacing={2}>
       <Grid item xs={12} md={4}>
         <Autocomplete
-          options={operators.map((op) => op.name)}
+          options={operators}
+          getOptionLabel={(op) => op.name}
           autoComplete
           autoHighlight
-          value={operatorName}
-          onChange={handleOperatorNameChanged}
+          value={operator}
+          onChange={handleOperatorChanged}
           id="operator-name"
           renderInput={(params) => (
             <TextField
