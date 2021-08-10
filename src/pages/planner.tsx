@@ -15,7 +15,7 @@ import React, { useMemo, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { addGoals, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
-import { Operator } from "../types";
+import { Item, Operator } from "../types";
 import GoalList from "../components/GoalList";
 import ItemNeededList from "../components/ItemNeededList";
 
@@ -66,6 +66,37 @@ const Planner: React.VFC = () => {
   const data = useStaticQuery(
     graphql`
       query {
+        allItemsJson {
+          nodes {
+            id
+            name
+            ingredients {
+              id
+              name
+              quantity
+              sortId
+              tier
+            }
+            sortId
+            sanityValue
+            tier
+            yield
+            stages {
+              leastSanity {
+                dropRate
+                itemSanityCost
+                stageName
+                stageSanityCost
+              }
+              mostEfficient {
+                dropRate
+                itemSanityCost
+                stageName
+                stageSanityCost
+              }
+            }
+          }
+        }
         allOperatorsJson(
           sort: { fields: name, order: ASC }
           filter: { rarity: { gte: 3 } }
@@ -123,6 +154,11 @@ const Planner: React.VFC = () => {
   const operatorMap = useMemo(
     () => Object.fromEntries<Operator>(operators.map((op) => [op.id, op])),
     [operators]
+  );
+  const items: Item[] = data.allItemsJson.nodes;
+  const itemMap = useMemo(
+    () => Object.fromEntries<Item>(items.map((item) => [item.id, item])),
+    [items]
   );
   const dispatch = useAppDispatch();
   const [operatorId, setOperatorId] = useState<string | null>(null);
@@ -243,8 +279,8 @@ const Planner: React.VFC = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <ItemNeededList operatorMap={operatorMap} />
-        <GoalList operatorMap={operatorMap} />
+        <ItemNeededList operatorMap={operatorMap} itemMap={itemMap} />
+        <GoalList operatorMap={operatorMap} itemMap={itemMap} />
       </Grid>
     </Grid>
   );

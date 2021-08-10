@@ -1,13 +1,14 @@
 import React from "react";
 import { OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
-import { Ingredient, Operator } from "../types";
+import { Ingredient, Item, Operator } from "../types";
 
 interface Props {
   operatorMap: Record<string, Operator>;
+  itemMap: Record<string, Item>;
 }
 
-const ItemNeededList: React.VFC<Props> = ({ operatorMap }) => {
+const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
   const dispatch = useAppDispatch();
   const { itemsBeingCrafted, quantities } = useAppSelector(
     (state) => state.depot
@@ -74,7 +75,7 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap }) => {
     <ul>
       {Object.entries(materialsNeeded).map(([id, quantity]) => (
         <li key={id}>
-          {id}: {quantity}
+          {itemMap[id].name}: {quantity}
         </li>
       ))}
     </ul>

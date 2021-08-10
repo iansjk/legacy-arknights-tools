@@ -1,13 +1,14 @@
 import React from "react";
 import { OperatorGoalType } from "../store/goalsSlice";
 import { useAppSelector } from "../store/store";
-import { Operator } from "../types";
+import { Item, Operator } from "../types";
 
 interface Props {
   operatorMap: Record<string, Operator>;
+  itemMap: Record<string, Item>;
 }
 
-const GoalList: React.VFC<Props> = ({ operatorMap }) => {
+const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
   const goals = useAppSelector((state) => state.goals);
   return (
     <ol>
