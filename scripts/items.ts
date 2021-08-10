@@ -79,7 +79,8 @@ const WHITELISTED_ITEMS = new Set([
   "Polymerization Preparation",
   "Bipolar Nanoflake",
   "D32 Steel",
-  "Crystalline Electroassembly",
+  "Crystalline Electroassembly", // FIXME needed for Luzark's planner
+  "Crystalline Electronic Unit",
   "Skill Summary - 1",
   "Skill Summary - 2",
   "Skill Summary - 3",
@@ -154,22 +155,6 @@ const items = Object.keys(cnItemTable)
     }
     return baseObj;
   });
-
-const crystalItems = {
-  "Crystal Component": "Crystalline Component",
-  "Crystal Circuit": "Crystalline Circuit",
-  "Crystal Electronic Unit": "Crystalline Electroassembly",
-};
-
-Object.entries(crystalItems).forEach(([oldName, newName]) => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const newEntry = items.find((item) => item.name === newName)!;
-  items.push({
-    ...newEntry,
-    name: oldName,
-    id: oldName,
-  });
-});
 
 const LUZARK_LP_SOLVER_URL =
   "https://colab.research.google.com/drive/1lHwJDG7WCAr3KMlxY-HLyD8-yG3boazq";
