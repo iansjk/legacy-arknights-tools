@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  decrementItemQuantity,
+  incrementItemQuantity,
+} from "../store/depotSlice";
 import { OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { Ingredient, Item, Operator } from "../types";
@@ -14,6 +18,14 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     (state) => state.depot
   );
   const { operators: operatorGoals } = useAppSelector((state) => state.goals);
+
+  const handleIncrement = (itemId: string) => {
+    dispatch(incrementItemQuantity(itemId));
+  };
+
+  const handleDecrement = (itemId: string) => {
+    dispatch(decrementItemQuantity(itemId));
+  };
 
   const materialsNeeded: Record<string, number> = {};
   operatorGoals.forEach((opGoal) => {
@@ -73,9 +85,19 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
   });
   return (
     <ul>
-      {Object.entries(materialsNeeded).map(([id, quantity]) => (
+      {Object.entries(materialsNeeded).map(([id, needed]) => (
         <li key={id}>
-          {itemMap[id].name}: {quantity}
+          {itemMap[id].name}: {needed}
+          <br />
+          Have: {quantities[id] ?? 0}
+          <br />
+          <button type="button" onClick={() => handleIncrement(id)}>
+            Increment
+          </button>
+          <br />
+          <button type="button" onClick={() => handleDecrement(id)}>
+            Decrement
+          </button>
         </li>
       ))}
     </ul>

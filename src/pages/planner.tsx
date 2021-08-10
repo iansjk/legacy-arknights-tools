@@ -278,9 +278,13 @@ const Planner: React.VFC = () => {
           </Button>
         </Box>
       </Grid>
-      <Grid item xs={12}>
-        <ItemNeededList operatorMap={operatorMap} itemMap={itemMap} />
-        <GoalList operatorMap={operatorMap} itemMap={itemMap} />
+      <Grid item xs={12} container>
+        <Grid item xs={7}>
+          <ItemNeededList operatorMap={operatorMap} itemMap={itemMap} />
+        </Grid>
+        <Grid item xs={5}>
+          <GoalList operatorMap={operatorMap} itemMap={itemMap} />
+        </Grid>
       </Grid>
     </Grid>
   );
