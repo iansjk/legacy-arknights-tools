@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Ingredient } from "../types";
+import { setItemQuantity } from "./depotSlice";
+import { AppThunk } from "./store";
 
 /*
   what is the absolute minimum state that we need to track a user's goals? 
@@ -59,10 +62,14 @@ export enum OperatorGoalType {
   // working with these enums will be pretty annoying but maybe it's worth it?
 }
 
-interface OperatorGoal {
+export interface OperatorGoal {
   operatorId: string;
   goal: OperatorGoalType;
 }
+
+export type OperatorGoalWithIngredients = OperatorGoal & {
+  ingredients: Ingredient[];
+};
 
 export interface GoalsState {
   operators: OperatorGoal[];
@@ -90,24 +97,35 @@ export const goalsSlice = createSlice({
     deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
       state.operators = state.operators.filter(
         (opGoal) =>
-          !(
-            opGoal.goal !== action.payload.goal &&
-            opGoal.operatorId !== action.payload.operatorId
-          )
+          opGoal.goal !== action.payload.goal ||
+          opGoal.operatorId !== action.payload.operatorId
       );
     },
     deleteAllGoals: (state) => {
       state = initialState;
     },
-    // completeGoal: (state) => {
-    // TODO this one is going to be pretty complicated.
-    // we're going to want to dispatch an action to depotSlice so that it can update its material counts
-    // and then also remove the goal from goalsSlice.
-    // so I guess it'll be a thunk in the future?
-    // }
   },
 });
 
 export const { addGoals, deleteGoal, deleteAllGoals } = goalsSlice.actions;
+
+export const completeGoal = (goal: OperatorGoalWithIngredients): AppThunk => (
+  dispatch,
+  getState
+) => {
+  const { quantities } = getState().depot;
+  goal.ingredients.forEach((ingredient) =>
+    dispatch(
+      setItemQuantity({
+        itemId: ingredient.id,
+        quantity: Math.max(
+          (quantities[ingredient.id] ?? 0) - ingredient.quantity,
+          0
+        ),
+      })
+    )
+  );
+  dispatch(deleteGoal(goal));
+};
 
 export default goalsSlice.reducer;

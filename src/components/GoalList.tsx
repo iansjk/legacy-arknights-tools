@@ -1,6 +1,12 @@
 import React from "react";
-import { OperatorGoalType } from "../store/goalsSlice";
-import { useAppSelector } from "../store/store";
+import { operatorGoalIngredients } from "../pages/planner";
+import {
+  completeGoal,
+  deleteGoal,
+  OperatorGoal,
+  OperatorGoalType,
+} from "../store/goalsSlice";
+import { useAppDispatch, useAppSelector } from "../store/store";
 import { Item, Operator } from "../types";
 
 interface Props {
@@ -9,14 +15,40 @@ interface Props {
 }
 
 const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
+  const dispatch = useAppDispatch();
   const goals = useAppSelector((state) => state.goals);
+
+  const handleDelete = (opGoal: OperatorGoal) => {
+    dispatch(deleteGoal(opGoal));
+  };
+
+  const handleComplete = (opGoal: OperatorGoal) => {
+    dispatch(
+      completeGoal({
+        ...opGoal,
+        ingredients: operatorGoalIngredients(opGoal, operatorMap),
+      })
+    );
+  };
+
   return (
     <ol>
-      {goals.operators.map(({ operatorId, goal }) => (
-        <li key={`${operatorId}-g${goal}`}>
-          {operatorMap[operatorId].name}: {OperatorGoalType[goal]}
-        </li>
-      ))}
+      {goals.operators.map((opGoal) => {
+        const { operatorId, goal } = opGoal;
+        return (
+          <li key={`${operatorId}-g${goal}`}>
+            {operatorMap[operatorId].name}: {OperatorGoalType[goal]}
+            <br />
+            <button type="button" onClick={() => handleDelete(opGoal)}>
+              Delete
+            </button>
+            <br />
+            <button type="button" onClick={() => handleComplete(opGoal)}>
+              Complete
+            </button>
+          </li>
+        );
+      })}
     </ol>
   );
 };

@@ -25,8 +25,10 @@ export const depotSlice = createSlice({
         (state.quantities[action.payload] ?? 0) + 1;
     },
     decrementItemQuantity: (state, action: PayloadAction<string>) => {
-      state.quantities[action.payload] =
-        (state.quantities[action.payload] ?? 0) - 1;
+      state.quantities[action.payload] = Math.max(
+        (state.quantities[action.payload] ?? 0) - 1,
+        0
+      );
     },
     setItemQuantity: (state, action: PayloadAction<QuantityPayload>) => {
       state.quantities[action.payload.itemId] = action.payload.quantity;
