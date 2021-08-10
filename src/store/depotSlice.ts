@@ -21,12 +21,12 @@ export const depotSlice = createSlice({
   initialState,
   reducers: {
     incrementItemQuantity: (state, action: PayloadAction<string>) => {
-      // eslint-disable-next-line no-plusplus
-      state.quantities[action.payload]++;
+      state.quantities[action.payload] =
+        (state.quantities[action.payload] ?? 0) + 1;
     },
     decrementItemQuantity: (state, action: PayloadAction<string>) => {
-      // eslint-disable-next-line no-plusplus
-      state.quantities[action.payload]--;
+      state.quantities[action.payload] =
+        (state.quantities[action.payload] ?? 0) - 1;
     },
     setItemQuantity: (state, action: PayloadAction<QuantityPayload>) => {
       state.quantities[action.payload.itemId] = action.payload.quantity;
