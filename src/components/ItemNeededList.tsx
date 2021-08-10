@@ -3,10 +3,10 @@ import { operatorGoalIngredients } from "../pages/planner";
 import {
   decrementItemQuantity,
   incrementItemQuantity,
+  setItemQuantity,
 } from "../store/depotSlice";
-import { OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
-import { Ingredient, Item, Operator } from "../types";
+import { Item, Operator } from "../types";
 
 interface Props {
   operatorMap: Record<string, Operator>;
@@ -28,6 +28,10 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     dispatch(decrementItemQuantity(itemId));
   };
 
+  const handleChangeQuantity = (itemId: string, quantity: number) => {
+    dispatch(setItemQuantity({ itemId, quantity }));
+  };
+
   const materialsNeeded: Record<string, number> = {};
   operatorGoals.forEach((opGoal) => {
     operatorGoalIngredients(opGoal, operatorMap).forEach((ingr) => {
@@ -41,7 +45,12 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
         <li key={id}>
           {itemMap[id].name}: {needed}
           <br />
-          Have: {quantities[id] ?? 0}
+          Have:{" "}
+          <input
+            type="numeric"
+            onChange={(e) => handleChangeQuantity(id, Number(e.target.value))}
+            value={quantities[id] ?? 0}
+          />
           <br />
           <button type="button" onClick={() => handleIncrement(id)}>
             Increment
