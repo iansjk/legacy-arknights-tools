@@ -243,12 +243,8 @@ const Planner: React.VFC = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
+        <ItemNeededList operatorMap={operatorMap} />
         <GoalList operatorMap={operatorMap} />
-        {/* <GoalOverview
-          goals={operatorGoals}
-          onGoalDeleted={handleGoalDeleted}
-          onClearAllGoals={handleClearAllGoals}
-        /> */}
       </Grid>
     </Grid>
   );
