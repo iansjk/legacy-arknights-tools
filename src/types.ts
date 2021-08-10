@@ -1,4 +1,5 @@
 export interface Item {
+  id: string;
   name: string;
   tier: number;
   ingredients?: Ingredient[];
@@ -6,6 +7,7 @@ export interface Item {
 }
 
 export interface Ingredient {
+  id: string;
   name: string;
   tier: number;
   quantity: number;

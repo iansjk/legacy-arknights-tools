@@ -17,6 +17,7 @@ import { addGoals, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
 import { Operator } from "../types";
 import GoalList from "../components/GoalList";
+import ItemNeededList from "../components/ItemNeededList";
 
 const possibleGoalsForOperator = (
   rarity: number,
@@ -78,6 +79,7 @@ const Planner: React.VFC = () => {
               goalCategory
               goalName
               ingredients {
+                id
                 name
                 tier
                 quantity
@@ -89,6 +91,7 @@ const Planner: React.VFC = () => {
               goalShortName
               skillLevel
               ingredients {
+                id
                 name
                 tier
                 quantity
@@ -101,6 +104,7 @@ const Planner: React.VFC = () => {
                 goalName
                 goalShortName
                 ingredients {
+                  id
                   name
                   tier
                   quantity
