@@ -10,13 +10,13 @@ interface Props {
 const GoalList: React.VFC<Props> = ({ operatorMap }) => {
   const goals = useAppSelector((state) => state.goals);
   return (
-    <ul>
+    <ol>
       {goals.operators.map(({ operatorId, goal }) => (
         <li key={`${operatorId}-g${goal}`}>
           {operatorMap[operatorId].name}: {OperatorGoalType[goal]}
         </li>
       ))}
-    </ul>
+    </ol>
   );
 };
 export default GoalList;
