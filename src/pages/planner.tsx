@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { addGoals, OperatorGoalType } from "../store/goalsSlice";
 import { useAppDispatch } from "../store/store";
@@ -116,6 +116,10 @@ const Planner: React.VFC = () => {
     `
   );
   const operators: Operator[] = data.allOperatorsJson.nodes;
+  const operatorMap = useMemo(
+    () => Object.fromEntries<Operator>(operators.map((op) => [op.id, op])),
+    [operators]
+  );
   const dispatch = useAppDispatch();
   const [operatorName, setOperatorName] = useState<string | null>(null);
   const operator = operators.find((op) => op.name === operatorName);
@@ -236,7 +240,7 @@ const Planner: React.VFC = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <GoalList />
+        <GoalList operatorMap={operatorMap} />
         {/* <GoalOverview
           goals={operatorGoals}
           onGoalDeleted={handleGoalDeleted}
