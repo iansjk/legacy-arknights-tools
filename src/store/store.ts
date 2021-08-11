@@ -1,14 +1,44 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import localForage from "localforage";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from "redux-persist";
+import { combineReducers } from "redux";
 import goalsReducer from "./goalsSlice";
 import depotReducer from "./depotSlice";
 
-export const store = configureStore({
-  reducer: {
-    goals: goalsReducer,
-    depot: depotReducer,
-  },
+const rootReducer = combineReducers({
+  goals: goalsReducer,
+  depot: depotReducer,
 });
+
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage: localForage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+
+export const persistor = persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

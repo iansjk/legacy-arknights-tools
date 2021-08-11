@@ -22,9 +22,10 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import { Link as GatsbyLink } from "gatsby-theme-material-ui";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import AppFooter from "../components/AppFooter";
 import favicon from "../data/images/favicon.ico";
-import { store } from "../store/store";
+import { persistor, store } from "../store/store";
 
 const drawerWidth = 220;
 
@@ -172,79 +173,85 @@ function Layout(props: LayoutProps): React.ReactElement {
 
   return (
     <Provider store={store}>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={favicon} />
-        <meta property="og:url" content={`${siteUrl}${uri}`} />
-        <link rel="icon" type="image/x-icon" href={favicon} />
-      </Helmet>
-      <CssBaseline />
-      <div className={classes.appWrapper}>
-        <div className={classes.appContainer}>
-          <nav className={classes.drawer}>
-            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-            <Hidden lgUp implementation="css">
-              <Drawer
-                container={container}
-                variant="temporary"
-                anchor={theme.direction === "rtl" ? "right" : "left"}
-                open={mobileOpen}
-                onClose={handleDrawerToggle}
-                classes={{
-                  paper: classes.drawerPaper,
-                }}
-                ModalProps={{
-                  keepMounted: true, // Better open performance on mobile.
-                }}
-              >
-                {drawer}
-              </Drawer>
-            </Hidden>
-            <Hidden mdDown implementation="css">
-              <Drawer
-                classes={{
-                  paper: classes.drawerPaper,
-                }}
-                variant="permanent"
-                open
-              >
-                {drawer}
-              </Drawer>
-            </Hidden>
-          </nav>
-          <AppBar position="fixed" className={classes.headerFooter}>
-            <Toolbar className={classes.mainToolbar}>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                className={classes.menuButton}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography
-                component="h2"
-                variant="h5"
-                noWrap
-                className={classes.pageTitle}
-              >
-                {pageTitle}
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <Container className={classes.content} component="main" maxWidth="lg">
-            <div className={classes.toolbar} />
-            {children}
-          </Container>
+      <PersistGate loading={null} persistor={persistor}>
+        <Helmet>
+          <html lang="en" />
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta property="og:title" content={title} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={favicon} />
+          <meta property="og:url" content={`${siteUrl}${uri}`} />
+          <link rel="icon" type="image/x-icon" href={favicon} />
+        </Helmet>
+        <CssBaseline />
+        <div className={classes.appWrapper}>
+          <div className={classes.appContainer}>
+            <nav className={classes.drawer}>
+              {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+              <Hidden lgUp implementation="css">
+                <Drawer
+                  container={container}
+                  variant="temporary"
+                  anchor={theme.direction === "rtl" ? "right" : "left"}
+                  open={mobileOpen}
+                  onClose={handleDrawerToggle}
+                  classes={{
+                    paper: classes.drawerPaper,
+                  }}
+                  ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                  }}
+                >
+                  {drawer}
+                </Drawer>
+              </Hidden>
+              <Hidden mdDown implementation="css">
+                <Drawer
+                  classes={{
+                    paper: classes.drawerPaper,
+                  }}
+                  variant="permanent"
+                  open
+                >
+                  {drawer}
+                </Drawer>
+              </Hidden>
+            </nav>
+            <AppBar position="fixed" className={classes.headerFooter}>
+              <Toolbar className={classes.mainToolbar}>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  className={classes.menuButton}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography
+                  component="h2"
+                  variant="h5"
+                  noWrap
+                  className={classes.pageTitle}
+                >
+                  {pageTitle}
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            <Container
+              className={classes.content}
+              component="main"
+              maxWidth="lg"
+            >
+              <div className={classes.toolbar} />
+              {children}
+            </Container>
+          </div>
+          <Box flexGrow={1} />
+          <AppFooter className={classes.headerFooter} />
         </div>
-        <Box flexGrow={1} />
-        <AppFooter className={classes.headerFooter} />
-      </div>
+      </PersistGate>
     </Provider>
   );
 }
