@@ -2,6 +2,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk } from "./store";
 import { Ingredient } from "../types";
+import { completeGoal } from "./goalsSlice";
 
 interface DepotState {
   quantities: { [itemId: string]: number };
@@ -44,6 +45,16 @@ export const depotSlice = createSlice({
       ];
     },
   },
+  extraReducers: (builder) =>
+    builder.addCase(completeGoal, (state, action) => {
+      const { ingredients } = action.payload;
+      ingredients.forEach((ingr) => {
+        state.quantities[ingr.id] = Math.max(
+          state.quantities[ingr.id] ?? 0 - ingr.quantity,
+          0
+        );
+      });
+    }),
 });
 
 export const {

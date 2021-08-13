@@ -2,8 +2,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Ingredient } from "../types";
-import { setItemQuantity } from "./depotSlice";
-import { AppThunk } from "./store";
 
 /*
   what is the absolute minimum state that we need to track a user's goals? 
@@ -104,28 +102,24 @@ export const goalsSlice = createSlice({
     deleteAllGoals: (state) => {
       state = initialState;
     },
+    completeGoal: (
+      state,
+      action: PayloadAction<OperatorGoalWithIngredients>
+    ) => {
+      state.operators = state.operators.filter(
+        (opGoal) =>
+          opGoal.goal !== action.payload.goal ||
+          opGoal.operatorId !== action.payload.operatorId
+      );
+    },
   },
 });
 
-export const { addGoals, deleteGoal, deleteAllGoals } = goalsSlice.actions;
-
-export const completeGoal = (goal: OperatorGoalWithIngredients): AppThunk => (
-  dispatch,
-  getState
-) => {
-  const { quantities } = getState().depot;
-  goal.ingredients.forEach((ingredient) =>
-    dispatch(
-      setItemQuantity({
-        itemId: ingredient.id,
-        quantity: Math.max(
-          (quantities[ingredient.id] ?? 0) - ingredient.quantity,
-          0
-        ),
-      })
-    )
-  );
-  dispatch(deleteGoal(goal));
-};
+export const {
+  addGoals,
+  deleteGoal,
+  deleteAllGoals,
+  completeGoal,
+} = goalsSlice.actions;
 
 export default goalsSlice.reducer;
