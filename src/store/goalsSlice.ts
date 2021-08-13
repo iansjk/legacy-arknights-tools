@@ -92,7 +92,7 @@ export const goalsSlice = createSlice({
               existing.operatorId === newGoal.operatorId
           )
       );
-      state.operators.push(...newGoals);
+      state.operators.unshift(...newGoals);
     },
     deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
       state.operators = state.operators.filter(
