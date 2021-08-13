@@ -12,12 +12,16 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import { combineReducers } from "redux";
+import { firebaseReducer } from "react-redux-firebase";
+import { firestoreReducer } from "redux-firestore";
 import goalsReducer from "./goalsSlice";
 import depotReducer from "./depotSlice";
 
 const rootReducer = combineReducers({
   goals: goalsReducer,
   depot: depotReducer,
+  firebase: firebaseReducer,
+  firestore: firestoreReducer,
 });
 
 const persistConfig = {
