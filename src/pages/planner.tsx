@@ -286,32 +286,46 @@ const Planner: React.VFC = () => {
                 onChange={handleSelectedGoalsChanged}
                 value={selectedGoals}
               >
-                <ListSubheader key="elite">Elite Levels</ListSubheader>
-                {possibleGoals
-                  .filter(
-                    (goal) =>
-                      goal === OperatorGoalType["Elite 1"] ||
-                      goal === OperatorGoalType["Elite 2"]
-                  )
-                  .map(toMenuItem)}
-                {possibleGoals.includes(
-                  OperatorGoalType["Skill 1 Mastery 1"]
-                ) && <ListSubheader key="masteries">Masteries</ListSubheader>}
-                {possibleGoals
-                  .filter(
-                    (goal) =>
-                      goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
-                      goal <= OperatorGoalType["Skill 3 Mastery 3"]
-                  )
-                  .map(toMenuItem)}
-                <ListSubheader key="skillLevels">Skill Levels</ListSubheader>
-                {possibleGoals
-                  .filter(
-                    (goal) =>
-                      goal >= OperatorGoalType["Skill Level 1 → 2"] &&
-                      goal <= OperatorGoalType["Skill Level 6 → 7"]
-                  )
-                  .map(toMenuItem)}
+                {!operator ? (
+                  <MenuItem>Please select an operator first.</MenuItem>
+                ) : (
+                  [
+                    <ListSubheader key="elite">Elite Levels</ListSubheader>,
+                    ...possibleGoals
+                      .filter(
+                        (goal) =>
+                          goal === OperatorGoalType["Elite 1"] ||
+                          goal === OperatorGoalType["Elite 2"]
+                      )
+                      .map(toMenuItem),
+                    ...(possibleGoals.includes(
+                      OperatorGoalType["Skill 1 Mastery 1"]
+                    )
+                      ? [
+                          <ListSubheader key="masteries">
+                            Masteries
+                          </ListSubheader>,
+                        ]
+                      : []),
+                    ...possibleGoals
+                      .filter(
+                        (goal) =>
+                          goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
+                          goal <= OperatorGoalType["Skill 3 Mastery 3"]
+                      )
+                      .map(toMenuItem),
+                    <ListSubheader key="skillLevels">
+                      Skill Levels
+                    </ListSubheader>,
+                    ...possibleGoals
+                      .filter(
+                        (goal) =>
+                          goal >= OperatorGoalType["Skill Level 1 → 2"] &&
+                          goal <= OperatorGoalType["Skill Level 6 → 7"]
+                      )
+                      .map(toMenuItem),
+                  ]
+                )}
               </Select>
             </FormControl>
           </Box>
