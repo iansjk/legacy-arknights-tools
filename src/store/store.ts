@@ -12,7 +12,7 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import { combineReducers } from "redux";
-import { firebaseReducer } from "react-redux-firebase";
+import { firebaseReducer, getFirebase } from "react-redux-firebase";
 import { firestoreReducer } from "redux-firestore";
 import goalsReducer from "./goalsSlice";
 import depotReducer from "./depotSlice";
@@ -32,6 +32,27 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const writeToFirebaseMiddleware = (getFirebase) => (store) => (next) => (
+  action
+) => {
+  const state = store.getState();
+  if (
+    (action.type.startsWith("depot") || action.type.startsWith("goals")) &&
+    state.firebase.auth.isLoaded &&
+    !state.firebase.auth.isEmpty
+  ) {
+    const firebase = getFirebase();
+    console.log(firebase);
+    console.log("before:", state);
+    console.log("This is where I'd write to firebase, action:", action);
+    const sliceThatChanged = action.type.split("/")[0];
+    const retVal = next(action);
+    console.log("after:", store.getState()[sliceThatChanged]);
+    return retVal;
+  }
+  return next(action);
+};
+
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -39,7 +60,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(writeToFirebaseMiddleware(getFirebase)),
 });
 
 export const persistor = persistStore(store);
