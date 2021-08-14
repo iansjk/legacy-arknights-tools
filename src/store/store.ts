@@ -42,12 +42,10 @@ const writeToFirebaseMiddleware = (getFirebase) => (store) => (next) => (
     !state.firebase.auth.isEmpty
   ) {
     const firebase = getFirebase();
-    console.log(firebase);
-    console.log("before:", state);
-    console.log("This is where I'd write to firebase, action:", action);
-    const sliceThatChanged = action.type.split("/")[0];
+    const sliceName = action.type.split("/")[0];
     const retVal = next(action);
-    console.log("after:", store.getState()[sliceThatChanged]);
+    const sliceData = store.getState()[sliceName];
+    firebase.updateProfile({ [sliceName]: sliceData });
     return retVal;
   }
   return next(action);
