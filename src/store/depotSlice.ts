@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { constants as rrfConstants } from "react-redux-firebase";
 import { AppThunk } from "./store";
 import { Ingredient } from "../types";
 import { completeGoal } from "./goalsSlice";
@@ -46,15 +47,22 @@ export const depotSlice = createSlice({
     },
   },
   extraReducers: (builder) =>
-    builder.addCase(completeGoal, (state, action) => {
-      const { ingredients } = action.payload;
-      ingredients.forEach((ingr) => {
-        state.quantities[ingr.id] = Math.max(
-          state.quantities[ingr.id] ?? 0 - ingr.quantity,
-          0
-        );
-      });
-    }),
+    builder
+      .addCase(completeGoal, (state, action) => {
+        const { ingredients } = action.payload;
+        ingredients.forEach((ingr) => {
+          state.quantities[ingr.id] = Math.max(
+            state.quantities[ingr.id] ?? 0 - ingr.quantity,
+            0
+          );
+        });
+        return state;
+      })
+      .addCase(rrfConstants.actionTypes.SET_PROFILE, (state, action) => {
+        console.log("depotSlice saw SET_PROFILE");
+        console.log((action as any).profile.depot);
+        return (action as any).profile.depot;
+      }),
 });
 
 export const {

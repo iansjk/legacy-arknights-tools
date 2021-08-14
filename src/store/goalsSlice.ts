@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { constants as rrfConstants } from "react-redux-firebase";
 import { Ingredient } from "../types";
 
 /*
@@ -113,6 +114,12 @@ export const goalsSlice = createSlice({
       );
     },
   },
+  extraReducers: (builder) =>
+    builder.addCase(rrfConstants.actionTypes.SET_PROFILE, (state, action) => {
+      console.log("goalsSlice saw SET_PROFILE");
+      console.log((action as any).profile.goals);
+      return (action as any).profile.goals;
+    }),
 });
 
 export const {
