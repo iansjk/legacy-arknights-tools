@@ -219,19 +219,6 @@ const Planner: React.VFC = () => {
   const operator = operatorId == null ? null : operatorMap[operatorId];
   const [selectedGoals, setSelectedGoals] = useState<OperatorGoalType[]>([]);
 
-  const firebase = useFirebase();
-  const profile = useAppSelector((state) => state.firebase.profile);
-
-  useEffect(() => {
-    console.log("in useEffect (profile updated)");
-    if (profile.goals) {
-      dispatch(replaceGoalsFromRemote(profile.goals));
-    }
-    if (profile.depot) {
-      dispatch(replaceDepotFromRemote(profile.depot));
-    }
-  }, [dispatch, profile]);
-
   const handleOperatorChanged = (_: unknown, value: Operator | null) => {
     setOperatorId(value?.id ?? null);
     setSelectedGoals([]);
