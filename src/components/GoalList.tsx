@@ -5,6 +5,7 @@ import {
   deleteGoal,
   OperatorGoal,
   OperatorGoalType,
+  toggleFavorite,
 } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { Item, Operator } from "../types";
@@ -31,6 +32,10 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     );
   };
 
+  const handleToggleFavorite = (opGoal: OperatorGoal) => {
+    dispatch(toggleFavorite(opGoal));
+  };
+
   return (
     <ol>
       {goals.operators.map((opGoal) => {
@@ -45,6 +50,9 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
             <br />
             <button type="button" onClick={() => handleComplete(opGoal)}>
               Complete
+            </button>
+            <button type="button" onClick={() => handleToggleFavorite(opGoal)}>
+              {opGoal.favorite ? "Remove" : "Add"} Favorite
             </button>
           </li>
         );

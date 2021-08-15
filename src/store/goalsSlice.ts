@@ -139,6 +139,7 @@ export const {
   deleteAllGoals,
   completeGoal,
   replaceGoalsFromRemote,
+  toggleFavorite,
 } = goalsSlice.actions;
 
 export default goalsSlice.reducer;
