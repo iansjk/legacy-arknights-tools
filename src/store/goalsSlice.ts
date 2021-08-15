@@ -130,6 +130,15 @@ export const goalsSlice = createSlice({
         };
       }
     },
+    reorderGoal: (
+      state,
+      action: PayloadAction<{ oldIndex: number; newIndex: number }>
+    ) => {
+      const newOps = [...state.operators];
+      const [removed] = newOps.splice(action.payload.oldIndex, 1);
+      newOps.splice(action.payload.newIndex, 0, removed);
+      state.operators = newOps;
+    },
   },
 });
 
@@ -140,6 +149,7 @@ export const {
   completeGoal,
   replaceGoalsFromRemote,
   toggleFavorite,
+  reorderGoal,
 } = goalsSlice.actions;
 
 export default goalsSlice.reducer;
