@@ -14,7 +14,7 @@ import {
   OperatorGoal,
   OperatorGoalType,
   reorderGoal,
-  toggleFavorite,
+  toggleFocus,
 } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { Item, Operator } from "../types";
@@ -41,8 +41,8 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     );
   };
 
-  const handleToggleFavorite = (opGoal: OperatorGoal) => {
-    dispatch(toggleFavorite(opGoal));
+  const handleToggleFocus = (opGoal: OperatorGoal) => {
+    dispatch(toggleFocus(opGoal));
   };
 
   const handleDragEnd = (result: DropResult, provided: ResponderProvided) => {
@@ -96,9 +96,9 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
                         </button>
                         <button
                           type="button"
-                          onClick={() => handleToggleFavorite(opGoal)}
+                          onClick={() => handleToggleFocus(opGoal)}
                         >
-                          {opGoal.favorite ? "Remove" : "Add"} Favorite
+                          {opGoal.focused ? "Remove" : "Add"} Focus
                         </button>
                       </li>
                     )}

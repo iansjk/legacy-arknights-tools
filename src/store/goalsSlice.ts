@@ -70,7 +70,7 @@ export type OperatorGoalWithIngredients = OperatorGoal & {
 };
 
 export interface GoalsState {
-  operators: (OperatorGoal & { favorite: boolean })[];
+  operators: (OperatorGoal & { focused: boolean })[];
 }
 
 const initialState: GoalsState = {
@@ -91,7 +91,7 @@ export const goalsSlice = createSlice({
                 existing.operatorId === newGoal.operatorId
             )
         )
-        .map((opGoal) => ({ ...opGoal, favorite: false }));
+        .map((opGoal) => ({ ...opGoal, focused: false }));
       state.operators.unshift(...newGoals);
     },
     deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
@@ -117,7 +117,7 @@ export const goalsSlice = createSlice({
     replaceGoalsFromRemote: (_state, action: PayloadAction<GoalsState>) => {
       return action.payload;
     },
-    toggleFavorite: (state, action: PayloadAction<OperatorGoal>) => {
+    toggleFocus: (state, action: PayloadAction<OperatorGoal>) => {
       const idx = state.operators.findIndex(
         (opGoal) =>
           opGoal.goal === action.payload.goal &&
@@ -126,7 +126,7 @@ export const goalsSlice = createSlice({
       if (idx >= 0) {
         state.operators[idx] = {
           ...state.operators[idx],
-          favorite: !state.operators[idx].favorite,
+          focused: !state.operators[idx].focused,
         };
       }
     },
@@ -148,7 +148,7 @@ export const {
   deleteAllGoals,
   completeGoal,
   replaceGoalsFromRemote,
-  toggleFavorite,
+  toggleFocus,
   reorderGoal,
 } = goalsSlice.actions;
 
