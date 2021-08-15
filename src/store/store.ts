@@ -32,7 +32,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const WRITE_TO_FIREBASE_DEBOUNCE_MS = 1500;
+const WRITE_TO_FIREBASE_DEBOUNCE_MS = 500;
 let writeTimeoutHandle: NodeJS.Timeout | null = null;
 
 if (typeof window !== "undefined") {
