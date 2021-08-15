@@ -32,6 +32,15 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const WRITE_TO_FIREBASE_DEBOUNCE_MS = 1500;
+let writeTimeoutHandle: NodeJS.Timeout | null = null;
+
+if (typeof window !== "undefined") {
+  window.addEventListener("beforeunload", () => {
+    const firebase = getFirebase();
+    firebase.updateProfile(newData);
+  });
+}
 const writeToFirebaseMiddleware = (getFirebase) => (store) => (next) => (
   action
 ) => {
@@ -54,7 +63,13 @@ const writeToFirebaseMiddleware = (getFirebase) => (store) => (next) => (
       const { goals, depot } = store.getState();
       const newData = { goals, depot };
       console.log("writing new data:", newData);
-      firebase.updateProfile(newData);
+      if (writeTimeoutHandle !== null) {
+        clearTimeout(writeTimeoutHandle);
+      }
+      writeTimeoutHandle = setTimeout(() => {
+        console.log("setTimeout timer is up!");
+        firebase.updateProfile(newData);
+      }, WRITE_TO_FIREBASE_DEBOUNCE_MS);
       return retVal;
     }
   }
