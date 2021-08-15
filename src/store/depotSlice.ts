@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { constants as rrfConstants } from "react-redux-firebase";
 import { AppThunk } from "./store";
 import { Ingredient } from "../types";
 import { completeGoal } from "./goalsSlice";
@@ -37,40 +36,38 @@ export const depotSlice = createSlice({
     setItemQuantity: (state, action: PayloadAction<QuantityPayload>) => {
       state.quantities[action.payload.itemId] = action.payload.quantity;
     },
-    resetAllQuantities: (state) => {
+    resetAll: (state) => {
       state.quantities = {};
+      state.itemsBeingCrafted = {};
     },
     toggleItemCrafting: (state, action: PayloadAction<string>) => {
       state.itemsBeingCrafted[action.payload] = !state.itemsBeingCrafted[
         action.payload
       ];
     },
+    replaceDepotFromRemote: (_state, action: PayloadAction<DepotState>) => {
+      return action.payload;
+    },
   },
   extraReducers: (builder) =>
-    builder
-      .addCase(completeGoal, (state, action) => {
-        const { ingredients } = action.payload;
-        ingredients.forEach((ingr) => {
-          state.quantities[ingr.id] = Math.max(
-            state.quantities[ingr.id] ?? 0 - ingr.quantity,
-            0
-          );
-        });
-        return state;
-      })
-      .addCase(rrfConstants.actionTypes.SET_PROFILE, (state, action) => {
-        console.log("depotSlice saw SET_PROFILE");
-        console.log((action as any).profile.depot);
-        return (action as any).profile.depot;
-      }),
+    builder.addCase(completeGoal, (state, action) => {
+      const { ingredients } = action.payload;
+      ingredients.forEach((ingr) => {
+        state.quantities[ingr.id] = Math.max(
+          (state.quantities[ingr.id] ?? 0) - ingr.quantity,
+          0
+        );
+      });
+    }),
 });
 
 export const {
   incrementItemQuantity,
   decrementItemQuantity,
-  resetAllQuantities,
+  resetAll,
   setItemQuantity,
   toggleItemCrafting,
+  replaceDepotFromRemote,
 } = depotSlice.actions;
 
 export const craftItemOnce = (

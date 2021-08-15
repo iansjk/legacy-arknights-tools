@@ -11,13 +11,20 @@ import {
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { addGoals, OperatorGoal, OperatorGoalType } from "../store/goalsSlice";
-import { useAppDispatch } from "../store/store";
+import { useFirebase } from "react-redux-firebase";
+import {
+  addGoals,
+  OperatorGoal,
+  OperatorGoalType,
+  replaceGoalsFromRemote,
+} from "../store/goalsSlice";
+import { useAppDispatch, useAppSelector } from "../store/store";
 import { Ingredient, Item, Operator } from "../types";
 import GoalList from "../components/GoalList";
 import ItemNeededList from "../components/ItemNeededList";
+import { replaceDepotFromRemote } from "../store/depotSlice";
 
 export const operatorGoalIngredients = (
   operatorGoal: OperatorGoal,
@@ -211,6 +218,19 @@ const Planner: React.VFC = () => {
   const [operatorId, setOperatorId] = useState<string | null>(null);
   const operator = operatorId == null ? null : operatorMap[operatorId];
   const [selectedGoals, setSelectedGoals] = useState<OperatorGoalType[]>([]);
+
+  const firebase = useFirebase();
+  const profile = useAppSelector((state) => state.firebase.profile);
+
+  useEffect(() => {
+    console.log("in useEffect (profile updated)");
+    if (profile.goals) {
+      dispatch(replaceGoalsFromRemote(profile.goals));
+    }
+    if (profile.depot) {
+      dispatch(replaceDepotFromRemote(profile.depot));
+    }
+  }, [dispatch, profile]);
 
   const handleOperatorChanged = (_: unknown, value: Operator | null) => {
     setOperatorId(value?.id ?? null);

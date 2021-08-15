@@ -14,8 +14,8 @@ import {
 import { combineReducers } from "redux";
 import { firebaseReducer, getFirebase } from "react-redux-firebase";
 import { firestoreReducer } from "redux-firestore";
-import goalsReducer from "./goalsSlice";
-import depotReducer from "./depotSlice";
+import goalsReducer, { replaceGoalsFromRemote } from "./goalsSlice";
+import depotReducer, { replaceDepotFromRemote } from "./depotSlice";
 
 const rootReducer = combineReducers({
   goals: goalsReducer,
@@ -37,16 +37,26 @@ const writeToFirebaseMiddleware = (getFirebase) => (store) => (next) => (
 ) => {
   const state = store.getState();
   if (
-    (action.type.startsWith("depot") || action.type.startsWith("goals")) &&
     state.firebase.auth.isLoaded &&
-    !state.firebase.auth.isEmpty
+    !state.firebase.auth.isEmpty &&
+    (action.type.startsWith("depot") || action.type.startsWith("goals"))
   ) {
-    const firebase = getFirebase();
-    const sliceName = action.type.split("/")[0];
-    const retVal = next(action);
-    const sliceData = store.getState()[sliceName];
-    firebase.updateProfile({ [sliceName]: sliceData });
-    return retVal;
+    console.log("in writeToFirebaseMiddleware");
+    if (
+      action.type === replaceGoalsFromRemote.toString() ||
+      action.type === replaceDepotFromRemote.toString()
+    ) {
+      console.log("it's a remote update, skipping");
+    } else {
+      console.log("action:", action);
+      const firebase = getFirebase();
+      const retVal = next(action);
+      const { goals, depot } = store.getState();
+      const newData = { goals, depot };
+      console.log("writing new data:", newData);
+      firebase.updateProfile(newData);
+      return retVal;
+    }
   }
   return next(action);
 };
