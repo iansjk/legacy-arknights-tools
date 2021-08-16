@@ -58,39 +58,42 @@ const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
   });
 
   return (
-    <ul>
-      {Object.entries(materialsNeeded).map(([id, needed]) => (
-        <li key={id}>
-          {itemMap[id].name}: {needed}
-          <br />
-          Have:{" "}
-          <input
-            type="numeric"
-            onChange={(e) => handleChangeQuantity(id, Number(e.target.value))}
-            value={quantities[id] ?? 0}
-          />
-          <br />
-          <button type="button" onClick={() => handleIncrement(id)}>
-            Increment
-          </button>
-          <br />
-          <button
-            type="button"
-            onClick={() => handleDecrement(id)}
-            disabled={quantities[id] == null || quantities[id] === 0}
-          >
-            Decrement
-          </button>
-          {itemMap[id].ingredients.length > 0 ? (
-            <button type="button" onClick={() => handleToggleCrafting(id)}>
-              {itemsBeingCrafted[id] ? "Stop Crafting" : "Start Crafting"}
+    <>
+      <h3>Items needed</h3>
+      <ul>
+        {Object.entries(materialsNeeded).map(([id, needed]) => (
+          <li key={id}>
+            {itemMap[id].name}: {needed}
+            <br />
+            Have:{" "}
+            <input
+              type="numeric"
+              onChange={(e) => handleChangeQuantity(id, Number(e.target.value))}
+              value={quantities[id] ?? 0}
+            />
+            <br />
+            <button type="button" onClick={() => handleIncrement(id)}>
+              Increment
             </button>
-          ) : (
-            "Uncraftable"
-          )}
-        </li>
-      ))}
-    </ul>
+            <br />
+            <button
+              type="button"
+              onClick={() => handleDecrement(id)}
+              disabled={quantities[id] == null || quantities[id] === 0}
+            >
+              Decrement
+            </button>
+            {itemMap[id].ingredients.length > 0 ? (
+              <button type="button" onClick={() => handleToggleCrafting(id)}>
+                {itemsBeingCrafted[id] ? "Stop Crafting" : "Start Crafting"}
+              </button>
+            ) : (
+              "Uncraftable"
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 export default ItemNeededList;
