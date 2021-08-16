@@ -63,10 +63,6 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
         ? focusedGoals
         : unfocusedGoals;
       const destinationItem = destinationList[result.destination.index];
-      console.log("sourceItem", sourceItem);
-      console.log("destinationItem", destinationItem);
-      console.log("source.index", result.source.index);
-      console.log("destination.index", result.destination.index);
       if (
         result.source.droppableId.startsWith("focused") !==
         result.destination.droppableId.startsWith("focused")
@@ -75,13 +71,19 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
       }
 
       let newIndex = 0;
-      if (destinationList.length > 0) {
-        if (result.destination.index === destinationList.length) {
-          newIndex =
-            destinationList[destinationList.length - 1].originalIndex + 1;
-        } else {
-          newIndex = destinationList[result.destination.index].originalIndex;
-        }
+      if (sourceList === destinationList) {
+        newIndex = destinationItem.originalIndex;
+      } else if (destinationList.length === 0) {
+        newIndex =
+          destinationList === unfocusedGoals ? goals.operators.length - 1 : 0;
+      } else if (result.destination.index === destinationList.length) {
+        newIndex =
+          destinationList[destinationList.length - 1].originalIndex + 1;
+      } else {
+        newIndex = Math.max(
+          destinationList[result.destination.index].originalIndex - 1,
+          0
+        );
       }
 
       dispatch(
