@@ -1,5 +1,4 @@
-import React from "react";
-import { operatorGoalIngredients } from "../pages/planner";
+import React, { useContext } from "react";
 import {
   craftItemOnce,
   decrementItemQuantity,
@@ -8,19 +7,16 @@ import {
   toggleItemCrafting,
 } from "../store/depotSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
-import { Item, Operator } from "../types";
+import { operatorGoalIngredients } from "../utils";
+import PlannerContext from "./PlannerContext";
 
-interface Props {
-  operatorMap: Record<string, Operator>;
-  itemMap: Record<string, Item>;
-}
-
-const ItemNeededList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
+const ItemNeededList: React.VFC = () => {
   const dispatch = useAppDispatch();
   const { itemsBeingCrafted, quantities } = useAppSelector(
     (state) => state.depot
   );
   const { operators: operatorGoals } = useAppSelector((state) => state.goals);
+  const { itemMap, operatorMap } = useContext(PlannerContext);
 
   const handleIncrement = (itemId: string) => {
     dispatch(incrementItemQuantity(itemId));

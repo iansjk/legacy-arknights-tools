@@ -1,3 +1,4 @@
+import React, { useMemo, useState } from "react";
 import {
   Box,
   Button,
@@ -11,76 +12,13 @@ import {
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import React, { useMemo, useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { useFirebase } from "react-redux-firebase";
-import {
-  addGoals,
-  OperatorGoalState,
-  OperatorGoalType,
-  replaceGoalsFromRemote,
-} from "../store/goalsSlice";
-import { useAppDispatch, useAppSelector } from "../store/store";
-import { Ingredient, Item, Operator } from "../types";
+import { addGoals, OperatorGoalType } from "../store/goalsSlice";
+import { useAppDispatch } from "../store/store";
+import { Item, Operator } from "../types";
 import GoalList from "../components/GoalList";
 import ItemNeededList from "../components/ItemNeededList";
-import { replaceDepotFromRemote } from "../store/depotSlice";
-
-export const operatorGoalIngredients = (
-  operatorGoal: OperatorGoalState,
-  operatorMap: Record<string, Operator>
-): Ingredient[] => {
-  const { goal, operatorId } = operatorGoal;
-  let ingredients = [];
-  switch (goal) {
-    case OperatorGoalType["Elite 1"]:
-    case OperatorGoalType["Elite 2"]:
-      ingredients =
-        operatorMap[operatorId].elite[goal - OperatorGoalType["Elite 1"]]
-          .ingredients;
-      break;
-    case OperatorGoalType["Skill 1 Mastery 1"]:
-    case OperatorGoalType["Skill 1 Mastery 2"]:
-    case OperatorGoalType["Skill 1 Mastery 3"]:
-      ingredients =
-        operatorMap[operatorId].skills[0].masteries[
-          goal - OperatorGoalType["Skill 1 Mastery 1"]
-        ].ingredients;
-      break;
-    case OperatorGoalType["Skill 2 Mastery 1"]:
-    case OperatorGoalType["Skill 2 Mastery 2"]:
-    case OperatorGoalType["Skill 2 Mastery 3"]:
-      ingredients =
-        operatorMap[operatorId].skills[1].masteries[
-          goal - OperatorGoalType["Skill 2 Mastery 1"]
-        ].ingredients;
-      break;
-    case OperatorGoalType["Skill 3 Mastery 1"]:
-    case OperatorGoalType["Skill 3 Mastery 2"]:
-    case OperatorGoalType["Skill 3 Mastery 3"]:
-      ingredients =
-        operatorMap[operatorId].skills[2].masteries[
-          goal - OperatorGoalType["Skill 3 Mastery 1"]
-        ].ingredients;
-      break;
-    case OperatorGoalType["Skill Level 1 → 2"]:
-    case OperatorGoalType["Skill Level 2 → 3"]:
-    case OperatorGoalType["Skill Level 3 → 4"]:
-    case OperatorGoalType["Skill Level 4 → 5"]:
-    case OperatorGoalType["Skill Level 5 → 6"]:
-    case OperatorGoalType["Skill Level 6 → 7"]:
-      ingredients =
-        operatorMap[operatorId].skillLevels[
-          goal - OperatorGoalType["Skill Level 1 → 2"]
-        ].ingredients;
-      break;
-    default:
-      throw new Error(
-        `Unexpected operator goal type: ${OperatorGoalType[goal]}`
-      );
-  }
-  return ingredients;
-};
+import PlannerContext from "../components/PlannerContext";
 
 const possibleGoalsForOperator = (
   rarity: number,
@@ -214,6 +152,14 @@ const Planner: React.VFC = () => {
     () => Object.fromEntries<Item>(items.map((item) => [item.id, item])),
     [items]
   );
+  const contextValue = useMemo(
+    () => ({
+      operatorMap,
+      itemMap,
+    }),
+    [itemMap, operatorMap]
+  );
+
   const dispatch = useAppDispatch();
   const [operatorId, setOperatorId] = useState<string | null>(null);
   const operator = operatorId == null ? null : operatorMap[operatorId];
@@ -248,113 +194,115 @@ const Planner: React.VFC = () => {
     : [];
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} md={4}>
-        <Autocomplete
-          options={operators}
-          getOptionLabel={(op) => op.name}
-          autoComplete
-          autoHighlight
-          value={operator}
-          onChange={handleOperatorChanged}
-          id="operator-name"
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              name="operator-name"
-              label="Operator name"
-              variant="outlined"
-            />
-          )}
-        />
-      </Grid>
-      <Grid item xs={12} md={8}>
-        <Box display="flex">
-          <Box mr={2} flexGrow={1} minWidth={0} width="100%">
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel htmlFor="goal-select">Goals</InputLabel>
-              <Select
-                id="goal-select"
-                name="goal-select"
-                autoWidth
-                multiple
-                displayEmpty
-                MenuProps={{
-                  getContentAnchorEl: null,
-                  anchorOrigin: {
-                    vertical: "bottom" as const,
-                    horizontal: "left" as const,
-                  },
-                  transformOrigin: {
-                    vertical: "top" as const,
-                    horizontal: "left" as const,
-                  },
-                }}
-                onChange={handleSelectedGoalsChanged}
-                value={selectedGoals}
-              >
-                {!operator ? (
-                  <MenuItem>Please select an operator first.</MenuItem>
-                ) : (
-                  [
-                    <ListSubheader key="elite">Elite Levels</ListSubheader>,
-                    ...possibleGoals
-                      .filter(
-                        (goal) =>
-                          goal === OperatorGoalType["Elite 1"] ||
-                          goal === OperatorGoalType["Elite 2"]
+    <PlannerContext.Provider value={contextValue}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={4}>
+          <Autocomplete
+            options={operators}
+            getOptionLabel={(op) => op.name}
+            autoComplete
+            autoHighlight
+            value={operator}
+            onChange={handleOperatorChanged}
+            id="operator-name"
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                name="operator-name"
+                label="Operator name"
+                variant="outlined"
+              />
+            )}
+          />
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <Box display="flex">
+            <Box mr={2} flexGrow={1} minWidth={0} width="100%">
+              <FormControl variant="outlined" fullWidth>
+                <InputLabel htmlFor="goal-select">Goals</InputLabel>
+                <Select
+                  id="goal-select"
+                  name="goal-select"
+                  autoWidth
+                  multiple
+                  displayEmpty
+                  MenuProps={{
+                    getContentAnchorEl: null,
+                    anchorOrigin: {
+                      vertical: "bottom" as const,
+                      horizontal: "left" as const,
+                    },
+                    transformOrigin: {
+                      vertical: "top" as const,
+                      horizontal: "left" as const,
+                    },
+                  }}
+                  onChange={handleSelectedGoalsChanged}
+                  value={selectedGoals}
+                >
+                  {!operator ? (
+                    <MenuItem>Please select an operator first.</MenuItem>
+                  ) : (
+                    [
+                      <ListSubheader key="elite">Elite Levels</ListSubheader>,
+                      ...possibleGoals
+                        .filter(
+                          (goal) =>
+                            goal === OperatorGoalType["Elite 1"] ||
+                            goal === OperatorGoalType["Elite 2"]
+                        )
+                        .map(toMenuItem),
+                      ...(possibleGoals.includes(
+                        OperatorGoalType["Skill 1 Mastery 1"]
                       )
-                      .map(toMenuItem),
-                    ...(possibleGoals.includes(
-                      OperatorGoalType["Skill 1 Mastery 1"]
-                    )
-                      ? [
-                          <ListSubheader key="masteries">
-                            Masteries
-                          </ListSubheader>,
-                        ]
-                      : []),
-                    ...possibleGoals
-                      .filter(
-                        (goal) =>
-                          goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
-                          goal <= OperatorGoalType["Skill 3 Mastery 3"]
-                      )
-                      .map(toMenuItem),
-                    <ListSubheader key="skillLevels">
-                      Skill Levels
-                    </ListSubheader>,
-                    ...possibleGoals
-                      .filter(
-                        (goal) =>
-                          goal >= OperatorGoalType["Skill Level 1 → 2"] &&
-                          goal <= OperatorGoalType["Skill Level 6 → 7"]
-                      )
-                      .map(toMenuItem),
-                  ]
-                )}
-              </Select>
-            </FormControl>
+                        ? [
+                            <ListSubheader key="masteries">
+                              Masteries
+                            </ListSubheader>,
+                          ]
+                        : []),
+                      ...possibleGoals
+                        .filter(
+                          (goal) =>
+                            goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
+                            goal <= OperatorGoalType["Skill 3 Mastery 3"]
+                        )
+                        .map(toMenuItem),
+                      <ListSubheader key="skillLevels">
+                        Skill Levels
+                      </ListSubheader>,
+                      ...possibleGoals
+                        .filter(
+                          (goal) =>
+                            goal >= OperatorGoalType["Skill Level 1 → 2"] &&
+                            goal <= OperatorGoalType["Skill Level 6 → 7"]
+                        )
+                        .map(toMenuItem),
+                    ]
+                  )}
+                </Select>
+              </FormControl>
+            </Box>
+            <Button
+              color="primary"
+              variant="contained"
+              startIcon={<AddIcon />}
+              onClick={handleAddGoals}
+            >
+              Add
+            </Button>
           </Box>
-          <Button
-            color="primary"
-            variant="contained"
-            startIcon={<AddIcon />}
-            onClick={handleAddGoals}
-          >
-            Add
-          </Button>
-        </Box>
-      </Grid>
-      <Grid item xs={12} container>
-        <Grid item xs={7}>
-          <ItemNeededList operatorMap={operatorMap} itemMap={itemMap} />
         </Grid>
-        <Grid item xs={5}>
-          <GoalList operatorMap={operatorMap} itemMap={itemMap} />
+        <Grid item xs={12} container>
+          <Grid item xs={7}>
+            <ItemNeededList />
+          </Grid>
+          <Grid item xs={5}>
+            <GoalList />
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </PlannerContext.Provider>
   );
 };
 export default Planner;

@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from "react";
+import React, { useContext } from "react";
 import {
   DragDropContext,
   Draggable,
   Droppable,
   DropResult,
-  ResponderProvided,
 } from "react-beautiful-dnd";
-import { operatorGoalIngredients } from "../pages/planner";
 import {
   completeGoal,
   deleteGoal,
@@ -17,16 +15,13 @@ import {
   toggleFocus,
 } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
-import { Item, Operator } from "../types";
+import { operatorGoalIngredients } from "../utils";
+import PlannerContext from "./PlannerContext";
 
-interface Props {
-  operatorMap: Record<string, Operator>;
-  itemMap: Record<string, Item>;
-}
-
-const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
+const GoalList: React.VFC = () => {
   const dispatch = useAppDispatch();
   const goals = useAppSelector((state) => state.goals);
+  const { operatorMap } = useContext(PlannerContext);
 
   const handleDelete = (opGoal: OperatorGoalState) => {
     dispatch(deleteGoal(opGoal));
