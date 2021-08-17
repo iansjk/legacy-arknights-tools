@@ -60,17 +60,17 @@ export enum OperatorGoalType {
   // working with these enums will be pretty annoying but maybe it's worth it?
 }
 
-export interface OperatorGoal {
+export interface OperatorGoalState {
   operatorId: string;
   goal: OperatorGoalType;
 }
 
-export type OperatorGoalWithIngredients = OperatorGoal & {
+export type OperatorGoalWithIngredients = OperatorGoalState & {
   ingredients: Ingredient[];
 };
 
 export interface GoalsState {
-  operators: (OperatorGoal & { focused: boolean })[];
+  operators: (OperatorGoalState & { focused: boolean })[];
 }
 
 const initialState: GoalsState = {
@@ -81,7 +81,7 @@ export const goalsSlice = createSlice({
   name: "goals",
   initialState,
   reducers: {
-    addGoals: (state, action: PayloadAction<OperatorGoal[]>) => {
+    addGoals: (state, action: PayloadAction<OperatorGoalState[]>) => {
       const newGoals = action.payload
         .filter(
           (newGoal) =>
@@ -94,7 +94,7 @@ export const goalsSlice = createSlice({
         .map((opGoal) => ({ ...opGoal, focused: false }));
       state.operators.unshift(...newGoals);
     },
-    deleteGoal: (state, action: PayloadAction<OperatorGoal>) => {
+    deleteGoal: (state, action: PayloadAction<OperatorGoalState>) => {
       state.operators = state.operators.filter(
         (opGoal) =>
           opGoal.goal !== action.payload.goal ||
@@ -117,7 +117,7 @@ export const goalsSlice = createSlice({
     replaceGoalsFromRemote: (_state, action: PayloadAction<GoalsState>) => {
       return action.payload;
     },
-    toggleFocus: (state, action: PayloadAction<OperatorGoal>) => {
+    toggleFocus: (state, action: PayloadAction<OperatorGoalState>) => {
       const idx = state.operators.findIndex(
         (opGoal) =>
           opGoal.goal === action.payload.goal &&

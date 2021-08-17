@@ -16,7 +16,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useFirebase } from "react-redux-firebase";
 import {
   addGoals,
-  OperatorGoal,
+  OperatorGoalState,
   OperatorGoalType,
   replaceGoalsFromRemote,
 } from "../store/goalsSlice";
@@ -27,7 +27,7 @@ import ItemNeededList from "../components/ItemNeededList";
 import { replaceDepotFromRemote } from "../store/depotSlice";
 
 export const operatorGoalIngredients = (
-  operatorGoal: OperatorGoal,
+  operatorGoal: OperatorGoalState,
   operatorMap: Record<string, Operator>
 ): Ingredient[] => {
   const { goal, operatorId } = operatorGoal;

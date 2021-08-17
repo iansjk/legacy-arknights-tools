@@ -11,7 +11,7 @@ import { operatorGoalIngredients } from "../pages/planner";
 import {
   completeGoal,
   deleteGoal,
-  OperatorGoal,
+  OperatorGoalState,
   OperatorGoalType,
   reorderGoal,
   toggleFocus,
@@ -28,11 +28,11 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
   const dispatch = useAppDispatch();
   const goals = useAppSelector((state) => state.goals);
 
-  const handleDelete = (opGoal: OperatorGoal) => {
+  const handleDelete = (opGoal: OperatorGoalState) => {
     dispatch(deleteGoal(opGoal));
   };
 
-  const handleComplete = (opGoal: OperatorGoal) => {
+  const handleComplete = (opGoal: OperatorGoalState) => {
     dispatch(
       completeGoal({
         ...opGoal,
@@ -41,7 +41,7 @@ const GoalList: React.VFC<Props> = ({ operatorMap, itemMap }) => {
     );
   };
 
-  const handleToggleFocus = (opGoal: OperatorGoal) => {
+  const handleToggleFocus = (opGoal: OperatorGoalState) => {
     dispatch(toggleFocus(opGoal));
   };
 
