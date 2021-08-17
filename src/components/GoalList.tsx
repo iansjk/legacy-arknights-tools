@@ -90,116 +90,67 @@ const GoalList: React.VFC = () => {
     }
   };
 
+  const renderList = (
+    list: (OperatorGoalState & { originalIndex: number })[],
+    focused: boolean
+  ) => (
+    <Droppable droppableId={`${focused ? "focused-" : ""}goal-list`}>
+      {(droppableProvided) => (
+        <div
+          {...droppableProvided.droppableProps}
+          ref={droppableProvided.innerRef}
+        >
+          <h3>{focused ? "Focused" : "Other"} goals</h3>
+          <ol>
+            {list.map((opGoal, i) => {
+              const { operatorId, goal } = opGoal;
+              const key = `${focused ? "focused-" : ""}${operatorId}-g${goal}`;
+              return (
+                <Draggable key={key} draggableId={key} index={i}>
+                  {(draggableProvided) => (
+                    <li
+                      {...draggableProvided.dragHandleProps}
+                      {...draggableProvided.draggableProps}
+                      ref={draggableProvided.innerRef}
+                    >
+                      {operatorMap[operatorId].name}: {OperatorGoalType[goal]}{" "}
+                      (internal index: {opGoal.originalIndex})
+                      <br />
+                      <button
+                        type="button"
+                        onClick={() => handleDelete(opGoal)}
+                      >
+                        Delete
+                      </button>
+                      <br />
+                      <button
+                        type="button"
+                        onClick={() => handleComplete(opGoal)}
+                      >
+                        Complete
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleToggleFocus(opGoal)}
+                      >
+                        {opGoal.focused ? "Remove" : "Add"} Focus
+                      </button>
+                    </li>
+                  )}
+                </Draggable>
+              );
+            })}
+          </ol>
+          {droppableProvided.placeholder}
+        </div>
+      )}
+    </Droppable>
+  );
+
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId="focused-goal-list">
-        {(droppableProvided) => (
-          <div
-            {...droppableProvided.droppableProps}
-            ref={droppableProvided.innerRef}
-          >
-            <h3>Focused goals</h3>
-            <ol>
-              {focusedGoals.map((opGoal, i) => {
-                const { operatorId, goal } = opGoal;
-                return (
-                  <Draggable
-                    key={`focused-${operatorId}-g${goal}`}
-                    draggableId={`focused-${operatorId}-g${goal}`}
-                    index={i}
-                  >
-                    {(draggableProvided) => (
-                      <li
-                        {...draggableProvided.dragHandleProps}
-                        {...draggableProvided.draggableProps}
-                        ref={draggableProvided.innerRef}
-                      >
-                        {operatorMap[operatorId].name}: {OperatorGoalType[goal]}{" "}
-                        (internal index: {opGoal.originalIndex})
-                        <br />
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(opGoal)}
-                        >
-                          Delete
-                        </button>
-                        <br />
-                        <button
-                          type="button"
-                          onClick={() => handleComplete(opGoal)}
-                        >
-                          Complete
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleToggleFocus(opGoal)}
-                        >
-                          {opGoal.focused ? "Remove" : "Add"} Focus
-                        </button>
-                      </li>
-                    )}
-                  </Draggable>
-                );
-              })}
-            </ol>
-            {droppableProvided.placeholder}
-          </div>
-        )}
-      </Droppable>
-      <Droppable droppableId="unfocused-goal-list">
-        {(droppableProvided) => (
-          <div
-            {...droppableProvided.droppableProps}
-            ref={droppableProvided.innerRef}
-          >
-            <h3>Other goals</h3>
-            <ol>
-              {unfocusedGoals.map((opGoal, i) => {
-                const { operatorId, goal } = opGoal;
-                return (
-                  <Draggable
-                    key={`${operatorId}-g${goal}`}
-                    draggableId={`${operatorId}-g${goal}`}
-                    index={i}
-                  >
-                    {(draggableProvided) => (
-                      <li
-                        {...draggableProvided.draggableProps}
-                        {...draggableProvided.dragHandleProps}
-                        ref={draggableProvided.innerRef}
-                      >
-                        {operatorMap[operatorId].name}: {OperatorGoalType[goal]}{" "}
-                        (internal index: {opGoal.originalIndex})
-                        <br />
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(opGoal)}
-                        >
-                          Delete
-                        </button>
-                        <br />
-                        <button
-                          type="button"
-                          onClick={() => handleComplete(opGoal)}
-                        >
-                          Complete
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleToggleFocus(opGoal)}
-                        >
-                          {opGoal.focused ? "Remove" : "Add"} Focus
-                        </button>
-                      </li>
-                    )}
-                  </Draggable>
-                );
-              })}
-            </ol>
-            {droppableProvided.placeholder}
-          </div>
-        )}
-      </Droppable>
+      {renderList(focusedGoals, true)}
+      {renderList(unfocusedGoals, false)}
     </DragDropContext>
   );
 };
