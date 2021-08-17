@@ -21,8 +21,8 @@ import {
   OperatorGoal,
   OperatorSkill,
   SkillLevelGoal,
-} from "../types";
-import { getOperatorImagePublicId } from "../utils";
+} from "../../types";
+import { getOperatorImagePublicId } from "../../utils";
 
 const useStyles = makeStyles((theme) => ({
   deleteIconButton: {

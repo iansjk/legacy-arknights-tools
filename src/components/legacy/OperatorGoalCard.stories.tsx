@@ -2,9 +2,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { Grid } from "@material-ui/core";
-import OperatorGoalCard, {
-  OperatorGoalCardProps,
-} from "../OldOperatorGoalCard";
+import OperatorGoalCard, { OperatorGoalCardProps } from "./OperatorGoalCard";
 
 export default {
   title: "Planner/OperatorGoalCard",

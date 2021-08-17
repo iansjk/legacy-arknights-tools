@@ -10,9 +10,9 @@ import {
 } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import { useStaticQuery, graphql } from "gatsby";
-import ItemStack from "./OldItemStack";
-import { Ingredient, Item } from "../types";
-import sanityIcon from "../data/images/sanity.png";
+import ItemStack from "./ItemStack";
+import { Ingredient, Item } from "../../types";
+import sanityIcon from "../../data/images/sanity.png";
 
 const useCommonStyles = makeStyles((theme) => ({
   itemInfoSection: {

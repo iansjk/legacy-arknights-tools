@@ -1,6 +1,6 @@
 import { makeStyles, Box, Typography } from "@material-ui/core";
 import React from "react";
-import { Item } from "../types";
+import { Item } from "../../types";
 import ItemBase from "./ItemBase";
 
 export const defaultSize = 100;

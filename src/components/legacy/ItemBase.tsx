@@ -1,13 +1,13 @@
 import { Box, makeStyles } from "@material-ui/core";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import React from "react";
-import slugify from "../utils";
-import { Item } from "../types";
-import tier1 from "../data/images/tier1.png";
-import tier2 from "../data/images/tier2.png";
-import tier3 from "../data/images/tier3.png";
-import tier4 from "../data/images/tier4.png";
-import tier5 from "../data/images/tier5.png";
+import slugify from "../../utils";
+import { Item } from "../../types";
+import tier1 from "../../data/images/tier1.png";
+import tier2 from "../../data/images/tier2.png";
+import tier3 from "../../data/images/tier3.png";
+import tier4 from "../../data/images/tier4.png";
+import tier5 from "../../data/images/tier5.png";
 
 function itemBackgroundImage(tier: number) {
   if (tier === 1) {

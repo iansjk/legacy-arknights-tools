@@ -15,7 +15,7 @@ import ClearAllIcon from "@material-ui/icons/ClearAll";
 import RotateLeftIcon from "@material-ui/icons/RotateLeft";
 import { useStaticQuery, graphql } from "gatsby";
 import React, { useState } from "react";
-import { Ingredient, Item, OperatorGoal } from "../types";
+import { Ingredient, Item, OperatorGoal } from "../../types";
 import ItemNeeded from "./ItemNeeded";
 import OperatorGoalCard from "./OperatorGoalCard";
 import lmdIcon from "../data/images/lmd.png";
