@@ -9,7 +9,6 @@ import PlannerContext from "./PlannerContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "list-style-type": "none",
     padding: theme.spacing(1),
     display: "flex",
     alignItems: "center",
@@ -22,7 +21,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export type OperatorGoalCardProps = OperatorGoalState;
+export type OperatorGoalCardProps = OperatorGoalState & {
+  onToggleFocus: (opGoal: OperatorGoalState) => void;
+  onCompleteGoal: (opGoal: OperatorGoalState) => void;
+  onDeleteGoal: (opGoal: OperatorGoalState) => void;
+};
 
 const OperatorGoalCard: React.VFC<OperatorGoalCardProps> = (props) => {
   const { operatorId, goal, focused } = props;
@@ -31,7 +34,7 @@ const OperatorGoalCard: React.VFC<OperatorGoalCardProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <Paper elevation={3} component="li" classes={classes}>
+    <Paper elevation={3} classes={classes}>
       <span className={classes.nameAndGoal}>
         <Typography component="span" variant="h6" className={classes.name}>
           {operator.name}
