@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 import OperatorGoalCard, { OperatorGoalCardProps } from "./OperatorGoalCard";
 
 export default {
-  title: "Planner/OperatorGoalCard",
+  title: "Legacy Planner/OperatorGoalCard",
   component: OperatorGoalCard,
 } as Meta;
 
