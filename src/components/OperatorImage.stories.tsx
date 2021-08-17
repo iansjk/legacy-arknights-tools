@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import OperatorImage, { OperatorImageProps } from "../components/OperatorImage";
+import OperatorImage, { OperatorImageProps } from "./OperatorImage";
 
 export default {
   title: "OperatorImage",
