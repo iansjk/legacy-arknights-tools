@@ -4,7 +4,7 @@ import { Story, Meta } from "@storybook/react";
 import { Grid } from "@material-ui/core";
 import OperatorGoalCard, {
   OperatorGoalCardProps,
-} from "../components/OperatorGoalCard";
+} from "../components/OldOperatorGoalCard";
 
 export default {
   title: "Planner/OperatorGoalCard",

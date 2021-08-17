@@ -7,7 +7,7 @@ import {
   MasteryGoal,
   OperatorGoal,
   OperatorSkill,
-} from "../types";
+} from "../../types";
 import elite1 from "../data/images/elite1.png";
 import elite2 from "../data/images/elite2.png";
 import mastery1 from "../data/images/mastery1.png";
