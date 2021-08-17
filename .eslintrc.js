@@ -28,13 +28,7 @@ module.exports = {
     ],
     "react/prop-types": "off",
     "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": [
-      "error",
-      {
-        explicitSpread: "ignore",
-        exceptions: ["ButtonBase", "Popover", "TextField", "GatsbyLink"],
-      },
-    ],
+    "react/jsx-props-no-spreading": "off",
     "prettier/prettier": [
       "warn",
       {
