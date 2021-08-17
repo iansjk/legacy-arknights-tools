@@ -63,6 +63,7 @@ export enum OperatorGoalType {
 export interface OperatorGoalState {
   operatorId: string;
   goal: OperatorGoalType;
+  focused: boolean;
 }
 
 export type OperatorGoalWithIngredients = OperatorGoalState & {

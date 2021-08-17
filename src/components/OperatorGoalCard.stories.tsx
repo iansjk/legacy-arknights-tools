@@ -26,4 +26,5 @@ export const Default = Template.bind({});
 Default.args = {
   operatorId: "char_002_amiya",
   goal: OperatorGoalType["Elite 1"],
+  focused: false,
 };
