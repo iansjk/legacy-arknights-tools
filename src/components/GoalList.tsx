@@ -18,20 +18,16 @@ import { operatorGoalIngredients } from "../utils";
 import OperatorGoalCard from "./OperatorGoalCard";
 import PlannerContext from "./PlannerContext";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   goalList: {
     padding: 0,
-  },
-  listItem: {
-    "list-style-type": "none",
-    marginBottom: theme.spacing(1),
   },
   droppable: {
     "& > li": {
       "list-style-type": "none",
     },
   },
-}));
+});
 
 const GoalList: React.VFC = () => {
   const dispatch = useAppDispatch();
@@ -128,19 +124,15 @@ const GoalList: React.VFC = () => {
                 return (
                   <Draggable key={key} draggableId={key} index={i}>
                     {(draggableProvided) => (
-                      <li
+                      <OperatorGoalCard
+                        {...opGoal}
+                        onToggleFocus={handleToggleFocus}
+                        onCompleteGoal={handleCompleteGoal}
+                        onDeleteGoal={handleDeleteGoal}
                         {...draggableProvided.dragHandleProps}
                         {...draggableProvided.draggableProps}
                         ref={draggableProvided.innerRef}
-                        className={classes.listItem}
-                      >
-                        <OperatorGoalCard
-                          {...opGoal}
-                          onToggleFocus={handleToggleFocus}
-                          onCompleteGoal={handleCompleteGoal}
-                          onDeleteGoal={handleDeleteGoal}
-                        />
-                      </li>
+                      />
                     )}
                   </Draggable>
                 );

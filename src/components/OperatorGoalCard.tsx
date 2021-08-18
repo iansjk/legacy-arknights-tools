@@ -8,10 +8,12 @@ import { OperatorGoalState, OperatorGoalType } from "../store/goalsSlice";
 import PlannerContext from "./PlannerContext";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  paper: {
     padding: theme.spacing(1),
     display: "flex",
     alignItems: "center",
+    "list-style-type": "none",
+    marginBottom: theme.spacing(1),
   },
   nameAndGoal: {
     flexGrow: 1,
@@ -27,14 +29,23 @@ export type OperatorGoalCardProps = OperatorGoalState & {
   onDeleteGoal: (opGoal: OperatorGoalState) => void;
 };
 
-const OperatorGoalCard: React.VFC<OperatorGoalCardProps> = (props) => {
-  const { operatorId, goal, focused } = props;
+const OperatorGoalCard = React.forwardRef<
+  HTMLElement,
+  OperatorGoalCardProps & React.HTMLAttributes<HTMLElement>
+>((props, ref) => {
+  const { operatorId, goal, focused, ...rest } = props;
   const { operatorMap } = useContext(PlannerContext);
   const operator = operatorMap[operatorId];
   const classes = useStyles();
 
   return (
-    <Paper elevation={3} classes={classes}>
+    <Paper
+      elevation={3}
+      component="li"
+      className={classes.paper}
+      ref={ref}
+      {...rest}
+    >
       <span className={classes.nameAndGoal}>
         <Typography component="span" variant="h6" className={classes.name}>
           {operator.name}
@@ -57,5 +68,5 @@ const OperatorGoalCard: React.VFC<OperatorGoalCardProps> = (props) => {
       </IconButton>
     </Paper>
   );
-};
+});
 export default OperatorGoalCard;
