@@ -33,7 +33,15 @@ const OperatorGoalCard = React.forwardRef<
   HTMLElement,
   OperatorGoalCardProps & React.HTMLAttributes<HTMLElement>
 >((props, ref) => {
-  const { operatorId, goal, focused, ...rest } = props;
+  const {
+    operatorId,
+    goal,
+    focused,
+    onToggleFocus,
+    onCompleteGoal,
+    onDeleteGoal,
+    ...rest
+  } = props;
   const { operatorMap } = useContext(PlannerContext);
   const operator = operatorMap[operatorId];
   const classes = useStyles();
@@ -57,13 +65,22 @@ const OperatorGoalCard = React.forwardRef<
       <IconButton
         aria-label={`${focused ? "Unfocus" : "Focus"} this goal`}
         size="small"
+        onClick={() => onToggleFocus({ operatorId, goal, focused })}
       >
         {focused ? <UnfocusIcon /> : <FocusIcon />}
       </IconButton>
-      <IconButton aria-label="Complete this goal" size="small">
+      <IconButton
+        aria-label="Complete this goal"
+        size="small"
+        onClick={() => onCompleteGoal({ operatorId, goal, focused })}
+      >
         <CompleteGoalIcon />
       </IconButton>
-      <IconButton aria-label="Delete this goal" size="small">
+      <IconButton
+        aria-label="Delete this goal"
+        size="small"
+        onClick={() => onDeleteGoal({ operatorId, goal, focused })}
+      >
         <DeleteGoalIcon />
       </IconButton>
     </Paper>
