@@ -19,4 +19,6 @@ const Template: Story<ItemNeededProps> = (args) => <ItemNeeded {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   itemId: "3211",
+  owned: 0,
+  needed: 10,
 };
