@@ -97,22 +97,15 @@ const GoalList: React.VFC = () => {
                 return (
                   <Draggable key={key} draggableId={key} index={i}>
                     {(draggableProvided) => (
-                      <Box
-                        position="relative"
+                      <OperatorGoalCard
+                        {...opGoal}
+                        onToggleFocus={handleToggleFocus}
+                        onCompleteGoal={handleCompleteGoal}
+                        onDeleteGoal={handleDeleteGoal}
                         {...draggableProvided.dragHandleProps}
                         {...draggableProvided.draggableProps}
                         ref={draggableProvided.innerRef}
-                      >
-                        <OperatorGoalCard
-                          {...opGoal}
-                          onToggleFocus={handleToggleFocus}
-                          onCompleteGoal={handleCompleteGoal}
-                          onDeleteGoal={handleDeleteGoal}
-                        />
-                        <Box position="absolute" left={0} top={0} zIndex={1}>
-                          {opGoal.originalIndex}
-                        </Box>
-                      </Box>
+                      />
                     )}
                   </Draggable>
                 );
