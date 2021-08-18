@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import React, { useContext } from "react";
 import {
   DragDropContext,
@@ -59,44 +59,17 @@ const GoalList: React.VFC = () => {
   const unfocusedGoals = sortedGoals.filter((opGoal) => !opGoal.focused);
 
   const handleDragEnd = (result: DropResult) => {
-    if (result.destination) {
-      const sourceList = result.source.droppableId.startsWith("focused")
+    if (
+      result.destination &&
+      result.source.droppableId === result.destination.droppableId
+    ) {
+      const list = result.source.droppableId.startsWith("focused")
         ? focusedGoals
         : unfocusedGoals;
-      const sourceItem = sourceList[result.source.index];
-      const destinationList = result.destination.droppableId.startsWith(
-        "focused"
-      )
-        ? focusedGoals
-        : unfocusedGoals;
-      const destinationItem = destinationList[result.destination.index];
-      if (
-        result.source.droppableId.startsWith("focused") !==
-        result.destination.droppableId.startsWith("focused")
-      ) {
-        dispatch(toggleFocus(sourceItem));
-      }
-
-      let newIndex = 0;
-      if (sourceList === destinationList) {
-        newIndex = destinationItem.originalIndex;
-      } else if (destinationList.length === 0) {
-        newIndex =
-          destinationList === unfocusedGoals ? goals.operators.length - 1 : 0;
-      } else if (result.destination.index === destinationList.length) {
-        newIndex =
-          destinationList[destinationList.length - 1].originalIndex + 1;
-      } else {
-        newIndex = Math.max(
-          destinationList[result.destination.index].originalIndex - 1,
-          0
-        );
-      }
-
       dispatch(
         reorderGoal({
-          oldIndex: sourceItem.originalIndex,
-          newIndex,
+          oldIndex: list[result.source.index].originalIndex,
+          newIndex: list[result.destination.index].originalIndex,
         })
       );
     }
@@ -124,15 +97,22 @@ const GoalList: React.VFC = () => {
                 return (
                   <Draggable key={key} draggableId={key} index={i}>
                     {(draggableProvided) => (
-                      <OperatorGoalCard
-                        {...opGoal}
-                        onToggleFocus={handleToggleFocus}
-                        onCompleteGoal={handleCompleteGoal}
-                        onDeleteGoal={handleDeleteGoal}
+                      <Box
+                        position="relative"
                         {...draggableProvided.dragHandleProps}
                         {...draggableProvided.draggableProps}
                         ref={draggableProvided.innerRef}
-                      />
+                      >
+                        <OperatorGoalCard
+                          {...opGoal}
+                          onToggleFocus={handleToggleFocus}
+                          onCompleteGoal={handleCompleteGoal}
+                          onDeleteGoal={handleDeleteGoal}
+                        />
+                        <Box position="absolute" left={0} top={0} zIndex={1}>
+                          {opGoal.originalIndex}
+                        </Box>
+                      </Box>
                     )}
                   </Draggable>
                 );
