@@ -5,6 +5,7 @@ import {
   InputAdornment,
   makeStyles,
   TextField,
+  Typography,
 } from "@material-ui/core";
 import IncrementIcon from "@material-ui/icons/AddCircle";
 import DecrementIcon from "@material-ui/icons/RemoveCircle";
@@ -13,16 +14,25 @@ import PlannerContext from "./PlannerContext";
 
 const DEFAULT_SIZE = 100;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   itemBg: {
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
+    position: "relative",
   },
   itemImage: {
     width: "100%",
     height: "100%",
   },
-});
+  needed: {
+    position: "absolute",
+    right: 0,
+    bottom: "10%",
+    padding: theme.spacing(0.25, 1.5),
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    color: theme.palette.text.primary,
+  },
+}));
 
 export interface ItemNeededProps {
   itemId: string;
@@ -76,6 +86,11 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
           src={itemImageSrc(item.name)}
           alt={item.name}
         />
+        <Box component="span" boxShadow={3} className={classes.needed}>
+          <Typography variant="button" data-cy="quantity">
+            {needed}
+          </Typography>
+        </Box>
       </div>
       <TextField
         size="small"
