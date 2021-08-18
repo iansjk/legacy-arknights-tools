@@ -2,10 +2,9 @@ import baseSlugify from "slugify";
 import { OperatorGoalState, OperatorGoalType } from "./store/goalsSlice";
 import { Operator, Ingredient } from "./types";
 
-function slugify(toSlug: string): string {
+export function slugify(toSlug: string): string {
   return baseSlugify(toSlug, { lower: true, replacement: "-", remove: /-/g });
 }
-export default slugify;
 
 export const getOperatorImagePublicId = (
   name: string,

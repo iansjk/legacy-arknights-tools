@@ -17,7 +17,7 @@ import {
   bindTrigger,
   usePopupState,
 } from "material-ui-popup-state/hooks";
-import slugify from "../../utils";
+import { slugify } from "../../utils";
 import ItemStack, { defaultSize } from "./ItemStack";
 import { Ingredient, Item } from "../../types";
 import ItemInfoPopoverContent from "./ItemInfoPopoverContent";

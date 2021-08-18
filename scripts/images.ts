@@ -3,7 +3,7 @@ import path from "path";
 import { promises as fs } from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import dotenv from "dotenv";
-import slugify from "../src/utils";
+import { slugify } from "../src/utils";
 import { getOperatorName } from "./globals";
 
 dotenv.config({
