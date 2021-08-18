@@ -67,7 +67,7 @@ const OperatorGoalCard = React.forwardRef<
         size="small"
         onClick={() => onToggleFocus({ operatorId, goal, focused })}
       >
-        {focused ? <UnfocusIcon /> : <FocusIcon />}
+        {focused ? <FocusIcon /> : <UnfocusIcon />}
       </IconButton>
       <IconButton
         aria-label="Complete this goal"
