@@ -3,9 +3,16 @@ import { Box, makeStyles } from "@material-ui/core";
 import { itemBgSrc, itemImageSrc } from "../images";
 import PlannerContext from "./PlannerContext";
 
+const DEFAULT_SIZE = 100;
+
 const useStyles = makeStyles({
   itemBg: {
     backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+  },
+  itemImage: {
+    width: "100%",
+    height: "100%",
   },
 });
 
@@ -13,6 +20,7 @@ export interface ItemNeededProps {
   itemId: string;
   needed: number;
   owned: number;
+  size?: number;
   onIncrement: () => void;
   onDecrement: () => void;
   onChange: () => void;
@@ -25,6 +33,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
     itemId,
     needed,
     owned,
+    size = DEFAULT_SIZE,
     onIncrement,
     onDecrement,
     onChange,
@@ -38,9 +47,17 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
   return (
     <Box
       className={classes.itemBg}
-      style={{ backgroundImage: `url("${itemBgSrc(item.tier)}")` }}
+      style={{
+        backgroundImage: `url("${itemBgSrc(item.tier)}")`,
+        width: size,
+        height: size,
+      }}
     >
-      <img src={itemImageSrc(item.name)} alt={item.name} />
+      <img
+        className={classes.itemImage}
+        src={itemImageSrc(item.name)}
+        alt={item.name}
+      />
     </Box>
   );
 };
