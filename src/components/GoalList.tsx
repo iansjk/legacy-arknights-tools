@@ -77,11 +77,11 @@ const GoalList: React.VFC = () => {
 
   const renderList = (
     list: (OperatorGoalState & { originalIndex: number })[],
-    focused: boolean
+    isFocusedList: boolean
   ) => (
     <>
-      <h3>{focused ? "Focused" : "Other"} goals</h3>
-      <Droppable droppableId={`${focused ? "focused-" : ""}goal-list`}>
+      <h3>{isFocusedList ? "Focused" : "Other"} goals</h3>
+      <Droppable droppableId={`${isFocusedList ? "focused-" : ""}goal-list`}>
         {(droppableProvided) => (
           <div
             {...droppableProvided.droppableProps}
@@ -90,15 +90,17 @@ const GoalList: React.VFC = () => {
           >
             <ol className={classes.goalList}>
               {list.map((opGoal, i) => {
-                const { operatorId, goal } = opGoal;
+                const { operatorId, goal, focused } = opGoal;
                 const key = `${
-                  focused ? "focused-" : ""
+                  isFocusedList ? "focused-" : ""
                 }${operatorId}-g${goal}`;
                 return (
                   <Draggable key={key} draggableId={key} index={i}>
                     {(draggableProvided) => (
                       <OperatorGoalCard
-                        {...opGoal}
+                        operatorId={operatorId}
+                        goal={goal}
+                        focused={focused}
                         onToggleFocus={handleToggleFocus}
                         onCompleteGoal={handleCompleteGoal}
                         onDeleteGoal={handleDeleteGoal}
