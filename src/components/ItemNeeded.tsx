@@ -62,7 +62,7 @@ export interface ItemNeededProps {
   onCraftOne: (itemId: string) => void;
 }
 
-const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
+const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
   const {
     itemId,
     needed,
@@ -78,6 +78,43 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
   const [ownedString, setOwnedString] = useState<string>("");
   const classes = useStyles();
   const item = itemMap[itemId];
+  const inputProps = {
+    className: classes.input,
+    type: "number",
+    min: 0,
+    step: 1,
+    "aria-label": "Quantity owned",
+    "data-cy": "ownedInput",
+  };
+  const InputProps = {
+    startAdornment: (
+      <InputAdornment position="start">
+        <IconButton
+          aria-label="remove 1 from owned amount"
+          edge="start"
+          disabled={owned === 0}
+          onClick={() => onDecrement(itemId)}
+          data-cy="decrement"
+          size="small"
+        >
+          <DecrementIcon />
+        </IconButton>
+      </InputAdornment>
+    ),
+    endAdornment: (
+      <InputAdornment position="end">
+        <IconButton
+          aria-label="add 1 to owned amount"
+          edge="end"
+          onClick={() => onIncrement(itemId)}
+          data-cy="increment"
+          size="small"
+        >
+          <IncrementIcon />
+        </IconButton>
+      </InputAdornment>
+    ),
+  };
 
   useEffect(() => {
     if (owned !== 0 || ownedString !== "") {
@@ -116,49 +153,14 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
       </div>
       <TextField
         size="small"
-        fullWidth
         variant="outlined"
         value={ownedString}
         onFocus={(event) => event.target.select()}
         onChange={handleChange}
-        inputProps={{
-          type: "number",
-          min: 0,
-          step: 1,
-          "aria-label": "Quantity owned",
-          "data-cy": "ownedInput",
-        }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <IconButton
-                aria-label="remove 1 from owned amount"
-                edge="start"
-                disabled={owned === 0}
-                onClick={() => onDecrement(itemId)}
-                data-cy="decrement"
-                size="small"
-              >
-                <DecrementIcon />
-              </IconButton>
-            </InputAdornment>
-          ),
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="add 1 to owned amount"
-                edge="end"
-                onClick={() => onIncrement(itemId)}
-                data-cy="increment"
-                size="small"
-              >
-                <IncrementIcon />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
+        inputProps={inputProps}
+        InputProps={InputProps}
       />
     </Box>
   );
-};
+});
 export default ItemNeeded;
