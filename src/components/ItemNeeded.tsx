@@ -15,6 +15,16 @@ import PlannerContext from "./PlannerContext";
 const DEFAULT_SIZE = 100;
 
 const useStyles = makeStyles((theme) => ({
+  input: {
+    "&::-webkit-inner-spin-button, &::-webkit-outer-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
+    "&": {
+      "-moz-appearance": "textfield",
+    },
+    textAlign: "center",
+  },
   itemBg: {
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
@@ -23,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   itemImage: {
     width: "100%",
     height: "100%",
+    objectFit: "contain",
   },
   needed: {
     position: "absolute",
@@ -72,7 +83,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
   };
 
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" alignItems="center">
       <div
         className={classes.itemBg}
         style={{
