@@ -75,7 +75,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
     onCraftOne,
   } = props;
   const { itemMap } = useContext(PlannerContext);
-  const [ownedString, setOwnedString] = useState<string>("");
+  const [ownedString, setOwnedString] = useState<string>();
   const classes = useStyles();
   const item = itemMap[itemId];
   const inputProps = {
