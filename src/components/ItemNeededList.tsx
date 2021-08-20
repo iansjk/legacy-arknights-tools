@@ -83,7 +83,7 @@ const ItemNeededList: React.VFC = () => {
       <h3>Items needed</h3>
       <Grid container component="ul" className={classes.list}>
         {Object.entries(materialsNeeded).map(([id, needed]) => (
-          <Grid item component="li">
+          <Grid item xs={4} component="li">
             <ItemNeeded
               key={id}
               itemId={id}
