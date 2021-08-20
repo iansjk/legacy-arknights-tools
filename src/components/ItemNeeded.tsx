@@ -1,4 +1,9 @@
-import React, { ChangeEventHandler, useContext, useState } from "react";
+import React, {
+  ChangeEventHandler,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import {
   Box,
   IconButton,
@@ -70,9 +75,15 @@ const ItemNeeded: React.VFC<ItemNeededProps> = (props) => {
     onCraftOne,
   } = props;
   const { itemMap } = useContext(PlannerContext);
-  const [ownedString, setOwnedString] = useState<string>(`${owned}`);
+  const [ownedString, setOwnedString] = useState<string>("");
   const classes = useStyles();
   const item = itemMap[itemId];
+
+  useEffect(() => {
+    if (owned !== 0 || ownedString !== "") {
+      setOwnedString(`${owned}`);
+    }
+  }, [ownedString, owned]);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setOwnedString(e.target.value);
