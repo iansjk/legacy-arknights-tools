@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { Grid, makeStyles } from "@material-ui/core";
 import {
   craftItemOnce,
@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "../store/store";
 import { operatorGoalIngredients } from "../utils";
 import ItemNeeded from "./ItemNeeded";
 import PlannerContext from "./PlannerContext";
+import ItemInfoPopover from "./ItemInfoPopover";
 
 const useStyles = makeStyles({
   list: {
@@ -26,6 +27,9 @@ const ItemNeededList: React.VFC = () => {
   );
   const { operators: operatorGoals } = useAppSelector((state) => state.goals);
   const { itemMap, operatorMap } = useContext(PlannerContext);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [popoverItemId, setPopoverItemId] = useState("");
+  const [popoverOpen, setPopoverOpen] = useState(false);
   const classes = useStyles();
 
   const handleIncrement = useCallback(
@@ -63,6 +67,19 @@ const ItemNeededList: React.VFC = () => {
     [dispatch, itemMap]
   );
 
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>, itemId: string) => {
+      setAnchorEl(e.currentTarget);
+      setPopoverItemId(itemId);
+      setPopoverOpen(true);
+    },
+    []
+  );
+
+  const handleClosePopover = useCallback(() => {
+    setPopoverOpen(false);
+  }, []);
+
   const materialsNeeded: Record<string, number> = {};
   operatorGoals.forEach((opGoal) => {
     operatorGoalIngredients(opGoal, operatorMap).forEach((ingr) => {
@@ -94,11 +111,17 @@ const ItemNeededList: React.VFC = () => {
               onChange={handleChangeQuantity}
               onCraftOne={handleCraftOne}
               onCraftingToggle={handleToggleCrafting}
-              onClick={(itemId) => console.log("clicked on item id", itemId)}
+              onClick={handleClick}
             />
           </Grid>
         ))}
       </Grid>
+      <ItemInfoPopover
+        anchorEl={anchorEl}
+        itemId={popoverItemId}
+        open={popoverOpen}
+        onClose={handleClosePopover}
+      />
     </>
   );
 };

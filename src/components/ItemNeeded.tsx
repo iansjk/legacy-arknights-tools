@@ -64,7 +64,7 @@ export interface ItemNeededProps {
   onChange: (itemId: string, value: number) => void;
   onCraftingToggle: (itemId: string) => void;
   onCraftOne: (itemId: string) => void;
-  onClick: (itemId: string) => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>, itemId: string) => void;
 }
 
 const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
@@ -145,7 +145,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
           width: size,
           height: size,
         }}
-        onClick={() => onClick(itemId)}
+        onClick={(e) => onClick(e, itemId)}
         disableRipple
       >
         <img
