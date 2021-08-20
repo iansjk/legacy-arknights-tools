@@ -94,6 +94,7 @@ const ItemNeededList: React.VFC = () => {
               onChange={handleChangeQuantity}
               onCraftOne={handleCraftOne}
               onCraftingToggle={handleToggleCrafting}
+              onClick={(itemId) => console.log("clicked on item id", itemId)}
             />
           </Grid>
         ))}

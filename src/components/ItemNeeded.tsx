@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import {
   Box,
+  ButtonBase,
   IconButton,
   InputAdornment,
   makeStyles,
@@ -30,10 +31,13 @@ const useStyles = makeStyles((theme) => ({
     },
     textAlign: "center",
   },
-  itemBg: {
+  itemButton: {
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
     position: "relative",
+    "&:focus, &:active": {
+      filter: "brightness(0.5)",
+    },
   },
   itemImage: {
     width: "100%",
@@ -60,6 +64,7 @@ export interface ItemNeededProps {
   onChange: (itemId: string, value: number) => void;
   onCraftingToggle: (itemId: string) => void;
   onCraftOne: (itemId: string) => void;
+  onClick: (itemId: string) => void;
 }
 
 const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
@@ -73,6 +78,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
     onChange,
     onCraftingToggle,
     onCraftOne,
+    onClick,
   } = props;
   const { itemMap } = useContext(PlannerContext);
   const [ownedString, setOwnedString] = useState<string>();
@@ -132,13 +138,15 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <div
-        className={classes.itemBg}
+      <ButtonBase
+        className={classes.itemButton}
         style={{
           backgroundImage: `url("${itemBgSrc(item.tier)}")`,
           width: size,
           height: size,
         }}
+        onClick={() => onClick(itemId)}
+        disableRipple
       >
         <img
           className={classes.itemImage}
@@ -150,7 +158,7 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
             {needed}
           </Typography>
         </Box>
-      </div>
+      </ButtonBase>
       <TextField
         size="small"
         variant="outlined"
