@@ -17,7 +17,7 @@ import DecrementIcon from "@material-ui/icons/RemoveCircle";
 import { itemBgSrc, itemImageSrc } from "../images";
 import PlannerContext from "./PlannerContext";
 
-const DEFAULT_SIZE = 100;
+const DEFAULT_SIZE = 85;
 
 const useStyles = makeStyles((theme) => ({
   input: {
