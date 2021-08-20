@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
+import { Grid, makeStyles } from "@material-ui/core";
 import {
   craftItemOnce,
   decrementItemQuantity,
@@ -8,7 +9,15 @@ import {
 } from "../store/depotSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { operatorGoalIngredients } from "../utils";
+import ItemNeeded from "./ItemNeeded";
 import PlannerContext from "./PlannerContext";
+
+const useStyles = makeStyles({
+  list: {
+    padding: 0,
+    listStyle: "none",
+  },
+});
 
 const ItemNeededList: React.VFC = () => {
   const dispatch = useAppDispatch();
@@ -17,26 +26,42 @@ const ItemNeededList: React.VFC = () => {
   );
   const { operators: operatorGoals } = useAppSelector((state) => state.goals);
   const { itemMap, operatorMap } = useContext(PlannerContext);
+  const classes = useStyles();
 
-  const handleIncrement = (itemId: string) => {
-    dispatch(incrementItemQuantity(itemId));
-  };
+  const handleIncrement = useCallback(
+    (itemId: string) => {
+      dispatch(incrementItemQuantity(itemId));
+    },
+    [dispatch]
+  );
 
-  const handleDecrement = (itemId: string) => {
-    dispatch(decrementItemQuantity(itemId));
-  };
+  const handleDecrement = useCallback(
+    (itemId: string) => {
+      dispatch(decrementItemQuantity(itemId));
+    },
+    [dispatch]
+  );
 
-  const handleChangeQuantity = (itemId: string, quantity: number) => {
-    dispatch(setItemQuantity({ itemId, quantity }));
-  };
+  const handleChangeQuantity = useCallback(
+    (itemId: string, quantity: number) => {
+      dispatch(setItemQuantity({ itemId, quantity }));
+    },
+    [dispatch]
+  );
 
-  const handleToggleCrafting = (itemId: string) => {
-    dispatch(toggleItemCrafting(itemId));
-  };
+  const handleToggleCrafting = useCallback(
+    (itemId: string) => {
+      dispatch(toggleItemCrafting(itemId));
+    },
+    [dispatch]
+  );
 
-  const handleCraftOne = (itemId: string) => {
-    dispatch(craftItemOnce(itemId, itemMap[itemId].ingredients));
-  };
+  const handleCraftOne = useCallback(
+    (itemId: string) => {
+      dispatch(craftItemOnce(itemId, itemMap[itemId].ingredients));
+    },
+    [dispatch, itemMap]
+  );
 
   const materialsNeeded: Record<string, number> = {};
   operatorGoals.forEach((opGoal) => {
@@ -56,39 +81,23 @@ const ItemNeededList: React.VFC = () => {
   return (
     <>
       <h3>Items needed</h3>
-      <ul>
+      <Grid container component="ul" className={classes.list}>
         {Object.entries(materialsNeeded).map(([id, needed]) => (
-          <li key={id}>
-            {itemMap[id].name}: {needed}
-            <br />
-            Have:{" "}
-            <input
-              type="numeric"
-              onChange={(e) => handleChangeQuantity(id, Number(e.target.value))}
-              value={quantities[id] ?? 0}
+          <Grid item component="li">
+            <ItemNeeded
+              key={id}
+              itemId={id}
+              needed={needed}
+              owned={quantities[id] ?? 0}
+              onIncrement={handleIncrement}
+              onDecrement={handleDecrement}
+              onChange={handleChangeQuantity}
+              onCraftOne={handleCraftOne}
+              onCraftingToggle={handleToggleCrafting}
             />
-            <br />
-            <button type="button" onClick={() => handleIncrement(id)}>
-              Increment
-            </button>
-            <br />
-            <button
-              type="button"
-              onClick={() => handleDecrement(id)}
-              disabled={quantities[id] == null || quantities[id] === 0}
-            >
-              Decrement
-            </button>
-            {itemMap[id].ingredients.length > 0 ? (
-              <button type="button" onClick={() => handleToggleCrafting(id)}>
-                {itemsBeingCrafted[id] ? "Stop Crafting" : "Start Crafting"}
-              </button>
-            ) : (
-              "Uncraftable"
-            )}
-          </li>
+          </Grid>
         ))}
-      </ul>
+      </Grid>
     </>
   );
 };
