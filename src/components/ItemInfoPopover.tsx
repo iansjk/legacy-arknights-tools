@@ -28,7 +28,6 @@ const ItemInfoPopover: React.VFC<ItemInfoPopoverProps> = (props) => {
   return (
     <Popover
       BackdropProps={BackdropProps}
-      hideBackdrop={false}
       anchorOrigin={anchorOrigin}
       transformOrigin={transformOrigin}
       open={open}
