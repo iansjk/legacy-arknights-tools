@@ -99,21 +99,23 @@ const ItemNeededList: React.VFC = () => {
     <>
       <h3>Items needed</h3>
       <Grid container component="ul" className={classes.list}>
-        {Object.entries(materialsNeeded).map(([id, needed]) => (
-          <Grid item xs={4} component="li" key={id}>
-            <ItemNeeded
-              itemId={id}
-              needed={needed}
-              owned={quantities[id] ?? 0}
-              onIncrement={handleIncrement}
-              onDecrement={handleDecrement}
-              onChange={handleChangeQuantity}
-              onCraftOne={handleCraftOne}
-              onCraftingToggle={handleToggleCrafting}
-              onClick={handleClick}
-            />
-          </Grid>
-        ))}
+        {Object.entries(materialsNeeded)
+          .filter(([id]) => id !== "4001") // LMD
+          .map(([id, needed]) => (
+            <Grid item xs={4} component="li" key={id}>
+              <ItemNeeded
+                itemId={id}
+                needed={needed}
+                owned={quantities[id] ?? 0}
+                onIncrement={handleIncrement}
+                onDecrement={handleDecrement}
+                onChange={handleChangeQuantity}
+                onCraftOne={handleCraftOne}
+                onCraftingToggle={handleToggleCrafting}
+                onClick={handleClick}
+              />
+            </Grid>
+          ))}
       </Grid>
       <ItemInfoPopover
         anchorEl={anchorEl}
