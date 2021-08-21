@@ -182,7 +182,11 @@ const Planner: React.VFC = () => {
     if (operator) {
       dispatch(
         addGoals(
-          selectedGoals.map((goal) => ({ goal, operatorId: operator.id }))
+          selectedGoals.map((goal) => ({
+            goal,
+            operatorId: operator.id,
+            focused: false,
+          }))
         )
       );
       setSelectedGoals([]);

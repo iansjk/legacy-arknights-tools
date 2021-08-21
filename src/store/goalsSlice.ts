@@ -83,16 +83,14 @@ export const goalsSlice = createSlice({
   initialState,
   reducers: {
     addGoals: (state, action: PayloadAction<OperatorGoalState[]>) => {
-      const newGoals = action.payload
-        .filter(
-          (newGoal) =>
-            !state.operators.find(
-              (existing) =>
-                existing.goal === newGoal.goal &&
-                existing.operatorId === newGoal.operatorId
-            )
-        )
-        .map((opGoal) => ({ ...opGoal, focused: false }));
+      const newGoals = action.payload.filter(
+        (newGoal) =>
+          !state.operators.find(
+            (existing) =>
+              existing.goal === newGoal.goal &&
+              existing.operatorId === newGoal.operatorId
+          )
+      );
       state.operators.unshift(...newGoals);
     },
     deleteGoal: (state, action: PayloadAction<OperatorGoalState>) => {
