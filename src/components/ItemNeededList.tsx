@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   },
 });
 
+const itemWidth = 135;
+const itemHeight = 125;
+
 const ItemNeededList: React.VFC = () => {
   const dispatch = useAppDispatch();
   const { itemsBeingCrafted, quantities } = useAppSelector(
@@ -104,8 +107,8 @@ const ItemNeededList: React.VFC = () => {
           .map(([id, needed]) => (
             <Grid item component="li" key={id}>
               <ItemNeeded
-                width={135}
-                height={125}
+                width={itemWidth}
+                height={itemHeight}
                 itemId={id}
                 needed={needed}
                 owned={quantities[id] ?? 0}
