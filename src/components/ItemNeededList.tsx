@@ -102,8 +102,10 @@ const ItemNeededList: React.VFC = () => {
         {Object.entries(materialsNeeded)
           .filter(([id]) => id !== "4001") // LMD
           .map(([id, needed]) => (
-            <Grid item xs={4} component="li" key={id}>
+            <Grid item component="li" key={id}>
               <ItemNeeded
+                width={135}
+                height={125}
                 itemId={id}
                 needed={needed}
                 owned={quantities[id] ?? 0}

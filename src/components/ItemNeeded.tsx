@@ -18,8 +18,6 @@ import DecrementIcon from "@material-ui/icons/RemoveCircle";
 import { itemBgSrc, itemImageSrc } from "../images";
 import PlannerContext from "./PlannerContext";
 
-const DEFAULT_SIZE = 85;
-
 const useStyles = makeStyles((theme) => ({
   input: {
     "&::-webkit-inner-spin-button, &::-webkit-outer-spin-button": {
@@ -55,10 +53,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export interface ItemNeededProps {
+  width: number;
+  height: number;
   itemId: string;
   needed: number;
   owned: number;
-  size?: number;
   onIncrement: (itemId: string) => void;
   onDecrement: (itemId: string) => void;
   onChange: (itemId: string, value: number) => void;
@@ -69,10 +68,11 @@ export interface ItemNeededProps {
 
 const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
   const {
+    width,
+    height,
     itemId,
     needed,
     owned,
-    size = DEFAULT_SIZE,
     onIncrement,
     onDecrement,
     onChange,
@@ -137,13 +137,21 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      width={width}
+      height={height}
+      mb={1}
+      ml={1}
+    >
       <ButtonBase
         className={classes.itemButton}
         style={{
           backgroundImage: `url("${itemBgSrc(item.tier)}")`,
-          width: size,
-          height: size,
+          width: height - 40,
+          height: height - 40,
         }}
         onClick={(e) => onClick(e, itemId)}
         disableRipple
