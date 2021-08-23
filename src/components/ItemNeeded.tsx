@@ -55,6 +55,8 @@ const useStyles = makeStyles((theme) => ({
 export interface ItemNeededProps {
   width: number;
   height: number;
+  className?: string;
+  style?: React.CSSProperties;
   itemId: string;
   needed: number;
   owned: number;
@@ -70,6 +72,8 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
   const {
     width,
     height,
+    className,
+    style,
     itemId,
     needed,
     owned,
@@ -143,8 +147,8 @@ const ItemNeeded: React.VFC<ItemNeededProps> = React.memo((props) => {
       alignItems="center"
       width={width}
       height={height}
-      mb={1}
-      ml={1}
+      className={className}
+      style={style}
     >
       <ButtonBase
         className={classes.itemButton}

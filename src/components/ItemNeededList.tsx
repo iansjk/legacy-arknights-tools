@@ -1,5 +1,10 @@
 import React, { useCallback, useContext, useState } from "react";
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core";
+import {
+  Grid as ReactVirtualizedGrid,
+  AutoSizer,
+  WindowScroller,
+} from "react-virtualized";
 import {
   craftItemOnce,
   decrementItemQuantity,
@@ -13,12 +18,17 @@ import ItemNeeded from "./ItemNeeded";
 import PlannerContext from "./PlannerContext";
 import ItemInfoPopover from "./ItemInfoPopover";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
-    padding: 0,
-    listStyle: "none",
+    "& > .ReactVirtualized__Grid__innerScrollContainer": {
+      display: "flex",
+      flexWrap: "wrap",
+    },
   },
-});
+  cell: {
+    padding: theme.spacing(0, 0, 1, 1),
+  },
+}));
 
 const itemWidth = 135;
 const itemHeight = 125;
@@ -34,6 +44,7 @@ const ItemNeededList: React.VFC = () => {
   const [popoverItemId, setPopoverItemId] = useState("");
   const [popoverOpen, setPopoverOpen] = useState(false);
   const classes = useStyles();
+  const theme = useTheme();
 
   const handleIncrement = useCallback(
     (itemId: string) => {
@@ -98,30 +109,64 @@ const ItemNeededList: React.VFC = () => {
     });
   });
 
+  const itemEntries = Object.entries(materialsNeeded).filter(
+    ([id]) => id !== "4001"
+  ); // LMD
+
   return (
     <>
       <h3>Items needed</h3>
-      <Grid container component="ul" className={classes.list}>
-        {Object.entries(materialsNeeded)
-          .filter(([id]) => id !== "4001") // LMD
-          .map(([id, needed]) => (
-            <Grid item component="li" key={id}>
-              <ItemNeeded
-                width={itemWidth}
-                height={itemHeight}
-                itemId={id}
-                needed={needed}
-                owned={quantities[id] ?? 0}
-                onIncrement={handleIncrement}
-                onDecrement={handleDecrement}
-                onChange={handleChangeQuantity}
-                onCraftOne={handleCraftOne}
-                onCraftingToggle={handleToggleCrafting}
-                onClick={handleClick}
-              />
-            </Grid>
-          ))}
-      </Grid>
+      <WindowScroller>
+        {({ height, isScrolling, onChildScroll, scrollTop }) => (
+          <AutoSizer disableHeight>
+            {({ width }) => {
+              const columnCount = Math.floor(
+                width / (itemWidth + theme.spacing())
+              );
+              return (
+                <ReactVirtualizedGrid
+                  className={classes.list}
+                  width={width}
+                  autoHeight
+                  height={height}
+                  onScroll={onChildScroll}
+                  scrollTop={scrollTop}
+                  isScrolling={isScrolling}
+                  rowHeight={itemHeight + theme.spacing(1)}
+                  columnCount={columnCount}
+                  columnWidth={itemWidth + theme.spacing(1)}
+                  rowCount={Math.ceil(itemEntries.length / columnCount)}
+                  cellRenderer={({ key, columnIndex, rowIndex, style }) => {
+                    const index = rowIndex * columnCount + columnIndex;
+                    if (itemEntries[index]) {
+                      const [id, needed] = itemEntries[index];
+                      return (
+                        <ItemNeeded
+                          key={key}
+                          width={itemWidth}
+                          height={itemHeight}
+                          className={classes.cell}
+                          style={style}
+                          itemId={id}
+                          needed={needed}
+                          owned={quantities[id] ?? 0}
+                          onIncrement={handleIncrement}
+                          onDecrement={handleDecrement}
+                          onChange={handleChangeQuantity}
+                          onCraftOne={handleCraftOne}
+                          onCraftingToggle={handleToggleCrafting}
+                          onClick={handleClick}
+                        />
+                      );
+                    }
+                    return null;
+                  }}
+                />
+              );
+            }}
+          </AutoSizer>
+        )}
+      </WindowScroller>
       <ItemInfoPopover
         anchorEl={anchorEl}
         itemId={popoverItemId}
