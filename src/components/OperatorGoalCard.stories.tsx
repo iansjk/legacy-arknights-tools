@@ -1,8 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import OperatorGoalCard, { OperatorGoalCardProps } from "./OperatorGoalCard";
-import operatorData from "../data/operators.json";
 import { OperatorGoalType } from "../store/goalsSlice";
+import operatorData from "../data/operators.json";
 
 export default {
   title: "Planner/OperatorGoalCard",
