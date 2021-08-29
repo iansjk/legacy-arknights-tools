@@ -9,11 +9,11 @@ import {
   makeStyles,
   Paper,
   Typography,
-  useTheme,
 } from "@material-ui/core";
 import { OperatorGoalState, OperatorGoalType } from "../store/goalsSlice";
 import PlannerContext from "./PlannerContext";
 import { operatorImageSrc } from "../images";
+import OperatorGoalIconography from "./OperatorGoalIconography";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -30,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   nameAndGoal: {
     flexGrow: 1,
+    display: "flex",
+    alignItems: "center",
   },
   name: {
     marginRight: theme.spacing(1),
@@ -58,7 +60,6 @@ const OperatorGoalCard = React.forwardRef<
   const { operatorMap } = useContext(PlannerContext);
   const operator = operatorMap[operatorId];
   const classes = useStyles();
-  const theme = useTheme();
   let eliteLevel = 0;
   if (
     goal === OperatorGoalType["Elite 2"] ||
@@ -92,6 +93,7 @@ const OperatorGoalCard = React.forwardRef<
         <Typography component="span" variant="h6" className={classes.name}>
           {operator.name}
         </Typography>
+        <OperatorGoalIconography operatorId={operatorId} goal={goal} />
         <Typography component="span" variant="body1">
           {OperatorGoalType[goal]}
         </Typography>
