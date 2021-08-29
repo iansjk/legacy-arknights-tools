@@ -5,7 +5,10 @@ const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/samidare/image/upload/${
 
 export const operatorImageSrc = (name: string, elite?: number): string =>
   `${CLOUDINARY_BASE_URL}/operators/${slugify(name)}${
-    typeof elite !== "undefined" && (elite > 1 || name === "Amiya") ? elite : ""
+    typeof elite !== "undefined" &&
+    (elite > 1 || (name === "Amiya" && elite === 1))
+      ? `-${slugify(`elite ${elite}`)}`
+      : ""
   }`;
 
 export const itemImageSrc = (itemName: string): string =>

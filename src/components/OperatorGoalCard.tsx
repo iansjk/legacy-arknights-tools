@@ -3,11 +3,24 @@ import FocusIcon from "@material-ui/icons/Star";
 import UnfocusIcon from "@material-ui/icons/StarBorder";
 import CompleteGoalIcon from "@material-ui/icons/CheckCircle";
 import DeleteGoalIcon from "@material-ui/icons/Cancel";
-import { IconButton, makeStyles, Paper, Typography } from "@material-ui/core";
+import {
+  Avatar,
+  IconButton,
+  makeStyles,
+  Paper,
+  Typography,
+  useTheme,
+} from "@material-ui/core";
 import { OperatorGoalState, OperatorGoalType } from "../store/goalsSlice";
 import PlannerContext from "./PlannerContext";
+import { operatorImageSrc } from "../images";
 
 const useStyles = makeStyles((theme) => ({
+  avatar: {
+    width: 32,
+    height: 32,
+    marginRight: theme.spacing(1),
+  },
   paper: {
     padding: theme.spacing(1),
     display: "flex",
@@ -45,6 +58,21 @@ const OperatorGoalCard = React.forwardRef<
   const { operatorMap } = useContext(PlannerContext);
   const operator = operatorMap[operatorId];
   const classes = useStyles();
+  const theme = useTheme();
+  let eliteLevel = 0;
+  if (
+    goal === OperatorGoalType["Elite 2"] ||
+    (goal >= OperatorGoalType["Skill 1 Mastery 1"] &&
+      goal <= OperatorGoalType["Skill 3 Mastery 3"])
+  )
+    eliteLevel = 2;
+  else if (
+    goal === OperatorGoalType["Elite 1"] ||
+    (goal >= OperatorGoalType["Skill Level 4 → 5"] &&
+      goal <= OperatorGoalType["Skill Level 6 → 7"])
+  )
+    eliteLevel = 1;
+  const operatorImage = operatorImageSrc(operator.name, eliteLevel);
 
   return (
     <Paper
@@ -54,6 +82,12 @@ const OperatorGoalCard = React.forwardRef<
       ref={ref}
       {...rest}
     >
+      <Avatar
+        alt=""
+        src={operatorImage}
+        className={classes.avatar}
+        aria-hidden="true"
+      />
       <span className={classes.nameAndGoal}>
         <Typography component="span" variant="h6" className={classes.name}>
           {operator.name}
