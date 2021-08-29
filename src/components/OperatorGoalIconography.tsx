@@ -18,7 +18,7 @@ const OperatorGoalIconography: React.VFC<OperatorGoalIconographyProps> = (
     case OperatorGoalType["Elite 1"]:
     case OperatorGoalType["Elite 2"]:
       return (
-        <Box component="span" aria-hidden="true" lineHeight={0}>
+        <Box aria-hidden="true" lineHeight={0}>
           <img
             src={eliteImageSrc(goal === OperatorGoalType["Elite 1"] ? 1 : 2)}
             alt=""
@@ -42,7 +42,7 @@ const OperatorGoalIconography: React.VFC<OperatorGoalIconographyProps> = (
         ((goal - OperatorGoalType["Skill 1 Mastery 1"]) % 3) + 1;
       const { iconId, skillId } = operatorMap[operatorId].skills[skillIndex];
       return (
-        <Box component="span" aria-hidden="true" lineHeight={0}>
+        <Box aria-hidden="true" lineHeight={0}>
           <img src={skillImageSrc(iconId, skillId)} alt="" height={ICON_SIZE} />
           <img
             src={masteryImageSrc(masteryLevel as 1 | 2 | 3)}
