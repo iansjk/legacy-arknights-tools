@@ -77,6 +77,7 @@ const OperatorGoalCard = React.forwardRef<
   )
     eliteLevel = 1;
   const operatorImage = operatorImageSrc(operator.name, eliteLevel);
+  const alterName = operator.name.split(" the ")[1];
 
   return (
     <Paper
@@ -94,7 +95,7 @@ const OperatorGoalCard = React.forwardRef<
       />
       <span className={classes.nameAndGoal}>
         <Typography component="span" variant="h6" className={classes.name}>
-          {operator.name}
+          {alterName ?? operator.name}
         </Typography>
         <OperatorGoalIconography operatorId={operatorId} goal={goal} />
         <Typography component="span" variant="body1">
