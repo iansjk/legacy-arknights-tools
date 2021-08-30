@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   name: {
     marginRight: theme.spacing(1),
   },
+  focusedIcon: {
+    fill: "gold",
+  },
 }));
 
 export type OperatorGoalCardProps = OperatorGoalState & {
@@ -103,7 +106,11 @@ const OperatorGoalCard = React.forwardRef<
         size="small"
         onClick={() => onToggleFocus({ operatorId, goal, focused })}
       >
-        {focused ? <FocusIcon /> : <UnfocusIcon />}
+        {focused ? (
+          <FocusIcon className={classes.focusedIcon} />
+        ) : (
+          <UnfocusIcon />
+        )}
       </IconButton>
       <IconButton
         aria-label="Complete this goal"
