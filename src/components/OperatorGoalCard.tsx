@@ -39,6 +39,18 @@ const useStyles = makeStyles((theme) => ({
   focusedIcon: {
     fill: "gold",
   },
+  completeIcon: {
+    transition: "fill .3s ease",
+    "&:hover, &:focus": {
+      fill: "yellowgreen",
+    },
+  },
+  deleteIcon: {
+    transition: "fill .3s ease",
+    "&:hover, &:focus": {
+      fill: "red",
+    },
+  },
 }));
 
 export type OperatorGoalCardProps = OperatorGoalState & {
@@ -118,14 +130,14 @@ const OperatorGoalCard = React.forwardRef<
         size="small"
         onClick={() => onCompleteGoal({ operatorId, goal, focused })}
       >
-        <CompleteGoalIcon />
+        <CompleteGoalIcon className={classes.completeIcon} />
       </IconButton>
       <IconButton
         aria-label="Delete this goal"
         size="small"
         onClick={() => onDeleteGoal({ operatorId, goal, focused })}
       >
-        <DeleteGoalIcon />
+        <DeleteGoalIcon className={classes.deleteIcon} />
       </IconButton>
     </Paper>
   );
