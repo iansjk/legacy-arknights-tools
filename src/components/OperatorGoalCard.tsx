@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   nameAndGoal: {
     flexGrow: 1,
     display: "flex",
-    alignItems: "center",
+    alignItems: "baseline",
   },
   name: {
     marginRight: theme.spacing(1),
