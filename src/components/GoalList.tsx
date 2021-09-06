@@ -121,10 +121,12 @@ const GoalList: React.VFC = () => {
   );
 
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      {renderList(focusedGoals, true)}
-      {renderList(unfocusedGoals, false)}
-    </DragDropContext>
+    <Box component="section" pl={2}>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        {renderList(focusedGoals, true)}
+        {renderList(unfocusedGoals, false)}
+      </DragDropContext>
+    </Box>
   );
 };
 export default GoalList;

@@ -1,5 +1,12 @@
 import React, { useCallback, useContext, useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core";
+import {
+  Box,
+  FormControlLabel,
+  makeStyles,
+  Paper,
+  Switch,
+  useTheme,
+} from "@material-ui/core";
 import {
   Grid as ReactVirtualizedGrid,
   AutoSizer,
@@ -114,7 +121,7 @@ const ItemNeededList: React.VFC = () => {
   ); // LMD
 
   return (
-    <>
+    <Paper component="section" elevation={3}>
       <h3>Items needed</h3>
       <WindowScroller>
         {({ height, isScrolling, onChildScroll, scrollTop }) => (
@@ -173,7 +180,7 @@ const ItemNeededList: React.VFC = () => {
         open={popoverOpen}
         onClose={handleClosePopover}
       />
-    </>
+    </Paper>
   );
 };
 export default ItemNeededList;
