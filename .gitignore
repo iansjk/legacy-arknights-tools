@@ -72,3 +72,7 @@ cypress/videos
 cypress/screenshots
 
 .netlify
+
+# VSCode Local History extension
+.history
+
