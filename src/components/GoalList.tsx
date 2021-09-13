@@ -6,7 +6,6 @@ import {
   Draggable,
   DraggableProvided,
   DraggableRubric,
-  DraggableStateSnapshot,
   Droppable,
   DroppableProvided,
   DropResult,
@@ -21,12 +20,13 @@ import {
 } from "../store/goalsSlice";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { operatorGoalIngredients } from "../utils";
-import OperatorGoalCard from "./OperatorGoalCard";
+import OperatorGoalCard, { ITEM_HEIGHT } from "./OperatorGoalCard";
 import PlannerContext from "./PlannerContext";
 
 const useStyles = makeStyles({
   goalList: {
     padding: 0,
+    margin: 0,
   },
   droppable: {
     "& > li": {
@@ -106,9 +106,8 @@ const GoalList: React.VFC = () => {
                           onToggleFocus={handleToggleFocus}
                           onCompleteGoal={handleCompleteGoal}
                           onDeleteGoal={handleDeleteGoal}
-                          {...draggableProvided.dragHandleProps}
-                          {...draggableProvided.draggableProps}
-                          ref={draggableProvided.innerRef}
+                          draggableProvided={draggableProvided}
+                          style={{ height: ITEM_HEIGHT }}
                         />
                       )}
                     </Draggable>
@@ -126,8 +125,8 @@ const GoalList: React.VFC = () => {
           droppableId="other-goal-list"
           mode="virtual"
           renderClone={(
-            provided: DraggableProvided,
-            snapshot: DraggableStateSnapshot,
+            draggableProvided: DraggableProvided,
+            _,
             rubric: DraggableRubric
           ) => {
             const { operatorId, focused, goal } = unfocusedGoals[
@@ -141,9 +140,7 @@ const GoalList: React.VFC = () => {
                 onToggleFocus={() => {}}
                 onCompleteGoal={() => {}}
                 onDeleteGoal={() => {}}
-                ref={provided.innerRef}
-                {...provided.dragHandleProps}
-                {...provided.draggableProps}
+                draggableProvided={draggableProvided}
               />
             );
           }}
@@ -154,14 +151,14 @@ const GoalList: React.VFC = () => {
                 <AutoSizer disableHeight>
                   {({ width }) => (
                     <List
-                      autoHeight
                       width={width}
+                      autoHeight
                       height={height}
+                      isScrolling={isScrolling}
                       onScroll={onChildScroll}
                       scrollTop={scrollTop}
-                      isScrolling={isScrolling}
                       rowCount={unfocusedGoals.length}
-                      rowHeight={48}
+                      rowHeight={ITEM_HEIGHT}
                       ref={(ref) => {
                         if (ref) {
                           // eslint-disable-next-line react/no-find-dom-node
@@ -172,16 +169,12 @@ const GoalList: React.VFC = () => {
                         }
                       }}
                       rowRenderer={({ index, style }) => {
-                        const { focused, goal, operatorId } = unfocusedGoals[
-                          index
-                        ];
+                        const opGoal = unfocusedGoals[index];
+                        const { focused, goal, operatorId } = opGoal;
                         const key = `${operatorId}-g${goal}`;
                         return (
                           <Draggable draggableId={key} key={key} index={index}>
-                            {(
-                              provided: DraggableProvided,
-                              snapshot: DraggableStateSnapshot
-                            ) => (
+                            {(draggableProvided: DraggableProvided) => (
                               <OperatorGoalCard
                                 focused={focused}
                                 goal={goal}
@@ -190,9 +183,7 @@ const GoalList: React.VFC = () => {
                                 onDeleteGoal={handleDeleteGoal}
                                 onToggleFocus={handleToggleFocus}
                                 style={style}
-                                ref={provided.innerRef}
-                                {...provided.dragHandleProps}
-                                {...provided.draggableProps}
+                                draggableProvided={draggableProvided}
                               />
                             )}
                           </Draggable>

@@ -10,15 +10,19 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
+import { DraggableProvided } from "react-beautiful-dnd";
 import { OperatorGoalState, OperatorGoalType } from "../store/goalsSlice";
 import PlannerContext from "./PlannerContext";
 import { operatorImageSrc } from "../images";
 import OperatorGoalIconography from "./OperatorGoalIconography";
 
+const AVATAR_SIZE = 32;
+export const ITEM_HEIGHT = AVATAR_SIZE + 8 + 8 + 8; // padding-top/-bottom + margin-bottom
+
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: 32,
-    height: 32,
+    width: AVATAR_SIZE,
+    height: AVATAR_SIZE,
     marginRight: theme.spacing(1),
   },
   paper: {
@@ -26,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     "list-style-type": "none",
-    marginBottom: theme.spacing(1),
   },
   nameAndGoal: {
     flexGrow: 1,
@@ -53,16 +56,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const combineStyle = (
+  provided?: DraggableProvided,
+  style?: React.CSSProperties
+) => {
+  return {
+    ...(provided?.draggableProps.style ?? {}),
+    ...(style ?? {}),
+  };
+};
+
 export type OperatorGoalCardProps = OperatorGoalState & {
   onToggleFocus: (opGoal: OperatorGoalState) => void;
   onCompleteGoal: (opGoal: OperatorGoalState) => void;
   onDeleteGoal: (opGoal: OperatorGoalState) => void;
+  style?: React.CSSProperties;
+  draggableProvided?: DraggableProvided;
 };
 
-const OperatorGoalCard = React.forwardRef<
-  HTMLElement,
-  OperatorGoalCardProps & React.HTMLAttributes<HTMLElement>
->((props, ref) => {
+const OperatorGoalCard: React.VFC<OperatorGoalCardProps> = (props) => {
   const {
     operatorId,
     goal,
@@ -70,7 +82,8 @@ const OperatorGoalCard = React.forwardRef<
     onToggleFocus,
     onCompleteGoal,
     onDeleteGoal,
-    ...rest
+    style,
+    draggableProvided,
   } = props;
   const { operatorMap } = useContext(PlannerContext);
   const operator = operatorMap[operatorId];
@@ -92,54 +105,57 @@ const OperatorGoalCard = React.forwardRef<
   const alterName = operator.name.split(" the ")[1];
 
   return (
-    <Paper
-      elevation={3}
-      component="li"
-      className={classes.paper}
-      ref={ref}
-      {...rest}
+    <div
+      className={classes.root}
+      ref={draggableProvided?.innerRef}
+      {...draggableProvided?.dragHandleProps}
+      {...draggableProvided?.draggableProps}
+      style={combineStyle(draggableProvided, style)}
     >
-      <Avatar
-        alt=""
-        src={operatorImage}
-        className={classes.avatar}
-        aria-hidden="true"
-      />
-      <span className={classes.nameAndGoal}>
-        <Typography component="span" variant="h6" className={classes.name}>
-          {alterName ?? operator.name}
-        </Typography>
-        <OperatorGoalIconography operatorId={operatorId} goal={goal} />
-        <Typography component="span" variant="body1">
-          {OperatorGoalType[goal]}
-        </Typography>
-      </span>
-      <IconButton
-        aria-label={`${focused ? "Unfocus" : "Focus"} this goal`}
-        size="small"
-        onClick={() => onToggleFocus({ operatorId, goal, focused })}
-      >
-        {focused ? (
-          <FocusIcon className={classes.focusedIcon} />
-        ) : (
-          <UnfocusIcon />
-        )}
-      </IconButton>
-      <IconButton
-        aria-label="Complete this goal"
-        size="small"
-        onClick={() => onCompleteGoal({ operatorId, goal, focused })}
-      >
-        <CompleteGoalIcon className={classes.completeIcon} />
-      </IconButton>
-      <IconButton
-        aria-label="Delete this goal"
-        size="small"
-        onClick={() => onDeleteGoal({ operatorId, goal, focused })}
-      >
-        <DeleteGoalIcon className={classes.deleteIcon} />
-      </IconButton>
-    </Paper>
+      {/* for some reason, <Paper> won't take style={style} so we have to use <Box clone> */}
+      <Paper elevation={3} className={classes.paper}>
+        <Avatar
+          alt=""
+          src={operatorImage}
+          className={classes.avatar}
+          aria-hidden="true"
+        />
+        <span className={classes.nameAndGoal}>
+          <Typography component="span" variant="h6" className={classes.name}>
+            {alterName ?? operator.name}
+          </Typography>
+          <OperatorGoalIconography operatorId={operatorId} goal={goal} />
+          <Typography component="span" variant="body1">
+            {OperatorGoalType[goal]}
+          </Typography>
+        </span>
+        <IconButton
+          aria-label={`${focused ? "Unfocus" : "Focus"} this goal`}
+          size="small"
+          onClick={() => onToggleFocus({ operatorId, goal, focused })}
+        >
+          {focused ? (
+            <FocusIcon className={classes.focusedIcon} />
+          ) : (
+            <UnfocusIcon />
+          )}
+        </IconButton>
+        <IconButton
+          aria-label="Complete this goal"
+          size="small"
+          onClick={() => onCompleteGoal({ operatorId, goal, focused })}
+        >
+          <CompleteGoalIcon className={classes.completeIcon} />
+        </IconButton>
+        <IconButton
+          aria-label="Delete this goal"
+          size="small"
+          onClick={() => onDeleteGoal({ operatorId, goal, focused })}
+        >
+          <DeleteGoalIcon className={classes.deleteIcon} />
+        </IconButton>
+      </Paper>
+    </div>
   );
-});
+};
 export default OperatorGoalCard;
