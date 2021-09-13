@@ -1,11 +1,17 @@
-import { Box, makeStyles } from "@material-ui/core";
 import React, { useContext } from "react";
+import ReactDOM from "react-dom";
+import { Box, makeStyles } from "@material-ui/core";
 import {
   DragDropContext,
   Draggable,
+  DraggableProvided,
+  DraggableRubric,
+  DraggableStateSnapshot,
   Droppable,
+  DroppableProvided,
   DropResult,
 } from "react-beautiful-dnd";
+import { AutoSizer, List, WindowScroller } from "react-virtualized";
 import {
   completeGoal,
   deleteGoal,
@@ -75,56 +81,130 @@ const GoalList: React.VFC = () => {
     }
   };
 
-  const renderList = (
-    list: (OperatorGoalState & { originalIndex: number })[],
-    isFocusedList: boolean
-  ) => (
-    <>
-      <h3>{isFocusedList ? "Focused" : "Other"} goals</h3>
-      <Droppable droppableId={`${isFocusedList ? "focused-" : ""}goal-list`}>
-        {(droppableProvided) => (
-          <div
-            {...droppableProvided.droppableProps}
-            ref={droppableProvided.innerRef}
-            className={classes.droppable}
-          >
-            <ol className={classes.goalList}>
-              {list.map((opGoal, i) => {
-                const { operatorId, goal, focused } = opGoal;
-                const key = `${
-                  isFocusedList ? "focused-" : ""
-                }${operatorId}-g${goal}`;
-                return (
-                  <Draggable key={key} draggableId={key} index={i}>
-                    {(draggableProvided) => (
-                      <OperatorGoalCard
-                        operatorId={operatorId}
-                        goal={goal}
-                        focused={focused}
-                        onToggleFocus={handleToggleFocus}
-                        onCompleteGoal={handleCompleteGoal}
-                        onDeleteGoal={handleDeleteGoal}
-                        {...draggableProvided.dragHandleProps}
-                        {...draggableProvided.draggableProps}
-                        ref={draggableProvided.innerRef}
-                      />
-                    )}
-                  </Draggable>
-                );
-              })}
-            </ol>
-            {droppableProvided.placeholder}
-          </div>
-        )}
-      </Droppable>
-    </>
-  );
-
   return (
     <Box component="section" pl={2}>
       <DragDropContext onDragEnd={handleDragEnd}>
-        {renderList(focusedGoals, true)}
-        {renderList(unfocusedGoals, false)}
+        <h3>Focused goals</h3>
+        <Droppable droppableId="focused-goal-list">
+          {(droppableProvided) => (
+            <div
+              {...droppableProvided.droppableProps}
+              ref={droppableProvided.innerRef}
+              className={classes.droppable}
+            >
+              <ol className={classes.goalList}>
+                {focusedGoals.map((opGoal, i) => {
+                  const { operatorId, goal, focused } = opGoal;
+                  const key = `focused-${operatorId}-g${goal}`;
+                  return (
+                    <Draggable key={key} draggableId={key} index={i}>
+                      {(draggableProvided) => (
+                        <OperatorGoalCard
+                          operatorId={operatorId}
+                          goal={goal}
+                          focused={focused}
+                          onToggleFocus={handleToggleFocus}
+                          onCompleteGoal={handleCompleteGoal}
+                          onDeleteGoal={handleDeleteGoal}
+                          {...draggableProvided.dragHandleProps}
+                          {...draggableProvided.draggableProps}
+                          ref={draggableProvided.innerRef}
+                        />
+                      )}
+                    </Draggable>
+                  );
+                })}
+              </ol>
+              {droppableProvided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <h3>Other goals</h3>
+        <Droppable
+          droppableId="other-goal-list"
+          mode="virtual"
+          renderClone={(
+            provided: DraggableProvided,
+            snapshot: DraggableStateSnapshot,
+            rubric: DraggableRubric
+          ) => {
+            const { operatorId, focused, goal } = unfocusedGoals[
+              rubric.source.index
+            ];
+            return (
+              <OperatorGoalCard
+                operatorId={operatorId}
+                goal={goal}
+                focused={focused}
+                onToggleFocus={() => {}}
+                onCompleteGoal={() => {}}
+                onDeleteGoal={() => {}}
+                ref={provided.innerRef}
+                {...provided.dragHandleProps}
+                {...provided.draggableProps}
+              />
+            );
+          }}
+        >
+          {(droppableProvided: DroppableProvided) => (
+            <WindowScroller>
+              {({ height, isScrolling, onChildScroll, scrollTop }) => (
+                <AutoSizer disableHeight>
+                  {({ width }) => (
+                    <List
+                      autoHeight
+                      width={width}
+                      height={height}
+                      onScroll={onChildScroll}
+                      scrollTop={scrollTop}
+                      isScrolling={isScrolling}
+                      rowCount={unfocusedGoals.length}
+                      rowHeight={48}
+                      ref={(ref) => {
+                        if (ref) {
+                          // eslint-disable-next-line react/no-find-dom-node
+                          const listRef = ReactDOM.findDOMNode(ref);
+                          if (listRef instanceof HTMLElement) {
+                            droppableProvided.innerRef(listRef);
+                          }
+                        }
+                      }}
+                      rowRenderer={({ index, style }) => {
+                        const { focused, goal, operatorId } = unfocusedGoals[
+                          index
+                        ];
+                        const key = `${operatorId}-g${goal}`;
+                        return (
+                          <Draggable draggableId={key} key={key} index={index}>
+                            {(
+                              provided: DraggableProvided,
+                              snapshot: DraggableStateSnapshot
+                            ) => (
+                              <OperatorGoalCard
+                                focused={focused}
+                                goal={goal}
+                                operatorId={operatorId}
+                                onCompleteGoal={handleCompleteGoal}
+                                onDeleteGoal={handleDeleteGoal}
+                                onToggleFocus={handleToggleFocus}
+                                style={style}
+                                ref={provided.innerRef}
+                                {...provided.dragHandleProps}
+                                {...provided.draggableProps}
+                              />
+                            )}
+                          </Draggable>
+                        );
+                      }}
+                    />
+                  )}
+                </AutoSizer>
+              )}
+            </WindowScroller>
+          )}
+        </Droppable>
       </DragDropContext>
     </Box>
   );
