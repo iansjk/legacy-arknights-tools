@@ -68,6 +68,15 @@ function itemImagePublicId(filename: string): string | null {
   return `arknights/items/${match.groups.itemSlug}`;
 }
 
+const moduleImageFilenameRegex = /^(?<equipId>uniequip_\d+_[^.]+)\.png$/;
+function moduleImagePublicId(filename: string): string | null {
+  const match = filename.match(moduleImageFilenameRegex);
+  if (!match?.groups?.equipId) {
+    return null;
+  }
+  return `arknights/equip/${match.groups.equipId}`;
+}
+
 interface CloudinaryResponse {
   next_cursor: string;
   resources: CloudinaryResource[];
@@ -132,6 +141,10 @@ interface CloudinaryResource {
     sourceDir: path.join(__dirname, "items"),
     publicIdFn: itemImagePublicId,
   };
+  const moduleImageTask = {
+    sourceDir: path.join(ACESHIP_BASEDIR, "img", "equip", "icon"),
+    publicIdFn: moduleImagePublicId,
+  };
 
   let newlyUploadedCount = 0;
   const tasks = [
@@ -139,6 +152,7 @@ interface CloudinaryResource {
     summonImageTask,
     skillIconTask,
     itemTask,
+    moduleImageTask,
   ].map(async (task) => {
     const files = await fs.readdir(task.sourceDir);
     return Promise.all(
