@@ -33,9 +33,9 @@ function skillIconPublicId(filename: string): string | null {
   return `arknights/skills/${match.groups.skillId}`;
 }
 
-const avatarFilenameRegex = /(?<internalName>char_\d+_[a-z0-9]+)(?:_(?<eliteLevel>[12])\+?)?\.png/;
+const operatorAvatarFilenameRegex = /(?<internalName>char_\d+_[a-z0-9]+)(?:_(?<eliteLevel>[12])\+?)?\.png/;
 function operatorImagePublicId(filename: string): string | null {
-  const match = filename.match(avatarFilenameRegex);
+  const match = filename.match(operatorAvatarFilenameRegex);
   if (
     !match?.groups?.internalName ||
     !getOperatorName(match.groups.internalName)
@@ -44,10 +44,19 @@ function operatorImagePublicId(filename: string): string | null {
   }
   const { eliteLevel } = match.groups;
   const operatorName = getOperatorName(match.groups.internalName);
-  const itemId = slugify(
+  const operatorSlug = slugify(
     eliteLevel ? `${operatorName} elite ${eliteLevel}` : `${operatorName}`
   );
-  return `arknights/operators/${itemId}`;
+  return `arknights/operators/${operatorSlug}`;
+}
+
+const summonAvatarFilenameRegex = /^(?<summonId>token_\d+_[^.]+)\.png$/;
+function summonImagePublicId(filename: string): string | null {
+  const match = filename.match(summonAvatarFilenameRegex);
+  if (!match?.groups?.summonId) {
+    return null;
+  }
+  return `arknights/summons/${match.groups.summonId}`;
 }
 
 const itemImageFilenameRegex = /(?<itemSlug>.*)\.png/;
@@ -111,6 +120,10 @@ interface CloudinaryResource {
     sourceDir: path.join(ACESHIP_BASEDIR, "img", "avatars"),
     publicIdFn: operatorImagePublicId,
   };
+  const summonImageTask = {
+    sourceDir: path.join(ACESHIP_BASEDIR, "img", "avatars"),
+    publicIdFn: summonImagePublicId,
+  };
   const skillIconTask = {
     sourceDir: path.join(ACESHIP_BASEDIR, "img", "skills"),
     publicIdFn: skillIconPublicId,
@@ -121,26 +134,29 @@ interface CloudinaryResource {
   };
 
   let newlyUploadedCount = 0;
-  const tasks = [operatorImageTask, skillIconTask, itemTask].map(
-    async (task) => {
-      const files = await fs.readdir(task.sourceDir);
-      return Promise.all(
-        files.map(async (filename) => {
-          const publicId = task.publicIdFn(filename);
-          if (publicId && !existingPublicIds.has(publicId)) {
-            console.info(
-              `Image "${publicId}" not found in Cloudinary, uploading...`
-            );
-            await cloudinary.uploader.upload(
-              path.join(task.sourceDir, filename),
-              { public_id: publicId }
-            );
-            newlyUploadedCount += 1;
-          }
-        })
-      );
-    }
-  );
+  const tasks = [
+    operatorImageTask,
+    summonImageTask,
+    skillIconTask,
+    itemTask,
+  ].map(async (task) => {
+    const files = await fs.readdir(task.sourceDir);
+    return Promise.all(
+      files.map(async (filename) => {
+        const publicId = task.publicIdFn(filename);
+        if (publicId && !existingPublicIds.has(publicId)) {
+          console.info(
+            `Image "${publicId}" not found in Cloudinary, uploading...`
+          );
+          await cloudinary.uploader.upload(
+            path.join(task.sourceDir, filename),
+            { public_id: publicId }
+          );
+          newlyUploadedCount += 1;
+        }
+      })
+    );
+  });
   await Promise.all(tasks);
   console.info(`Uploaded ${newlyUploadedCount} new files, done.`);
 })();
