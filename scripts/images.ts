@@ -23,7 +23,8 @@ cloudinary.config({
 
 const ACESHIP_BASEDIR = path.join(__dirname, "aceship");
 
-const skillIconFilenameRegex = /skill_icon_(?<skillId>[^.]+)\.png/;
+// exclude "sktok_..." skill icons, as these are for NPCs/summons/traps
+const skillIconFilenameRegex = /skill_icon_(?<skillId>sk((chr)|(com))[^.]+)\.png/;
 function skillIconPublicId(filename: string): string | null {
   const match = filename.match(skillIconFilenameRegex);
   if (!match?.groups?.skillId) {
@@ -57,6 +58,7 @@ function itemImagePublicId(filename: string): string | null {
   }
   return `arknights/items/${match.groups.itemSlug}`;
 }
+
 interface CloudinaryResponse {
   next_cursor: string;
   resources: CloudinaryResource[];
