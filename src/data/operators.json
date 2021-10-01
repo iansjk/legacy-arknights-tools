@@ -46171,7 +46171,7 @@
       {
         "skillId": "skchr_excu_1",
         "iconId": null,
-        "skillName": "Muzzle’s Elegy",
+        "skillName": "Muzzle's Elegy",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -50418,7 +50418,7 @@
   {
     "id": "char_304_zebra",
     "name": "Heavyrain",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Defender",
     "skillLevels": [
@@ -50631,7 +50631,7 @@
       {
         "skillId": "skchr_zebra_1",
         "iconId": null,
-        "skillName": "应急迷彩",
+        "skillName": "Emergency Camouflage",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -50725,7 +50725,7 @@
       {
         "skillId": "skchr_zebra_2",
         "iconId": null,
-        "skillName": "群体迷彩",
+        "skillName": "Group Camouflage",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -55360,7 +55360,7 @@
       {
         "skillId": "skchr_iris_2",
         "iconId": null,
-        "skillName": "Dreamland’s Cradle",
+        "skillName": "Dreamland's Cradle",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -61113,7 +61113,7 @@
   {
     "id": "char_363_toddi",
     "name": "Toddifons",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Sniper",
     "skillLevels": [
@@ -61326,7 +61326,7 @@
       {
         "skillId": "skchr_toddi_1",
         "iconId": null,
-        "skillName": "信号矢",
+        "skillName": "Signal Arrow",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -61420,7 +61420,7 @@
       {
         "skillId": "skchr_toddi_2",
         "iconId": null,
-        "skillName": "便携破城矢",
+        "skillName": "Portable Fortcracker Arrows",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -73423,7 +73423,7 @@
   {
     "id": "char_456_ash",
     "name": "Ash",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 6,
     "class": "Sniper",
     "skillLevels": [
@@ -73650,7 +73650,7 @@
       {
         "skillId": "skchr_ash_1",
         "iconId": null,
-        "skillName": "支援射击",
+        "skillName": "Supporting Fire",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -73744,7 +73744,7 @@
       {
         "skillId": "skchr_ash_2",
         "iconId": null,
-        "skillName": "突击战术",
+        "skillName": "Assault Tactics",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -73838,7 +73838,7 @@
       {
         "skillId": "skchr_ash_3",
         "iconId": null,
-        "skillName": "攻坚榴弹",
+        "skillName": "Breaching Rounds",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -73934,7 +73934,7 @@
   {
     "id": "char_457_blitz",
     "name": "Blitz",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Defender",
     "skillLevels": [
@@ -74147,7 +74147,7 @@
       {
         "skillId": "skchr_blitz_1",
         "iconId": null,
-        "skillName": "闪光护盾",
+        "skillName": "Flash Shield",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -74241,7 +74241,7 @@
       {
         "skillId": "skchr_blitz_2",
         "iconId": null,
-        "skillName": "突破防线",
+        "skillName": "Shield Bash",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -74337,7 +74337,7 @@
   {
     "id": "char_458_rfrost",
     "name": "Frost",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Specialist",
     "skillLevels": [
@@ -74550,7 +74550,7 @@
       {
         "skillId": "skchr_rfrost_1",
         "iconId": null,
-        "skillName": "陷阱部署",
+        "skillName": "Trap Deployment",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -74644,7 +74644,7 @@
       {
         "skillId": "skchr_rfrost_2",
         "iconId": null,
-        "skillName": "击倒猎物",
+        "skillName": "Incapacitated Prey",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -74740,7 +74740,7 @@
   {
     "id": "char_459_tachak",
     "name": "Tachanka",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Guard",
     "skillLevels": [
@@ -74953,7 +74953,7 @@
       {
         "skillId": "skchr_tachak_1",
         "iconId": null,
-        "skillName": "燃烧榴弹",
+        "skillName": "Incendiary Grenade",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -75047,7 +75047,7 @@
       {
         "skillId": "skchr_tachak_2",
         "iconId": null,
-        "skillName": "倾泻弹药",
+        "skillName": "Spray and Pray",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -75539,7 +75539,7 @@
   {
     "id": "char_472_pasngr",
     "name": "Passenger",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 6,
     "class": "Caster",
     "skillLevels": [
@@ -75766,7 +75766,7 @@
       {
         "skillId": "skchr_pasngr_1",
         "iconId": null,
-        "skillName": "电能之触",
+        "skillName": "Touch of Static",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -75860,7 +75860,7 @@
       {
         "skillId": "skchr_pasngr_2",
         "iconId": null,
-        "skillName": "聚焦指令",
+        "skillName": "Focus Command",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -75954,7 +75954,7 @@
       {
         "skillId": "skchr_pasngr_3",
         "iconId": null,
-        "skillName": "辉煌裂片",
+        "skillName": "Glorious Shards",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -76041,6 +76041,407 @@
             ],
             "goalName": "Skill 3 Mastery 3",
             "goalShortName": "S3 M3",
+            "goalCategory": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "char_473_mberry",
+    "name": "Mulberry",
+    "isCnOnly": true,
+    "rarity": 5,
+    "class": "Medic",
+    "skillLevels": [
+      {
+        "skillLevel": 2,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 4,
+            "sortId": 80003
+          }
+        ],
+        "goalName": "Skill Level 1 → 2",
+        "goalShortName": "Skill Level 2",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 3,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 4,
+            "sortId": 80003
+          },
+          {
+            "id": "30011",
+            "name": "Orirock",
+            "tier": 1,
+            "quantity": 10,
+            "sortId": 100015
+          }
+        ],
+        "goalName": "Skill Level 2 → 3",
+        "goalShortName": "Skill Level 3",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 4,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 6,
+            "sortId": 80002
+          },
+          {
+            "id": "30022",
+            "name": "Sugar",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100026
+          }
+        ],
+        "goalName": "Skill Level 3 → 4",
+        "goalShortName": "Skill Level 4",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 5,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 6,
+            "sortId": 80002
+          },
+          {
+            "id": "30032",
+            "name": "Polyester",
+            "tier": 2,
+            "quantity": 5,
+            "sortId": 100022
+          }
+        ],
+        "goalName": "Skill Level 4 → 5",
+        "goalShortName": "Skill Level 5",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 6,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 6,
+            "sortId": 80002
+          },
+          {
+            "id": "30093",
+            "name": "Grindstone",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 100009
+          }
+        ],
+        "goalName": "Skill Level 5 → 6",
+        "goalShortName": "Skill Level 6",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 7,
+        "ingredients": [
+          {
+            "id": "3303",
+            "name": "Skill Summary - 3",
+            "tier": 4,
+            "quantity": 6,
+            "sortId": 80001
+          },
+          {
+            "id": "30103",
+            "name": "RMA70-12",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 100011
+          },
+          {
+            "id": "31023",
+            "name": "Incandescent Alloy",
+            "tier": 3,
+            "quantity": 2,
+            "sortId": 100039
+          }
+        ],
+        "goalName": "Skill Level 6 → 7",
+        "goalShortName": "Skill Level 7",
+        "goalCategory": 2
+      }
+    ],
+    "elite": [
+      {
+        "eliteLevel": 1,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 20000,
+            "sortId": 10004
+          },
+          {
+            "id": "3261",
+            "name": "Medic Chip",
+            "tier": 3,
+            "quantity": 4,
+            "sortId": 400023
+          },
+          {
+            "id": "30062",
+            "name": "Device",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100018
+          },
+          {
+            "id": "30032",
+            "name": "Polyester",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100022
+          }
+        ],
+        "goalName": "Elite 1",
+        "goalCategory": 0
+      },
+      {
+        "eliteLevel": 2,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 120000,
+            "sortId": 10004
+          },
+          {
+            "id": "3263",
+            "name": "Medic Dualchip",
+            "tier": 5,
+            "quantity": 3,
+            "sortId": 400007
+          },
+          {
+            "id": "30014",
+            "name": "Orirock Concentration",
+            "tier": 4,
+            "quantity": 9,
+            "sortId": 100012
+          },
+          {
+            "id": "31043",
+            "tier": 3,
+            "quantity": 12,
+            "sortId": 100044
+          }
+        ],
+        "goalName": "Elite 2",
+        "goalCategory": 0
+      }
+    ],
+    "skills": [
+      {
+        "skillId": "skchr_mberry_1",
+        "iconId": null,
+        "skillName": "治愈云雾",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 5,
+                "sortId": 80001
+              },
+              {
+                "id": "30094",
+                "name": "Grindstone Pentahydrate",
+                "tier": 4,
+                "quantity": 3,
+                "sortId": 100008
+              },
+              {
+                "id": "30073",
+                "name": "Loxic Kohl",
+                "tier": 3,
+                "quantity": 4,
+                "sortId": 100005
+              }
+            ],
+            "goalName": "Skill 1 Mastery 1",
+            "goalShortName": "S1 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 80001
+              },
+              {
+                "id": "30044",
+                "name": "Oriron Block",
+                "tier": 4,
+                "quantity": 3,
+                "sortId": 100028
+              },
+              {
+                "id": "31024",
+                "name": "Incandescent Alloy Block",
+                "tier": 4,
+                "quantity": 5,
+                "sortId": 100038
+              }
+            ],
+            "goalName": "Skill 1 Mastery 2",
+            "goalShortName": "S1 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 10,
+                "sortId": 80001
+              },
+              {
+                "id": "30115",
+                "name": "Polymerization Preparation",
+                "tier": 5,
+                "quantity": 4,
+                "sortId": 100003
+              },
+              {
+                "id": "30074",
+                "name": "White Horse Kohl",
+                "tier": 4,
+                "quantity": 5,
+                "sortId": 100004
+              }
+            ],
+            "goalName": "Skill 1 Mastery 3",
+            "goalShortName": "S1 M3",
+            "goalCategory": 1
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_mberry_2",
+        "iconId": null,
+        "skillName": "安全区域",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 5,
+                "sortId": 80001
+              },
+              {
+                "id": "30104",
+                "name": "RMA70-24",
+                "tier": 4,
+                "quantity": 3,
+                "sortId": 100010
+              },
+              {
+                "id": "30083",
+                "name": "Manganese Ore",
+                "tier": 3,
+                "quantity": 2,
+                "sortId": 100007
+              }
+            ],
+            "goalName": "Skill 2 Mastery 1",
+            "goalShortName": "S2 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 80001
+              },
+              {
+                "id": "30054",
+                "name": "Keton Colloid",
+                "tier": 4,
+                "quantity": 3,
+                "sortId": 100032
+              },
+              {
+                "id": "31044",
+                "tier": 4,
+                "quantity": 5,
+                "sortId": 100043
+              }
+            ],
+            "goalName": "Skill 2 Mastery 2",
+            "goalShortName": "S2 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 10,
+                "sortId": 80001
+              },
+              {
+                "id": "30135",
+                "name": "D32 Steel",
+                "tier": 5,
+                "quantity": 4,
+                "sortId": 100001
+              },
+              {
+                "id": "30104",
+                "name": "RMA70-24",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100010
+              }
+            ],
+            "goalName": "Skill 2 Mastery 3",
+            "goalShortName": "S2 M3",
             "goalCategory": 1
           }
         ]
@@ -77354,6 +77755,906 @@
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100036
+              }
+            ],
+            "goalName": "Skill 2 Mastery 3",
+            "goalShortName": "S2 M3",
+            "goalCategory": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "char_479_sleach",
+    "name": "Saileach",
+    "isCnOnly": true,
+    "rarity": 6,
+    "class": "Vanguard",
+    "skillLevels": [
+      {
+        "skillLevel": 2,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 5,
+            "sortId": 80003
+          }
+        ],
+        "goalName": "Skill Level 1 → 2",
+        "goalShortName": "Skill Level 2",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 3,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 5,
+            "sortId": 80003
+          },
+          {
+            "id": "30051",
+            "name": "Diketon",
+            "tier": 1,
+            "quantity": 6,
+            "sortId": 100035
+          },
+          {
+            "id": "30011",
+            "name": "Orirock",
+            "tier": 1,
+            "quantity": 4,
+            "sortId": 100015
+          }
+        ],
+        "goalName": "Skill Level 2 → 3",
+        "goalShortName": "Skill Level 3",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 4,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 8,
+            "sortId": 80002
+          },
+          {
+            "id": "30062",
+            "name": "Device",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100018
+          }
+        ],
+        "goalName": "Skill Level 3 → 4",
+        "goalShortName": "Skill Level 4",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 5,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 8,
+            "sortId": 80002
+          },
+          {
+            "id": "30012",
+            "name": "Orirock Cube",
+            "tier": 2,
+            "quantity": 5,
+            "sortId": 100014
+          },
+          {
+            "id": "30062",
+            "name": "Device",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100018
+          }
+        ],
+        "goalName": "Skill Level 4 → 5",
+        "goalShortName": "Skill Level 5",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 6,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 8,
+            "sortId": 80002
+          },
+          {
+            "id": "30073",
+            "name": "Loxic Kohl",
+            "tier": 3,
+            "quantity": 7,
+            "sortId": 100005
+          }
+        ],
+        "goalName": "Skill Level 5 → 6",
+        "goalShortName": "Skill Level 6",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 7,
+        "ingredients": [
+          {
+            "id": "3303",
+            "name": "Skill Summary - 3",
+            "tier": 4,
+            "quantity": 8,
+            "sortId": 80001
+          },
+          {
+            "id": "30083",
+            "name": "Manganese Ore",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 100007
+          },
+          {
+            "id": "31043",
+            "tier": 3,
+            "quantity": 5,
+            "sortId": 100044
+          }
+        ],
+        "goalName": "Skill Level 6 → 7",
+        "goalShortName": "Skill Level 7",
+        "goalCategory": 2
+      }
+    ],
+    "elite": [
+      {
+        "eliteLevel": 1,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 30000,
+            "sortId": 10004
+          },
+          {
+            "id": "3211",
+            "name": "Vanguard Chip",
+            "tier": 3,
+            "quantity": 5,
+            "sortId": 400018
+          },
+          {
+            "id": "30042",
+            "name": "Oriron",
+            "tier": 2,
+            "quantity": 7,
+            "sortId": 100030
+          },
+          {
+            "id": "30032",
+            "name": "Polyester",
+            "tier": 2,
+            "quantity": 4,
+            "sortId": 100022
+          }
+        ],
+        "goalName": "Elite 1",
+        "goalCategory": 0
+      },
+      {
+        "eliteLevel": 2,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 180000,
+            "sortId": 10004
+          },
+          {
+            "id": "3213",
+            "name": "Vanguard Dualchip",
+            "tier": 5,
+            "quantity": 4,
+            "sortId": 400002
+          },
+          {
+            "id": "30145",
+            "name": "Crystalline Electroassembly",
+            "tier": 5,
+            "quantity": 4,
+            "sortId": 100040
+          },
+          {
+            "id": "31044",
+            "tier": 4,
+            "quantity": 6,
+            "sortId": 100043
+          }
+        ],
+        "goalName": "Elite 2",
+        "goalCategory": 0
+      }
+    ],
+    "skills": [
+      {
+        "skillId": "skcom_assist_cost[3]",
+        "iconId": null,
+        "skillName": "支援号令·γ型",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 8,
+                "sortId": 80001
+              },
+              {
+                "id": "30014",
+                "name": "Orirock Concentration",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100012
+              },
+              {
+                "id": "30093",
+                "name": "Grindstone",
+                "tier": 3,
+                "quantity": 7,
+                "sortId": 100009
+              }
+            ],
+            "goalName": "Skill 1 Mastery 1",
+            "goalShortName": "S1 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 12,
+                "sortId": 80001
+              },
+              {
+                "id": "30104",
+                "name": "RMA70-24",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100010
+              },
+              {
+                "id": "30084",
+                "name": "Manganese Trihydrate",
+                "tier": 4,
+                "quantity": 7,
+                "sortId": 100006
+              }
+            ],
+            "goalName": "Skill 1 Mastery 2",
+            "goalShortName": "S1 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 15,
+                "sortId": 80001
+              },
+              {
+                "id": "30145",
+                "name": "Crystalline Electroassembly",
+                "tier": 5,
+                "quantity": 6,
+                "sortId": 100040
+              },
+              {
+                "id": "31044",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100043
+              }
+            ],
+            "goalName": "Skill 1 Mastery 3",
+            "goalShortName": "S1 M3",
+            "goalCategory": 1
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_sleach_2",
+        "iconId": null,
+        "skillName": "信仰传承",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 8,
+                "sortId": 80001
+              },
+              {
+                "id": "31014",
+                "name": "Polymerized Gel",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100036
+              },
+              {
+                "id": "30013",
+                "name": "Orirock Cluster",
+                "tier": 3,
+                "quantity": 11,
+                "sortId": 100013
+              }
+            ],
+            "goalName": "Skill 2 Mastery 1",
+            "goalShortName": "S2 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 12,
+                "sortId": 80001
+              },
+              {
+                "id": "31034",
+                "name": "Crystalline Circuit",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100041
+              },
+              {
+                "id": "31054",
+                "tier": 4,
+                "quantity": 8,
+                "sortId": 100045
+              }
+            ],
+            "goalName": "Skill 2 Mastery 2",
+            "goalShortName": "S2 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 15,
+                "sortId": 80001
+              },
+              {
+                "id": "30115",
+                "name": "Polymerization Preparation",
+                "tier": 5,
+                "quantity": 6,
+                "sortId": 100003
+              },
+              {
+                "id": "31014",
+                "name": "Polymerized Gel",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 100036
+              }
+            ],
+            "goalName": "Skill 2 Mastery 3",
+            "goalShortName": "S2 M3",
+            "goalCategory": 1
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_sleach_3",
+        "iconId": null,
+        "skillName": "光辉旗帜",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 8,
+                "sortId": 80001
+              },
+              {
+                "id": "31024",
+                "name": "Incandescent Alloy Block",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100038
+              },
+              {
+                "id": "30103",
+                "name": "RMA70-12",
+                "tier": 3,
+                "quantity": 5,
+                "sortId": 100011
+              }
+            ],
+            "goalName": "Skill 3 Mastery 1",
+            "goalShortName": "S3 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 12,
+                "sortId": 80001
+              },
+              {
+                "id": "31054",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100045
+              },
+              {
+                "id": "30064",
+                "name": "Optimized Device",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 100016
+              }
+            ],
+            "goalName": "Skill 3 Mastery 2",
+            "goalShortName": "S3 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 15,
+                "sortId": 80001
+              },
+              {
+                "id": "30125",
+                "name": "Bipolar Nanoflake",
+                "tier": 5,
+                "quantity": 6,
+                "sortId": 100002
+              },
+              {
+                "id": "31034",
+                "name": "Crystalline Circuit",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 100041
+              }
+            ],
+            "goalName": "Skill 3 Mastery 3",
+            "goalShortName": "S3 M3",
+            "goalCategory": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "char_484_robrta",
+    "name": "Roberta",
+    "isCnOnly": true,
+    "rarity": 4,
+    "class": "Supporter",
+    "skillLevels": [
+      {
+        "skillLevel": 2,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 2,
+            "sortId": 80003
+          }
+        ],
+        "goalName": "Skill Level 1 → 2",
+        "goalShortName": "Skill Level 2",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 3,
+        "ingredients": [
+          {
+            "id": "3301",
+            "name": "Skill Summary - 1",
+            "tier": 2,
+            "quantity": 2,
+            "sortId": 80003
+          },
+          {
+            "id": "30061",
+            "name": "Damaged Device",
+            "tier": 1,
+            "quantity": 2,
+            "sortId": 100019
+          }
+        ],
+        "goalName": "Skill Level 2 → 3",
+        "goalShortName": "Skill Level 3",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 4,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 80002
+          },
+          {
+            "id": "30012",
+            "name": "Orirock Cube",
+            "tier": 2,
+            "quantity": 2,
+            "sortId": 100014
+          }
+        ],
+        "goalName": "Skill Level 3 → 4",
+        "goalShortName": "Skill Level 4",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 5,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 80002
+          },
+          {
+            "id": "30022",
+            "name": "Sugar",
+            "tier": 2,
+            "quantity": 3,
+            "sortId": 100026
+          }
+        ],
+        "goalName": "Skill Level 4 → 5",
+        "goalShortName": "Skill Level 5",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 6,
+        "ingredients": [
+          {
+            "id": "3302",
+            "name": "Skill Summary - 2",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 80002
+          },
+          {
+            "id": "30093",
+            "name": "Grindstone",
+            "tier": 3,
+            "quantity": 2,
+            "sortId": 100009
+          }
+        ],
+        "goalName": "Skill Level 5 → 6",
+        "goalShortName": "Skill Level 6",
+        "goalCategory": 2
+      },
+      {
+        "skillLevel": 7,
+        "ingredients": [
+          {
+            "id": "3303",
+            "name": "Skill Summary - 3",
+            "tier": 4,
+            "quantity": 4,
+            "sortId": 80001
+          },
+          {
+            "id": "30103",
+            "name": "RMA70-12",
+            "tier": 3,
+            "quantity": 2,
+            "sortId": 100011
+          }
+        ],
+        "goalName": "Skill Level 6 → 7",
+        "goalShortName": "Skill Level 7",
+        "goalCategory": 2
+      }
+    ],
+    "elite": [
+      {
+        "eliteLevel": 1,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 15000,
+            "sortId": 10004
+          },
+          {
+            "id": "3271",
+            "name": "Supporter Chip",
+            "tier": 3,
+            "quantity": 3,
+            "sortId": 400024
+          },
+          {
+            "id": "30012",
+            "name": "Orirock Cube",
+            "tier": 2,
+            "quantity": 1,
+            "sortId": 100014
+          },
+          {
+            "id": "30042",
+            "name": "Oriron",
+            "tier": 2,
+            "quantity": 1,
+            "sortId": 100030
+          }
+        ],
+        "goalName": "Elite 1",
+        "goalCategory": 0
+      },
+      {
+        "eliteLevel": 2,
+        "ingredients": [
+          {
+            "id": "4001",
+            "name": "LMD",
+            "tier": 4,
+            "quantity": 60000,
+            "sortId": 10004
+          },
+          {
+            "id": "3272",
+            "name": "Supporter Chip Pack",
+            "tier": 4,
+            "quantity": 5,
+            "sortId": 400016
+          },
+          {
+            "id": "31043",
+            "tier": 3,
+            "quantity": 14,
+            "sortId": 100044
+          },
+          {
+            "id": "30063",
+            "name": "Integrated Device",
+            "tier": 3,
+            "quantity": 7,
+            "sortId": 100017
+          }
+        ],
+        "goalName": "Elite 2",
+        "goalCategory": 0
+      }
+    ],
+    "skills": [
+      {
+        "skillId": "skchr_robrta_1",
+        "iconId": null,
+        "skillName": "叙拉古式上妆",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 80001
+              },
+              {
+                "id": "30094",
+                "name": "Grindstone Pentahydrate",
+                "tier": 4,
+                "quantity": 1,
+                "sortId": 100008
+              },
+              {
+                "id": "30073",
+                "name": "Loxic Kohl",
+                "tier": 3,
+                "quantity": 4,
+                "sortId": 100005
+              }
+            ],
+            "goalName": "Skill 1 Mastery 1",
+            "goalShortName": "S1 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 80001
+              },
+              {
+                "id": "30044",
+                "name": "Oriron Block",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100028
+              },
+              {
+                "id": "31024",
+                "name": "Incandescent Alloy Block",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100038
+              }
+            ],
+            "goalName": "Skill 1 Mastery 2",
+            "goalShortName": "S1 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 80001
+              },
+              {
+                "id": "30125",
+                "name": "Bipolar Nanoflake",
+                "tier": 5,
+                "quantity": 2,
+                "sortId": 100002
+              },
+              {
+                "id": "30084",
+                "name": "Manganese Trihydrate",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100006
+              }
+            ],
+            "goalName": "Skill 1 Mastery 3",
+            "goalShortName": "S1 M3",
+            "goalCategory": 1
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_robrta_2",
+        "iconId": null,
+        "skillName": "全自动造型仪",
+        "masteries": [
+          {
+            "masteryLevel": 1,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 80001
+              },
+              {
+                "id": "30104",
+                "name": "RMA70-24",
+                "tier": 4,
+                "quantity": 1,
+                "sortId": 100010
+              },
+              {
+                "id": "30083",
+                "name": "Manganese Ore",
+                "tier": 3,
+                "quantity": 3,
+                "sortId": 100007
+              }
+            ],
+            "goalName": "Skill 2 Mastery 1",
+            "goalShortName": "S2 M1",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 2,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 4,
+                "sortId": 80001
+              },
+              {
+                "id": "30054",
+                "name": "Keton Colloid",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100032
+              },
+              {
+                "id": "31044",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100043
+              }
+            ],
+            "goalName": "Skill 2 Mastery 2",
+            "goalShortName": "S2 M2",
+            "goalCategory": 1
+          },
+          {
+            "masteryLevel": 3,
+            "ingredients": [
+              {
+                "id": "3303",
+                "name": "Skill Summary - 3",
+                "tier": 4,
+                "quantity": 6,
+                "sortId": 80001
+              },
+              {
+                "id": "30115",
+                "name": "Polymerization Preparation",
+                "tier": 5,
+                "quantity": 2,
+                "sortId": 100003
+              },
+              {
+                "id": "30074",
+                "name": "White Horse Kohl",
+                "tier": 4,
+                "quantity": 2,
+                "sortId": 100004
               }
             ],
             "goalName": "Skill 2 Mastery 3",

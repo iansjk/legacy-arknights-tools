@@ -159,6 +159,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -473,6 +486,17 @@
           "Sniper",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -729,6 +753,17 @@
           "Defense",
           "Melee",
           "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
           "Senior Operator"
         ]
       },
@@ -1247,6 +1282,16 @@
         "rarity": 4,
         "tags": [
           "DPS",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
           "Ranged",
           "Sniper"
         ]
@@ -1908,6 +1953,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -1990,6 +2045,17 @@
         "tags": [
           "Shift",
           "Slow",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -2708,6 +2774,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -2789,6 +2865,17 @@
           "Debuff",
           "Ranged",
           "Supporter",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
           "Senior Operator"
         ]
       },
@@ -2949,6 +3036,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -3297,6 +3395,16 @@
           "Slow",
           "Ranged",
           "Caster"
+        ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
         ]
       },
       {
@@ -3670,6 +3778,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -3848,6 +3969,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -3866,6 +4000,19 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -4099,6 +4246,43 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Crowd-Control",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -4472,6 +4656,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -4671,6 +4868,17 @@
           "Defense",
           "Melee",
           "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
           "Senior Operator"
         ]
       }
@@ -5138,6 +5346,17 @@
           "Specialist",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5541,6 +5760,17 @@
           "Supporter",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5626,6 +5856,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -6590,6 +6831,17 @@
         ]
       },
       {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Gravel",
         "rarity": 4,
         "tags": [
@@ -7078,6 +7330,28 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Melee"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Defense",
       "Melee"
     ],
@@ -7210,6 +7484,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -7832,6 +8117,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -8160,6 +8455,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -8438,6 +8743,16 @@
           "Slow",
           "Ranged",
           "Caster"
+        ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
         ]
       },
       {
@@ -9462,6 +9777,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -9551,6 +9876,16 @@
           "Ranged",
           "Sniper"
         ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
       }
     ],
     "guarantees": [
@@ -9635,6 +9970,28 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Specialist"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Defense",
       "Specialist"
     ],
@@ -9666,6 +10023,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -10586,6 +10954,16 @@
           "Melee",
           "Guard"
         ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
       }
     ],
     "guarantees": [
@@ -10696,6 +11074,28 @@
       }
     ],
     "guarantees": []
+  },
+  {
+    "tags": [
+      "Debuff",
+      "Fast-Redeploy"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
   },
   {
     "tags": [
@@ -11055,6 +11455,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -11074,6 +11487,19 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -11314,6 +11740,44 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Crowd-Control",
+      "Senior Operator",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -11692,6 +12156,19 @@
           "DPS",
           "Ranged",
           "Supporter",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
           "Top Operator",
           "Senior Operator"
         ]
@@ -12143,6 +12620,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -12257,6 +12747,44 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Crowd-Control",
+      "Ranged",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -12443,6 +12971,19 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -12467,6 +13008,44 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Caster",
+      "Crowd-Control",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -12486,6 +13065,31 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Caster",
+      "Support",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -12984,6 +13588,31 @@
   {
     "tags": [
       "AoE",
+      "Crowd-Control",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "AoE",
       "Debuff",
       "Top Operator"
     ],
@@ -12994,6 +13623,56 @@
         "tags": [
           "AoE",
           "Debuff",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "AoE",
+      "Support",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
+          "Ranged",
+          "Caster",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      6
+    ]
+  },
+  {
+    "tags": [
+      "Crowd-Control",
+      "Support",
+      "Top Operator"
+    ],
+    "operators": [
+      {
+        "name": "Mostima",
+        "rarity": 6,
+        "tags": [
+          "AoE",
+          "Support",
+          "Crowd-Control",
           "Ranged",
           "Caster",
           "Top Operator",
@@ -13462,6 +14141,17 @@
           "Specialist",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -13685,6 +14375,29 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Melee",
+      "Senior Operator"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Defense",
       "Melee",
       "Senior Operator"
@@ -13764,6 +14477,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -15162,6 +15886,29 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Senior Operator",
+      "Specialist"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Fast-Redeploy",
       "Senior Operator",
       "Specialist"
@@ -15173,6 +15920,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -15850,6 +16608,29 @@
         "tags": [
           "DPS",
           "Survival",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
+      "Debuff",
+      "Fast-Redeploy",
+      "Senior Operator"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -16889,6 +17670,29 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Melee",
+      "Specialist"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Defense",
       "Melee",
       "Specialist"
@@ -16922,6 +17726,17 @@
         "tags": [
           "Fast-Redeploy",
           "Crowd-Control",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
@@ -17622,6 +18437,29 @@
   },
   {
     "tags": [
+      "Debuff",
+      "Fast-Redeploy",
+      "Melee"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
       "Defense",
       "Fast-Redeploy",
       "Melee"
@@ -18171,6 +19009,16 @@
         ]
       },
       {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Adnachiel",
         "rarity": 3,
         "tags": [
@@ -18259,6 +19107,16 @@
         "rarity": 4,
         "tags": [
           "AoE",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
           "Slow",
           "Ranged",
           "Sniper"
@@ -18652,10 +19510,20 @@
           "Caster",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
       }
     ],
     "guarantees": [
-      5
+      4
     ]
   },
   {
@@ -19288,6 +20156,28 @@
   {
     "tags": [
       "DPS",
+      "Slow",
+      "Sniper"
+    ],
+    "operators": [
+      {
+        "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      }
+    ],
+    "guarantees": [
+      4
+    ]
+  },
+  {
+    "tags": [
+      "DPS",
       "Sniper",
       "Survival"
     ],
@@ -19366,6 +20256,29 @@
         "tags": [
           "DPS",
           "Survival",
+          "Melee",
+          "Specialist",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
+      "Debuff",
+      "Fast-Redeploy",
+      "Specialist"
+    ],
+    "operators": [
+      {
+        "name": "Waai Fu",
+        "rarity": 5,
+        "tags": [
+          "Fast-Redeploy",
+          "Debuff",
           "Melee",
           "Specialist",
           "Senior Operator"
