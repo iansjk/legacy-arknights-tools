@@ -19,7 +19,7 @@ import { Ingredient, Item, OperatorGoal } from "../types";
 import ItemNeeded from "./ItemNeeded";
 import OperatorGoalCard from "./OperatorGoalCard";
 import lmdIcon from "../data/images/lmd.png";
-import usePersistence from "../hooks/usePersistence";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const useStyles = makeStyles((theme) => ({
   lmdIcon: {
@@ -72,12 +72,13 @@ const GoalOverview = React.memo(function GoalOverview(
     data.allItemsJson.nodes.map((node: { name: string }) => [node.name, node])
   );
   const { goals, onGoalDeleted, onClearAllGoals } = props;
-  const {
-    materialsOwned,
-    setMaterialsOwned,
-    itemsToCraft,
-    setItemsToCraft,
-  } = usePersistence();
+  const [materialsOwned, setMaterialsOwned] = useLocalStorage<
+    Record<string, number | null>
+  >("materialsOwned", {});
+  const [itemsToCraft, setItemsToCraft] = useLocalStorage<Record<string, Item>>(
+    "itemsToCraft",
+    {}
+  );
   const theme = useTheme();
   const isXSmallScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));

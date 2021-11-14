@@ -23,7 +23,7 @@ import {
   OperatorGoal,
   Goal,
 } from "../types";
-import usePersistence from "../hooks/usePersistence";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function Planner(): React.ReactElement {
   const data = useStaticQuery(
@@ -81,7 +81,10 @@ function Planner(): React.ReactElement {
   const operators: Operator[] = data.allOperatorsJson.nodes;
   const [operatorName, setOperatorName] = useState<string | null>(null);
   const [goalNames, setGoalNames] = useState<string[]>([] as string[]);
-  const { operatorGoals, setOperatorGoals } = usePersistence();
+  const [operatorGoals, setOperatorGoals] = useLocalStorage<OperatorGoal[]>(
+    "operatorGoals",
+    []
+  );
   const operator = operators.find((op) => op.name === operatorName);
   const goalSelectMenuProps = {
     getContentAnchorEl: null,
