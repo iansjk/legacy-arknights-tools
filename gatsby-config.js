@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+  },
   siteMetadata: {
     siteTitle: "Arknights Tools",
     siteUrl: "https://samidare.io/arknights",
@@ -41,7 +44,6 @@ module.exports = {
         path: "./src/data/",
       },
     },
-    "gatsby-plugin-netlify",
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
