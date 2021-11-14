@@ -6,7 +6,8 @@
 
 module.exports = {
   flags: {
-    FAST_DEV: true,
+    QUERY_ON_DEMAND: true,
+    FAST_REFRESH: true,
   },
   siteMetadata: {
     siteTitle: "Arknights Tools",
