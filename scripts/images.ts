@@ -33,7 +33,7 @@ function skillIconPublicId(filename: string): string | null {
 }
 
 const avatarFilenameRegex = /(?<internalName>char_\d+_[a-z0-9]+)(?:_(?<eliteLevel>[12])\+?)?\.png/;
-function operatorImagePublicId(filename: string): string | null {
+function avatarPublicId(filename: string): string | null {
   const match = filename.match(avatarFilenameRegex);
   if (
     !match?.groups?.internalName ||
@@ -47,6 +47,30 @@ function operatorImagePublicId(filename: string): string | null {
     eliteLevel ? `${operatorName} elite ${eliteLevel}` : `${operatorName}`
   );
   return `arknights/operators/${itemId}`;
+}
+
+const portraitFilenameRegex = /(?<internalName>char_\d+_[a-z0-9]+)_(?<eliteLevel>[12])\+?\.png/;
+function portraitPublicId(filename: string): string | null {
+  const match = filename.match(portraitFilenameRegex);
+  if (
+    !match?.groups?.internalName ||
+    !getOperatorName(match.groups.internalName)
+  ) {
+    return null;
+  }
+  const { eliteLevel: rawEliteLevel } = match.groups;
+  // for portraits, _1 means elite 0, _1+ means elite 1, and _2 means elite 2
+  let eliteLevel = 0;
+  if (rawEliteLevel === "1+") {
+    eliteLevel = 1;
+  } else if (rawEliteLevel === "2") {
+    eliteLevel = 2;
+  }
+  const operatorName = getOperatorName(match.groups.internalName);
+  const itemId = slugify(
+    eliteLevel ? `${operatorName} elite ${eliteLevel}` : `${operatorName}`
+  );
+  return `arknights/portraits/${itemId}`;
 }
 
 const itemImageFilenameRegex = /(?<itemSlug>.*)\.png/;
@@ -105,9 +129,13 @@ interface CloudinaryResource {
     `Found ${existingPublicIds.size} existing images in Cloudinary.`
   );
 
-  const operatorImageTask = {
+  const avatarTask = {
     sourceDir: path.join(ACESHIP_BASEDIR, "img", "avatars"),
-    publicIdFn: operatorImagePublicId,
+    publicIdFn: avatarPublicId,
+  };
+  const portraitTask = {
+    sourceDir: path.join(ACESHIP_BASEDIR, "img", "portraits"),
+    publicIdFn: portraitPublicId,
   };
   const skillIconTask = {
     sourceDir: path.join(ACESHIP_BASEDIR, "img", "skills"),
@@ -119,7 +147,7 @@ interface CloudinaryResource {
   };
 
   let newlyUploadedCount = 0;
-  const tasks = [operatorImageTask, skillIconTask, itemTask].map(
+  const tasks = [avatarTask, portraitTask, skillIconTask, itemTask].map(
     async (task) => {
       const files = await fs.readdir(task.sourceDir);
       return Promise.all(
