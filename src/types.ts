@@ -31,7 +31,7 @@ export interface OperatorSkill {
 export enum OperatorGoalCategory {
   "Elite" = 0,
   "Mastery",
-  "Skill Level",
+  "SkillLevel",
 }
 
 export interface Goal {

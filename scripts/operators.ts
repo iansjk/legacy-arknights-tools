@@ -17,7 +17,7 @@ import {
 } from "./globals";
 import { Operator } from "../src/types";
 
-enum GoalCategory {
+export enum GoalCategory {
   "Elite" = 0,
   "Mastery",
   "Skill Level",
