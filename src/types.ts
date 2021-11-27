@@ -75,6 +75,6 @@ export function isMasteryGoal(goal: Goal): goal is MasteryGoal {
 export function isSkillLevelGoal(goal: Goal): goal is SkillLevelGoal {
   return (
     Object.prototype.hasOwnProperty.call(goal, "skillLevel") &&
-    goal.goalCategory === OperatorGoalCategory["Skill Level"]
+    goal.goalCategory === OperatorGoalCategory.SkillLevel
   );
 }

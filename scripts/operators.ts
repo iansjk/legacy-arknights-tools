@@ -100,7 +100,7 @@ const operatorEntries = operatorIds.map((id: string) => {
         ingredients,
         goalName: `Skill Level ${i + 1} → ${i + 2}`,
         goalShortName: `Skill Level ${i + 2}`,
-        goalCategory: GoalCategory["Skill Level"],
+        goalCategory: GoalCategory.SkillLevel,
       };
     });
     // operatorData[id].phases[0] is E0, so we skip that one
