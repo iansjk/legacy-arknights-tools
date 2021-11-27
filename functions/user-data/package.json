@@ -1,9 +1,0 @@
-{
-  "name": "user-data",
-  "version": "1.0.0",
-  "main": "user-data.js",
-  "license": "MIT",
-  "dependencies": {
-    "faunadb": "^4.0.0"
-  }
-}

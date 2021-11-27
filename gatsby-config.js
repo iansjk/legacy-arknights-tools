@@ -5,6 +5,10 @@
  */
 
 module.exports = {
+  flags: {
+    QUERY_ON_DEMAND: true,
+    FAST_REFRESH: true,
+  },
   siteMetadata: {
     siteTitle: "Arknights Tools",
     siteUrl: "https://samidare.io/arknights",
@@ -41,7 +45,6 @@ module.exports = {
         path: "./src/data/",
       },
     },
-    "gatsby-plugin-netlify",
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
