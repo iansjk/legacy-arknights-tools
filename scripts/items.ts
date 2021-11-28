@@ -84,22 +84,6 @@ const items = Object.keys(cnItemTable)
     return baseObj;
   });
 
-const crystalItems = {
-  "Crystal Component": "Crystalline Component",
-  "Crystal Circuit": "Crystalline Circuit",
-  "Crystal Electronic Unit": "Crystalline Electroassembly",
-};
-
-Object.entries(crystalItems).forEach(([oldName, newName]) => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const newEntry = items.find((item) => item.name === newName)!;
-  items.push({
-    ...newEntry,
-    name: oldName,
-    id: oldName,
-  });
-});
-
 const LUZARK_LP_SOLVER_URL =
   "https://colab.research.google.com/drive/1lHwJDG7WCAr3KMlxY-HLyD8-yG3boazq";
 const SANITY_VALUE_CELL_ID = "feRucRPwWGZo";
