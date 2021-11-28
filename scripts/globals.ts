@@ -46,7 +46,16 @@ export function getOperatorName(operatorId: string): string | null {
 
 export function getItemName(itemId: string): string {
   const entry = enItemTable[itemId as keyof typeof enItemTable];
-  const name = itemNameOverride[itemId] ?? entry?.name;
+  const cnName = cnItemTable[itemId as keyof typeof cnItemTable].name;
+  let name = itemNameOverride[itemId] ?? entry?.name;
+  if (name == null) {
+    if (cnName != null) {
+      console.warn(`No item name translation found for ID '${itemId}'`);
+      name = cnName;
+    } else {
+      throw new Error(`Couldn't find item name for ID '${itemId}'`);
+    }
+  }
   return name;
 }
 
