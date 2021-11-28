@@ -15,18 +15,12 @@ import {
   Ingredient,
   professionToClass,
 } from "./globals";
-import { Operator } from "../src/types";
-
-export enum GoalCategory {
-  "Elite" = 0,
-  "Mastery",
-  "Skill Level",
-}
+import { OperatorGoalCategory } from "../src/types";
 
 interface OperatorGoal {
   goalName: string;
   goalShortName?: string;
-  goalCategory: GoalCategory;
+  goalCategory: OperatorGoalCategory;
   ingredients: Ingredient[];
 }
 
@@ -100,7 +94,7 @@ const operatorEntries = operatorIds.map((id: string) => {
         ingredients,
         goalName: `Skill Level ${i + 1} → ${i + 2}`,
         goalShortName: `Skill Level ${i + 2}`,
-        goalCategory: GoalCategory.SkillLevel,
+        goalCategory: OperatorGoalCategory.SkillLevel,
       };
     });
     // operatorData[id].phases[0] is E0, so we skip that one
@@ -114,7 +108,7 @@ const operatorEntries = operatorIds.map((id: string) => {
         eliteLevel: i + 1,
         ingredients,
         goalName: `Elite ${i + 1}`,
-        goalCategory: GoalCategory.Elite,
+        goalCategory: OperatorGoalCategory.Elite,
       };
     });
   }
@@ -131,7 +125,7 @@ const operatorEntries = operatorIds.map((id: string) => {
           ingredients,
           goalName: `Skill ${i + 1} Mastery ${j + 1}`,
           goalShortName: `S${i + 1} M${j + 1}`,
-          goalCategory: GoalCategory.Mastery,
+          goalCategory: OperatorGoalCategory.Mastery,
         };
       }
     );
