@@ -12,21 +12,21 @@
       "webRoot": "${workspaceFolder}"
     },
     {
-      "type": "node",
+      "name": "Launch TypeScript Program",
+      "type": "pwa-node",
       "request": "launch",
-      "name": "Launch Program",
-      "runtimeArgs": ["-r", "esm", "-r", "ts-node/register"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
       "args": ["${relativeFile}"],
-      "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "/Users/Ian/.nvm/versions/node/v12.20.0/bin/node"
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
     },
     {
       "name": "Attach",
       "port": 9229,
       "request": "attach",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node"
     }
   ]
