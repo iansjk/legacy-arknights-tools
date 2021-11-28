@@ -308,6 +308,10 @@ function shouldAddStageRecommendation(item: Item): boolean {
 
   fs.writeFileSync(
     path.join(ARKNIGHTS_DATA_DIR, "items.json"),
-    JSON.stringify(itemsWithStages, null, 2)
+    JSON.stringify(
+      Object.fromEntries(itemsWithStages.map((item) => [item.id, item])),
+      null,
+      2
+    )
   );
 })();
