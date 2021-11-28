@@ -140,11 +140,11 @@ const operatorEntries = operatorIds.map((id: string) => {
       masteries,
     };
   });
-  return operator;
+  return [operatorId, operator];
 });
 
 fs.mkdirSync(ARKNIGHTS_DATA_DIR, { recursive: true });
 fs.writeFileSync(
   path.join(ARKNIGHTS_DATA_DIR, "operators.json"),
-  JSON.stringify(operatorEntries, null, 2)
+  JSON.stringify(Object.fromEntries(operatorEntries), null, 2)
 );
