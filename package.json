@@ -39,6 +39,7 @@
     "gatsby-theme-material-ui": "^2.0.1",
     "gatsby-transformer-json": "^3.0.0",
     "js-combinatorics": "^1.4.5",
+    "localforage": "^1.10.0",
     "material-ui-popup-state": "^1.7.1",
     "puppeteer": "^10.1.0",
     "react": "^17.0.1",
