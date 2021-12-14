@@ -5,7 +5,7 @@ import {
   OperatorGoal,
   OperatorGoalCategory,
   SkillLevelGoal,
-} from "./types";
+} from "../types";
 
 export interface SchemaV0 {
   operatorGoals: Array<
