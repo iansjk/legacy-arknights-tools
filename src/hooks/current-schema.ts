@@ -51,4 +51,5 @@ export interface SchemaV1 {
   itemsToCraft: {
     [itemId: string]: boolean;
   };
+  version: 1;
 }
