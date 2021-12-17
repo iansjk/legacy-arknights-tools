@@ -7,16 +7,17 @@ import {
   SkillLevelGoal,
 } from "../types";
 
-export interface SchemaV0 {
-  operatorGoals: Array<
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export namespace SchemaV0 {
+  export type OperatorGoals = Array<
     Omit<OperatorGoal | EliteGoal | SkillLevelGoal | MasteryGoal, "skill">
   >;
-  materialsOwned: {
+  export interface MaterialsOwned {
     [itemName: string]: number;
-  };
-  itemsToCraft: {
+  }
+  export interface ItemsToCraft {
     [itemName: string]: Item;
-  };
+  }
 }
 
 interface SchemaV1OperatorGoal {

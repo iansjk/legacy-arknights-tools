@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import localforage from "localforage";
 
-import { SchemaV1 } from "./current-schema";
+import { SchemaV0, SchemaV1 } from "./current-schema";
 import useLocalStorage from "./useLocalStorage";
 
 const useUserData = (): SchemaV1 => {
@@ -11,9 +11,18 @@ const useUserData = (): SchemaV1 => {
     itemsToCraft: {},
     version: 1,
   });
-  const [operatorGoalsV0] = useLocalStorage("operatorGoals", []);
-  const [materialsOwnedV0] = useLocalStorage("materialsOwned", {});
-  const [itemsToCraftV0] = useLocalStorage("itemsToCraft", {});
+  const [operatorGoalsV0] = useLocalStorage<SchemaV0.OperatorGoals>(
+    "operatorGoals",
+    []
+  );
+  const [materialsOwnedV0] = useLocalStorage<SchemaV0.MaterialsOwned>(
+    "materialsOwned",
+    {}
+  );
+  const [itemsToCraftV0] = useLocalStorage<SchemaV0.ItemsToCraft>(
+    "itemsToCraft",
+    {}
+  );
 
   useEffect(() => {
     localforage
