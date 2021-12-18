@@ -4,7 +4,10 @@ import localforage from "localforage";
 import { SchemaV0, SchemaV1 } from "./current-schema";
 import useLocalStorage from "./useLocalStorage";
 
-const usePlannerData = (): SchemaV1 => {
+const usePlannerData = (): [
+  SchemaV1,
+  React.Dispatch<React.SetStateAction<SchemaV1>>
+] => {
   const [plannerData, setPlannerData] = useState<SchemaV1>({
     operatorGoals: [],
     materialsOwned: {},
@@ -37,6 +40,6 @@ const usePlannerData = (): SchemaV1 => {
       });
   }, []);
 
-  return plannerData;
+  return [plannerData, setPlannerData];
 };
 export default usePlannerData;
