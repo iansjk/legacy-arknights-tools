@@ -4,8 +4,8 @@ import localforage from "localforage";
 import { SchemaV0, SchemaV1 } from "./current-schema";
 import useLocalStorage from "./useLocalStorage";
 
-const useUserData = (): SchemaV1 => {
-  const [userData, setUserData] = useState<SchemaV1>({
+const usePlannerData = (): SchemaV1 => {
+  const [plannerData, setPlannerData] = useState<SchemaV1>({
     operatorGoals: [],
     materialsOwned: {},
     itemsToCraft: {},
@@ -26,10 +26,10 @@ const useUserData = (): SchemaV1 => {
 
   useEffect(() => {
     localforage
-      .getItem<SchemaV1 | undefined>("userData")
+      .getItem<SchemaV1 | undefined>("plannerData")
       .then((existingData) => {
         if (existingData) {
-          setUserData(existingData);
+          setPlannerData(existingData);
         } else {
           // attempt to migrate old data
           // TODO
@@ -37,6 +37,6 @@ const useUserData = (): SchemaV1 => {
       });
   }, []);
 
-  return userData;
+  return plannerData;
 };
-export default useUserData;
+export default usePlannerData;
