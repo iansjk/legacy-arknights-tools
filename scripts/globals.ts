@@ -28,6 +28,11 @@ const operatorNameOverride: Record<string, string> = {
 
 const itemNameOverride: Record<string, string> = {
   "30145": "Crystalline Electroassembly",
+  mod_unlock_token: "Module Data Block",
+  31043: "Compound Cutting Fluid",
+  31044: "Cutting Stock Solution",
+  31053: "Semi-natural Solvent",
+  31054: "Refined Solvent",
 };
 
 export function getOperatorName(operatorId: string): string | null {
@@ -46,7 +51,16 @@ export function getOperatorName(operatorId: string): string | null {
 
 export function getItemName(itemId: string): string {
   const entry = enItemTable[itemId as keyof typeof enItemTable];
-  const name = itemNameOverride[itemId] ?? entry?.name;
+  const cnName = cnItemTable[itemId as keyof typeof cnItemTable].name;
+  let name = itemNameOverride[itemId] ?? entry?.name;
+  if (name == null) {
+    if (cnName != null) {
+      console.warn(`No item name translation found for ID '${itemId}'`);
+      name = cnName;
+    } else {
+      throw new Error(`Couldn't find item name for ID '${itemId}'`);
+    }
+  }
   return name;
 }
 
