@@ -26,7 +26,7 @@ const operatorNameOverride: Record<string, string> = {
   Роса: "Rosa",
 };
 
-const itemNameOverride: Record<string, string> = {
+export const itemNameOverride: Record<string, string> = {
   mod_unlock_token: "Module Data Block",
   31043: "Compound Cutting Fluid",
   31044: "Cutting Stock Solution",

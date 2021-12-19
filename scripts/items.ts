@@ -35,6 +35,13 @@ const EFFICIENT_STAGE_MAX_ITEM_SANITY_COST_MULTIPLIER = 4;
 const PENGUIN_STATS_MATRIX_URL =
   "https://penguin-stats.io/PenguinStats/api/v2/result/matrix";
 
+const EXTRA_ITEMNAME_TO_ID_MAP_ENTRIES = {
+  "Crystalline Electroassembly": "30145",
+  "Crystal Electronic Unit": "30145",
+  "Crystal Component": "31033",
+  "Crystal Circuit": "31034",
+};
+
 const items = Object.keys(cnItemTable)
   .filter((id) => {
     const entry = cnItemTable[id as keyof typeof cnItemTable];
@@ -313,5 +320,14 @@ function shouldAddStageRecommendation(item: Item): boolean {
       null,
       2
     )
+  );
+
+  const itemNameToId = {
+    ...Object.fromEntries(items.map((item) => [item.name, item.id])),
+    ...EXTRA_ITEMNAME_TO_ID_MAP_ENTRIES,
+  };
+  fs.writeFileSync(
+    path.join(ARKNIGHTS_DATA_DIR, "item-name-to-id.json"),
+    JSON.stringify(itemNameToId, null, 2)
   );
 })();
