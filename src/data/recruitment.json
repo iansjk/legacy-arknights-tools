@@ -172,6 +172,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -497,6 +509,38 @@
           "Specialist",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -764,6 +808,28 @@
           "Debuff",
           "Melee",
           "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
           "Senior Operator"
         ]
       },
@@ -1183,6 +1249,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Haze",
         "rarity": 4,
         "tags": [
@@ -1288,6 +1364,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -1652,6 +1738,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -1914,6 +2011,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Jessica",
         "rarity": 4,
         "tags": [
@@ -1954,6 +2061,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -2201,6 +2318,17 @@
         ]
       },
       {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Scavenger",
         "rarity": 4,
         "tags": [
@@ -2304,6 +2432,17 @@
           "AoE",
           "Ranged",
           "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
           "Senior Operator"
         ]
       },
@@ -2453,6 +2592,17 @@
         "tags": [
           "DP-Recovery",
           "Crowd-Control",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
           "Melee",
           "Vanguard",
           "Senior Operator"
@@ -2667,6 +2817,27 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Haze",
         "rarity": 4,
         "tags": [
@@ -2775,6 +2946,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -3408,6 +3589,16 @@
         ]
       },
       {
+        "name": "Ambriel",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
         "name": "Orchid",
         "rarity": 3,
         "tags": [
@@ -3561,6 +3752,17 @@
           "Survival",
           "Melee",
           "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
           "Senior Operator"
         ]
       },
@@ -3791,6 +3993,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -3878,6 +4092,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -4104,6 +4330,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -4429,6 +4667,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -4704,6 +4954,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -4881,6 +5143,28 @@
           "Specialist",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5041,6 +5325,16 @@
           "Sniper",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5175,6 +5469,17 @@
           "Guard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5287,6 +5592,16 @@
         "rarity": 5,
         "tags": [
           "AoE",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
           "Ranged",
           "Sniper",
           "Senior Operator"
@@ -5444,6 +5759,17 @@
           "Vanguard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -5485,6 +5811,17 @@
           "AoE",
           "Ranged",
           "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
           "Senior Operator"
         ]
       }
@@ -5571,6 +5908,17 @@
         "tags": [
           "DP-Recovery",
           "Crowd-Control",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
           "Melee",
           "Vanguard",
           "Senior Operator"
@@ -5726,6 +6074,27 @@
           "Defense",
           "Melee",
           "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
           "Senior Operator"
         ]
       }
@@ -6190,6 +6559,17 @@
           "Survival",
           "Melee",
           "Specialist",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
           "Senior Operator"
         ]
       }
@@ -6681,6 +7061,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -6913,6 +7304,17 @@
         ]
       },
       {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Scavenger",
         "rarity": 4,
         "tags": [
@@ -6990,6 +7392,17 @@
     "operators": [
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -7078,6 +7491,17 @@
         "tags": [
           "DP-Recovery",
           "Crowd-Control",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
           "Melee",
           "Vanguard",
           "Senior Operator"
@@ -7225,6 +7649,17 @@
           "Defense",
           "Melee",
           "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
           "Senior Operator"
         ]
       },
@@ -7785,6 +8220,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -8078,6 +8524,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Jessica",
         "rarity": 4,
         "tags": [
@@ -8118,6 +8574,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -8416,6 +8882,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Haze",
         "rarity": 4,
         "tags": [
@@ -8456,6 +8932,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -8747,6 +9233,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -9235,6 +9731,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -9470,6 +9977,17 @@
       },
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -9748,6 +10266,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Jessica",
         "rarity": 4,
         "tags": [
@@ -9778,6 +10306,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -9879,6 +10417,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -10368,6 +10916,17 @@
         ]
       },
       {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Scavenger",
         "rarity": 4,
         "tags": [
@@ -10434,6 +10993,17 @@
       "Vanguard"
     ],
     "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
       {
         "name": "Scavenger",
         "rarity": 4,
@@ -10581,6 +11151,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -10697,6 +11278,17 @@
       "DPS"
     ],
     "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
       {
         "name": "Scavenger",
         "rarity": 4,
@@ -10957,6 +11549,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -11372,6 +11974,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -11593,6 +12207,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -11926,6 +12552,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -12208,6 +12846,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -12296,6 +12946,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -12428,6 +13090,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -12587,6 +13261,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -13266,6 +13952,18 @@
           "Top Operator",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Blaze",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -13341,6 +14039,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -13839,6 +14549,18 @@
       },
       {
         "name": "Hellagur",
+        "rarity": 6,
+        "tags": [
+          "DPS",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Top Operator",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Blaze",
         "rarity": 6,
         "tags": [
           "DPS",
@@ -14085,6 +14807,17 @@
           "Guard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -14186,6 +14919,17 @@
           "Vanguard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -14201,6 +14945,17 @@
     "operators": [
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -14273,6 +15028,17 @@
         "tags": [
           "DP-Recovery",
           "Crowd-Control",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
           "Melee",
           "Vanguard",
           "Senior Operator"
@@ -14365,6 +15131,17 @@
           "Defense",
           "Melee",
           "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
           "Senior Operator"
         ]
       }
@@ -14674,6 +15451,17 @@
           "Specialist",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -14812,6 +15600,16 @@
         "rarity": 5,
         "tags": [
           "AoE",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
           "Ranged",
           "Sniper",
           "Senior Operator"
@@ -15012,6 +15810,16 @@
           "Slow",
           "Ranged",
           "Caster",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
           "Senior Operator"
         ]
       }
@@ -15486,6 +16294,17 @@
           "Guard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -15603,6 +16422,17 @@
       },
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -15771,6 +16601,16 @@
         "tags": [
           "DPS",
           "Nuker",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
           "Ranged",
           "Sniper",
           "Senior Operator"
@@ -16208,6 +17048,40 @@
           "Vanguard",
           "Senior Operator"
         ]
+      },
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
+      "DPS",
+      "Senior Operator",
+      "Vanguard"
+    ],
+    "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
       }
     ],
     "guarantees": [
@@ -16269,6 +17143,17 @@
     "operators": [
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -16367,6 +17252,29 @@
           "Crowd-Control",
           "Ranged",
           "Supporter",
+          "Senior Operator"
+        ]
+      }
+    ],
+    "guarantees": [
+      5
+    ]
+  },
+  {
+    "tags": [
+      "DP-Recovery",
+      "DPS",
+      "Senior Operator"
+    ],
+    "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
           "Senior Operator"
         ]
       }
@@ -17319,6 +18227,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -17559,6 +18478,17 @@
       },
       {
         "name": "Specter",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
+        "name": "Broca",
         "rarity": 5,
         "tags": [
           "AoE",
@@ -17930,6 +18860,17 @@
         ]
       },
       {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Scavenger",
         "rarity": 4,
         "tags": [
@@ -17997,6 +18938,17 @@
       "Vanguard"
     ],
     "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
       {
         "name": "Scavenger",
         "rarity": 4,
@@ -18094,6 +19046,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -18169,6 +19132,17 @@
       "Melee"
     ],
     "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
       {
         "name": "Scavenger",
         "rarity": 4,
@@ -18980,6 +19954,16 @@
         ]
       },
       {
+        "name": "GreyThroat",
+        "rarity": 5,
+        "tags": [
+          "DPS",
+          "Ranged",
+          "Sniper",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Jessica",
         "rarity": 4,
         "tags": [
@@ -19010,6 +19994,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -19114,6 +20108,16 @@
       },
       {
         "name": "May",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
+      },
+      {
+        "name": "Ambriel",
         "rarity": 4,
         "tags": [
           "DPS",
@@ -19520,6 +20524,16 @@
           "Ranged",
           "Sniper"
         ]
+      },
+      {
+        "name": "Ambriel",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
       }
     ],
     "guarantees": [
@@ -19888,6 +20902,17 @@
         ]
       },
       {
+        "name": "Broca",
+        "rarity": 5,
+        "tags": [
+          "AoE",
+          "Survival",
+          "Melee",
+          "Guard",
+          "Senior Operator"
+        ]
+      },
+      {
         "name": "Estelle",
         "rarity": 4,
         "tags": [
@@ -20169,6 +21194,16 @@
           "Ranged",
           "Sniper"
         ]
+      },
+      {
+        "name": "Ambriel",
+        "rarity": 4,
+        "tags": [
+          "DPS",
+          "Slow",
+          "Ranged",
+          "Sniper"
+        ]
       }
     ],
     "guarantees": [
@@ -20433,6 +21468,17 @@
       "Vanguard"
     ],
     "operators": [
+      {
+        "name": "Reed",
+        "rarity": 5,
+        "tags": [
+          "DP-Recovery",
+          "DPS",
+          "Melee",
+          "Vanguard",
+          "Senior Operator"
+        ]
+      },
       {
         "name": "Scavenger",
         "rarity": 4,
