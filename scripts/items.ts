@@ -322,8 +322,11 @@ function shouldAddStageRecommendation(item: Item): boolean {
     };
   });
 
+  const itemsJson = Object.fromEntries(
+    itemsWithStages.map((item) => [item.id, item])
+  );
   fs.writeFileSync(
     path.join(ARKNIGHTS_DATA_DIR, "items.json"),
-    JSON.stringify(itemsWithStages, null, 2)
+    JSON.stringify(itemsJson, null, 2)
   );
 })();
