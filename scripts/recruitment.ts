@@ -132,7 +132,11 @@ const recruitmentResults = tagSets
       guarantees,
     };
   });
+
+const recruitmentJson = Object.fromEntries(
+  recruitmentResults.map((recruit) => [recruit.tags, recruit])
+);
 fs.writeFileSync(
   path.join(ARKNIGHTS_DATA_DIR, "recruitment.json"),
-  JSON.stringify(recruitmentResults, null, 2)
+  JSON.stringify(recruitmentJson, null, 2)
 );
