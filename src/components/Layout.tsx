@@ -18,11 +18,10 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { Helmet } from "react-helmet";
-import { Link as GatsbyLink } from "gatsby-theme-material-ui";
-import AppFooter from "../components/AppFooter";
-import favicon from "../data/images/favicon.ico";
+import Head from "next/head";
+import AppFooter from "./AppFooter";
+import NextMUILink from "./NextMUILink";
+import config from "../config";
 
 const drawerWidth = 220;
 
@@ -90,7 +89,7 @@ function ListItemLink({ to, linkText }: { to: string; linkText: string }) {
     () =>
       React.forwardRef<HTMLAnchorElement>((itemProps, ref) => (
         <li>
-          <GatsbyLink to={to} ref={ref} {...itemProps} />
+          <NextMUILink href={to} ref={ref} {...itemProps} />
         </li>
       )),
     [to]
@@ -115,21 +114,7 @@ function Layout(props: LayoutProps): React.ReactElement {
   const { uri, children, pageContext } = props;
   const { pageTitle } = pageContext;
   const classes = useStyles();
-  const { siteTitle, siteUrl, description, pages } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          siteTitle
-          siteUrl
-          description
-          pages {
-            slug
-            pageTitle
-          }
-        }
-      }
-    }
-  `).site.siteMetadata;
+  const { siteTitle, siteUrl, description, pages } = config;
   const title = pageTitle ? `${pageTitle} · ${siteTitle}` : siteTitle;
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -170,16 +155,14 @@ function Layout(props: LayoutProps): React.ReactElement {
 
   return (
     <>
-      <Helmet>
-        <html lang="en" />
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={favicon} />
         <meta property="og:url" content={`${siteUrl}${uri}`} />
-        <link rel="icon" type="image/x-icon" href={favicon} />
-      </Helmet>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      </Head>
       <CssBaseline />
       <div className={classes.appWrapper}>
         <div className={classes.appContainer}>
