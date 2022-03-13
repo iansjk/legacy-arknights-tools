@@ -14,13 +14,15 @@ import {
 import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
 import { Autocomplete } from "@material-ui/lab";
 import cx from "classnames";
-import { graphql, useStaticQuery } from "gatsby";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import { Operator } from "../types";
+
 import leveling from "../data/leveling.json";
 import lmdIcon from "../data/images/lmd.png";
 import OperatorImage from "../components/OperatorImage";
 import ValidatedTextField from "../components/ValidatedTextField";
+import operatorsJson from "../data/operators.json";
 
 const OPERATOR_IMAGE_SIZE = 100;
 
@@ -146,24 +148,6 @@ function maxLevel(rarity: number | undefined, elite: number | undefined) {
 }
 
 const Leveling: React.FC = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allOperatorsJson(
-          sort: { fields: name, order: ASC }
-          filter: { name: { ne: "Amiya (Guard)" } }
-        ) {
-          nodes {
-            name
-            rarity
-          }
-        }
-      }
-    `
-  );
-  const operators: Record<string, Operator> = Object.fromEntries(
-    data.allOperatorsJson.nodes.map((op: Operator) => [op.name, op])
-  );
   const [operatorName, setOperatorName] = useState<string | null>(null);
   const [startingElite, setStartingElite] = useState(0);
   const [startingLevel, setStartingLevel] = useState(1);
@@ -172,7 +156,14 @@ const Leveling: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
   const isXSmallScreen = useMediaQuery(theme.breakpoints.down("xs"));
-  const operator = operatorName ? operators[operatorName] : null;
+  const operatorNames = useMemo(
+    () => Object.keys(operatorsJson).filter((name) => name !== "Amiya (Guard)"),
+    []
+  );
+
+  const operator: Operator = operatorName
+    ? operatorsJson[operatorName as keyof typeof operatorsJson]
+    : null;
   const { exp, lmd, levelingLmd, eliteLmd } = operator
     ? levelingCost(
         operator.rarity,
@@ -192,7 +183,7 @@ const Leveling: React.FC = () => {
   const handleChangeOperatorName = (_: unknown, value: string | null) => {
     setOperatorName(value);
     if (value != null) {
-      const newOperator = operators[value as keyof typeof operators];
+      const newOperator = operatorsJson[value as keyof typeof operatorsJson];
       const newMaxElite = maxElite(newOperator.rarity);
       if (startingElite > newMaxElite) {
         setStartingElite(newMaxElite);
@@ -224,7 +215,7 @@ const Leveling: React.FC = () => {
         <Grid item xs={12}>
           <Autocomplete
             fullWidth
-            options={Object.keys(operators)}
+            options={operatorNames}
             autoComplete
             autoHighlight
             value={operatorName}
@@ -447,13 +438,7 @@ const Leveling: React.FC = () => {
                   <strong data-cy="lmd" data-lmd={lmd}>
                     {lmd.toLocaleString()}
                   </strong>{" "}
-                  <img
-                    className={classes.lmdIcon}
-                    alt="LMD"
-                    src={lmdIcon}
-                    width={26}
-                    height={18}
-                  />
+                  <Image className={classes.lmdIcon} alt="LMD" src={lmdIcon} />
                 </span>
                 <ul className={classes.subcostList}>
                   <Typography
@@ -469,12 +454,10 @@ const Leveling: React.FC = () => {
                       >
                         {levelingLmd.toLocaleString()}
                       </span>{" "}
-                      <img
+                      <Image
                         className={classes.lmdIcon}
                         alt="LMD"
                         src={lmdIcon}
-                        width={26}
-                        height={18}
                       />
                     </span>
                   </Typography>
@@ -488,12 +471,10 @@ const Leveling: React.FC = () => {
                       <span data-cy="eliteLmd" data-elite-lmd={eliteLmd}>
                         {eliteLmd.toLocaleString()}
                       </span>{" "}
-                      <img
+                      <Image
                         className={classes.lmdIcon}
                         alt="LMD"
                         src={lmdIcon}
-                        width={26}
-                        height={18}
                       />
                     </span>
                   </Typography>
