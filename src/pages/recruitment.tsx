@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React, { useMemo, useState } from "react";
 import {
   Box,
   Chip,
@@ -12,6 +11,7 @@ import {
 import { Combination } from "js-combinatorics";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import RecruitableOperatorChip from "../components/RecruitableOperatorChip";
+import recruitmentJson from "../data/recruitment.json";
 
 const TAGS_BY_CATEGORY = {
   Rarity: ["Top Operator", "Senior Operator", "Starter", "Robot"],
@@ -91,23 +91,6 @@ interface RecruitmentResult {
 }
 
 function Recruitment(): React.ReactElement {
-  const data = useStaticQuery(graphql`
-    query {
-      allRecruitmentJson {
-        nodes {
-          tags
-          operators {
-            name
-            rarity
-            tags
-          }
-          guarantees
-        }
-      }
-    }
-  `);
-  const allRecruitmentResults: RecruitmentResult[] =
-    data.allRecruitmentJson.nodes;
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(true);
   const classes = useStyles();
@@ -115,14 +98,13 @@ function Recruitment(): React.ReactElement {
   const isXSmallScreen = useMediaQuery(theme.breakpoints.down("xs"));
 
   const activeTagCombinations = getTagCombinations(activeTags);
-  const matchingOperators = React.useMemo(
+  const matchingOperators: RecruitmentResult[] = useMemo(
     () =>
-      allRecruitmentResults.filter((result) =>
-        activeTagCombinations.find(
-          (tags) => tags.toString() === result.tags.toString()
-        )
+      activeTagCombinations.map(
+        (tags) =>
+          recruitmentJson[tags.toString() as keyof typeof recruitmentJson]
       ),
-    [activeTagCombinations, allRecruitmentResults]
+    [activeTagCombinations]
   );
 
   function handleTagsChanged(
