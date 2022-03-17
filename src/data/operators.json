@@ -4118,7 +4118,7 @@
               },
               {
                 "id": "31043",
-                "name": "Compound Cutting Fluid",
+                "name": "Semi-Synthetic Solvent",
                 "tier": 3,
                 "quantity": 3,
                 "sortId": 100044
@@ -4140,7 +4140,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -5112,7 +5112,7 @@
               },
               {
                 "id": "31043",
-                "name": "Compound Cutting Fluid",
+                "name": "Semi-Synthetic Solvent",
                 "tier": 3,
                 "quantity": 1,
                 "sortId": 100044
@@ -5134,7 +5134,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100045
@@ -31885,7 +31885,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 5,
             "sortId": 100046
@@ -32044,7 +32044,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -32116,7 +32116,7 @@
               },
               {
                 "id": "31043",
-                "name": "Compound Cutting Fluid",
+                "name": "Semi-Synthetic Solvent",
                 "tier": 3,
                 "quantity": 3,
                 "sortId": 100044
@@ -32138,7 +32138,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -32821,7 +32821,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 3,
             "sortId": 100044
@@ -33117,7 +33117,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -33153,7 +33153,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 8,
                 "sortId": 100043
@@ -51839,7 +51839,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 8,
                 "sortId": 100045
@@ -54696,7 +54696,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 5,
             "sortId": 100044
@@ -54718,7 +54718,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 4,
             "sortId": 100046
@@ -54826,7 +54826,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -54985,7 +54985,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -55079,7 +55079,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100045
@@ -66928,7 +66928,7 @@
               },
               {
                 "id": "31053",
-                "name": "Semi-natural Solvent",
+                "name": "Compound Cutting Fluid",
                 "tier": 3,
                 "quantity": 5,
                 "sortId": 100046
@@ -70631,7 +70631,7 @@
           },
           {
             "id": "31054",
-            "name": "Refined Solvent",
+            "name": "Cutting Fluid Solution",
             "tier": 4,
             "quantity": 3,
             "sortId": 100045
@@ -70753,7 +70753,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 1,
                 "sortId": 100045
@@ -70818,7 +70818,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 2,
                 "sortId": 100045
@@ -71465,7 +71465,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100045
@@ -71559,7 +71559,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100043
@@ -71595,7 +71595,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100045
@@ -71840,7 +71840,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 13,
             "sortId": 100044
@@ -71933,7 +71933,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -71998,7 +71998,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100043
@@ -72307,7 +72307,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100043
@@ -72336,7 +72336,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100043
@@ -72430,7 +72430,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -73379,7 +73379,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 3,
             "sortId": 100044
@@ -73452,7 +73452,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 12,
             "sortId": 100046
@@ -73545,7 +73545,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -73574,7 +73574,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100045
@@ -75718,7 +75718,7 @@
               },
               {
                 "id": "31053",
-                "name": "Semi-natural Solvent",
+                "name": "Compound Cutting Fluid",
                 "tier": 3,
                 "quantity": 5,
                 "sortId": 100046
@@ -75841,7 +75841,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 8,
                 "sortId": 100045
@@ -76524,7 +76524,7 @@
               },
               {
                 "id": "31053",
-                "name": "Semi-natural Solvent",
+                "name": "Compound Cutting Fluid",
                 "tier": 3,
                 "quantity": 2,
                 "sortId": 100046
@@ -77928,7 +77928,7 @@
           },
           {
             "id": "31054",
-            "name": "Refined Solvent",
+            "name": "Cutting Fluid Solution",
             "tier": 4,
             "quantity": 7,
             "sortId": 100045
@@ -78050,7 +78050,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -78086,7 +78086,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 8,
                 "sortId": 100043
@@ -78144,7 +78144,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -78352,7 +78352,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 3,
             "sortId": 100044
@@ -78425,7 +78425,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 13,
             "sortId": 100046
@@ -78518,7 +78518,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100043
@@ -78547,7 +78547,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100045
@@ -78612,7 +78612,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -80036,7 +80036,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 4,
             "sortId": 100044
@@ -80058,7 +80058,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 3,
             "sortId": 100046
@@ -80131,7 +80131,7 @@
           },
           {
             "id": "31044",
-            "name": "Cutting Stock Solution",
+            "name": "Refined Solvent",
             "tier": 4,
             "quantity": 7,
             "sortId": 100043
@@ -84171,7 +84171,7 @@
   {
     "id": "char_473_mberry",
     "name": "Mulberry",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 5,
     "class": "Medic",
     "skillLevels": [
@@ -84370,7 +84370,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 12,
             "sortId": 100044
@@ -84384,7 +84384,7 @@
       {
         "skillId": "skchr_mberry_1",
         "iconId": null,
-        "skillName": "治愈云雾",
+        "skillName": "Healing Haze",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -84478,7 +84478,7 @@
       {
         "skillId": "skchr_mberry_2",
         "iconId": null,
-        "skillName": "安全区域",
+        "skillName": "Safe Zone",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -84528,7 +84528,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100043
@@ -85614,7 +85614,7 @@
           },
           {
             "id": "31053",
-            "name": "Semi-natural Solvent",
+            "name": "Compound Cutting Fluid",
             "tier": 3,
             "quantity": 3,
             "sortId": 100046
@@ -85744,7 +85744,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100043
@@ -86294,7 +86294,7 @@
   {
     "id": "char_479_sleach",
     "name": "Saileach",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 6,
     "class": "Vanguard",
     "skillLevels": [
@@ -86434,7 +86434,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 5,
             "sortId": 100044
@@ -86507,7 +86507,7 @@
           },
           {
             "id": "31044",
-            "name": "Cutting Stock Solution",
+            "name": "Refined Solvent",
             "tier": 4,
             "quantity": 6,
             "sortId": 100043
@@ -86521,7 +86521,7 @@
       {
         "skillId": "skcom_assist_cost[3]",
         "iconId": null,
-        "skillName": "支援号令·γ型",
+        "skillName": "Support γ",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -86600,7 +86600,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100043
@@ -86615,7 +86615,7 @@
       {
         "skillId": "skchr_sleach_2",
         "iconId": null,
-        "skillName": "信仰传承",
+        "skillName": "Inheritance of Faith",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -86665,7 +86665,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 8,
                 "sortId": 100045
@@ -86709,7 +86709,7 @@
       {
         "skillId": "skchr_sleach_3",
         "iconId": null,
-        "skillName": "光辉旗帜",
+        "skillName": "Glorious Banner",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -86752,7 +86752,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 4,
                 "sortId": 100045
@@ -86805,7 +86805,7 @@
   {
     "id": "char_484_robrta",
     "name": "Roberta",
-    "isCnOnly": true,
+    "isCnOnly": false,
     "rarity": 4,
     "class": "Supporter",
     "skillLevels": [
@@ -86990,7 +86990,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 14,
             "sortId": 100044
@@ -87011,7 +87011,7 @@
       {
         "skillId": "skchr_robrta_1",
         "iconId": null,
-        "skillName": "叙拉古式上妆",
+        "skillName": "Siracusan-Style Makeup",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -87105,7 +87105,7 @@
       {
         "skillId": "skchr_robrta_2",
         "iconId": null,
-        "skillName": "全自动造型仪",
+        "skillName": "Full Auto Modeler",
         "masteries": [
           {
             "masteryLevel": 1,
@@ -87155,7 +87155,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 2,
                 "sortId": 100043
@@ -88846,7 +88846,7 @@
               },
               {
                 "id": "31053",
-                "name": "Semi-natural Solvent",
+                "name": "Compound Cutting Fluid",
                 "tier": 3,
                 "quantity": 2,
                 "sortId": 100046
@@ -89040,7 +89040,7 @@
           },
           {
             "id": "31043",
-            "name": "Compound Cutting Fluid",
+            "name": "Semi-Synthetic Solvent",
             "tier": 3,
             "quantity": 3,
             "sortId": 100044
@@ -89113,7 +89113,7 @@
           },
           {
             "id": "31054",
-            "name": "Refined Solvent",
+            "name": "Cutting Fluid Solution",
             "tier": 4,
             "quantity": 8,
             "sortId": 100045
@@ -89148,7 +89148,7 @@
               },
               {
                 "id": "31044",
-                "name": "Cutting Stock Solution",
+                "name": "Refined Solvent",
                 "tier": 4,
                 "quantity": 3,
                 "sortId": 100043
@@ -89184,7 +89184,7 @@
               },
               {
                 "id": "31054",
-                "name": "Refined Solvent",
+                "name": "Cutting Fluid Solution",
                 "tier": 4,
                 "quantity": 5,
                 "sortId": 100045

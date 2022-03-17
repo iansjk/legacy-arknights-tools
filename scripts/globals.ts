@@ -29,10 +29,6 @@ const operatorNameOverride: Record<string, string> = {
 const itemNameOverride: Record<string, string> = {
   "30145": "Crystalline Electroassembly",
   mod_unlock_token: "Module Data Block",
-  31043: "Compound Cutting Fluid",
-  31044: "Cutting Stock Solution",
-  31053: "Semi-natural Solvent",
-  31054: "Refined Solvent",
 };
 
 export function getOperatorName(operatorId: string): string | null {

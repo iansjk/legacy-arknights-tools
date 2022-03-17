@@ -6,7 +6,7 @@
     "sortId": 70004,
     "ingredients": [],
     "yield": 1,
-    "sanityValue": 0.5
+    "sanityValue": 0
   },
   {
     "id": "2002",
@@ -15,7 +15,7 @@
     "sortId": 70003,
     "ingredients": [],
     "yield": 1,
-    "sanityValue": 1
+    "sanityValue": 0
   },
   {
     "id": "2003",
@@ -24,14 +24,14 @@
     "sortId": 70002,
     "ingredients": [],
     "yield": 1,
-    "sanityValue": 2.499
+    "sanityValue": 0
   },
   {
     "id": "2004",
     "name": "Strategic Battle Record",
     "tier": 5,
     "sortId": 70001,
-    "sanityValue": 4.998
+    "sanityValue": 0
   },
   {
     "id": "3211",
@@ -52,11 +52,11 @@
       "mostEfficient": {
         "stageSanityCost": 18,
         "stageName": "PR-C-1",
-        "itemSanityCost": 36.45,
+        "itemSanityCost": 36.42,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 14.301
+    "sanityValue": 15.012
   },
   {
     "id": "3212",
@@ -77,11 +77,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-C-2",
-        "itemSanityCost": 71.65,
+        "itemSanityCost": 71.67,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 28.602
+    "sanityValue": 30.024
   },
   {
     "id": "3213",
@@ -105,7 +105,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 58.037
+    "sanityValue": 60.048
   },
   {
     "id": "3221",
@@ -130,7 +130,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 19.994
+    "sanityValue": 20.988
   },
   {
     "id": "3222",
@@ -151,11 +151,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-D-2",
-        "itemSanityCost": 72.06,
+        "itemSanityCost": 72.05,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 39.988
+    "sanityValue": 41.976
   },
   {
     "id": "3223",
@@ -179,7 +179,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 80.809
+    "sanityValue": 83.952
   },
   {
     "id": "3231",
@@ -200,11 +200,11 @@
       "mostEfficient": {
         "stageSanityCost": 18,
         "stageName": "PR-A-1",
-        "itemSanityCost": 35.34,
+        "itemSanityCost": 35.33,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 19.994
+    "sanityValue": 20.988
   },
   {
     "id": "3232",
@@ -225,11 +225,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-A-2",
-        "itemSanityCost": 71.77,
+        "itemSanityCost": 71.75,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 39.988
+    "sanityValue": 41.976
   },
   {
     "id": "3233",
@@ -253,7 +253,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 80.809
+    "sanityValue": 83.952
   },
   {
     "id": "3241",
@@ -278,7 +278,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 19.994
+    "sanityValue": 20.988
   },
   {
     "id": "3242",
@@ -303,7 +303,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 39.988
+    "sanityValue": 41.976
   },
   {
     "id": "3243",
@@ -327,7 +327,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 80.809
+    "sanityValue": 83.952
   },
   {
     "id": "3251",
@@ -352,7 +352,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 14.301
+    "sanityValue": 15.012
   },
   {
     "id": "3252",
@@ -377,7 +377,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 28.602
+    "sanityValue": 30.024
   },
   {
     "id": "3253",
@@ -401,7 +401,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 58.037
+    "sanityValue": 60.048
   },
   {
     "id": "3261",
@@ -422,11 +422,11 @@
       "mostEfficient": {
         "stageSanityCost": 18,
         "stageName": "PR-A-1",
-        "itemSanityCost": 36.7,
+        "itemSanityCost": 36.71,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 14.301
+    "sanityValue": 15.012
   },
   {
     "id": "3262",
@@ -447,11 +447,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-A-2",
-        "itemSanityCost": 72.23,
+        "itemSanityCost": 72.25,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 28.602
+    "sanityValue": 30.024
   },
   {
     "id": "3263",
@@ -475,7 +475,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 58.037
+    "sanityValue": 60.048
   },
   {
     "id": "3271",
@@ -496,11 +496,11 @@
       "mostEfficient": {
         "stageSanityCost": 18,
         "stageName": "PR-C-1",
-        "itemSanityCost": 35.56,
+        "itemSanityCost": 35.59,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 19.994
+    "sanityValue": 20.988
   },
   {
     "id": "3272",
@@ -521,11 +521,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-C-2",
-        "itemSanityCost": 72.35,
+        "itemSanityCost": 72.33,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 39.988
+    "sanityValue": 41.976
   },
   {
     "id": "3273",
@@ -549,7 +549,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 80.809
+    "sanityValue": 83.952
   },
   {
     "id": "3281",
@@ -574,7 +574,7 @@
         "dropRate": 0.5
       }
     },
-    "sanityValue": 14.301
+    "sanityValue": 15.012
   },
   {
     "id": "3282",
@@ -595,11 +595,11 @@
       "mostEfficient": {
         "stageSanityCost": 36,
         "stageName": "PR-D-2",
-        "itemSanityCost": 71.94,
+        "itemSanityCost": 71.95,
         "dropRate": 0.5
       }
     },
-    "sanityValue": 28.602
+    "sanityValue": 30.024
   },
   {
     "id": "3283",
@@ -623,7 +623,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 58.037
+    "sanityValue": 60.048
   },
   {
     "id": "3301",
@@ -638,7 +638,7 @@
         "dropRate": 5
       }
     },
-    "sanityValue": 1.544
+    "sanityValue": 1.621
   },
   {
     "id": "3302",
@@ -669,7 +669,7 @@
         "dropRate": 1.5
       }
     },
-    "sanityValue": 3.96
+    "sanityValue": 4.157
   },
   {
     "id": "3303",
@@ -694,7 +694,7 @@
         "dropRate": 2
       }
     },
-    "sanityValue": 10.154
+    "sanityValue": 10.659
   },
   {
     "id": "30011",
@@ -709,7 +709,7 @@
         "dropRate": 3.67
       }
     },
-    "sanityValue": 1.153
+    "sanityValue": 1.537
   },
   {
     "id": "30012",
@@ -741,7 +741,7 @@
         "dropRate": 1.25
       }
     },
-    "sanityValue": 3.506
+    "sanityValue": 4.209
   },
   {
     "id": "30013",
@@ -773,7 +773,7 @@
         "dropRate": 0.42
       }
     },
-    "sanityValue": 17.262
+    "sanityValue": 19.903
   },
   {
     "id": "30014",
@@ -797,7 +797,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 65.495
+    "sanityValue": 74.614
   },
   {
     "id": "30021",
@@ -812,7 +812,7 @@
         "dropRate": 2.45
       }
     },
-    "sanityValue": 1.89
+    "sanityValue": 2.203
   },
   {
     "id": "30022",
@@ -844,7 +844,7 @@
         "dropRate": 1.52
       }
     },
-    "sanityValue": 5.715
+    "sanityValue": 6.204
   },
   {
     "id": "30023",
@@ -877,12 +877,12 @@
       },
       "mostEfficient": {
         "stageSanityCost": 18,
-        "stageName": "4-2",
-        "itemSanityCost": 46.09,
+        "stageName": "9-5",
+        "itemSanityCost": 46.71,
         "dropRate": 0.39
       }
     },
-    "sanityValue": 22.596
+    "sanityValue": 23.678
   },
   {
     "id": "30024",
@@ -920,7 +920,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 98.578
+    "sanityValue": 100.302
   },
   {
     "id": "30031",
@@ -935,7 +935,7 @@
         "dropRate": 2.54
       }
     },
-    "sanityValue": 1.843
+    "sanityValue": 1.914
   },
   {
     "id": "30032",
@@ -967,7 +967,7 @@
         "dropRate": 1.52
       }
     },
-    "sanityValue": 5.575
+    "sanityValue": 5.339
   },
   {
     "id": "30033",
@@ -992,14 +992,14 @@
     ],
     "yield": 1,
     "stages": {
-      "mostEfficient": {
+      "leastSanity": {
         "stageSanityCost": 18,
         "stageName": "7-4",
-        "itemSanityCost": 32.43,
+        "itemSanityCost": 32.42,
         "dropRate": 0.56
       }
     },
-    "sanityValue": 22.033
+    "sanityValue": 20.218
   },
   {
     "id": "30034",
@@ -1037,7 +1037,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 91.592
+    "sanityValue": 89.111
   },
   {
     "id": "30041",
@@ -1052,7 +1052,7 @@
         "dropRate": 0.96
       }
     },
-    "sanityValue": 2.38
+    "sanityValue": 2.63
   },
   {
     "id": "30042",
@@ -1084,7 +1084,7 @@
         "dropRate": 1.23
       }
     },
-    "sanityValue": 7.185
+    "sanityValue": 7.485
   },
   {
     "id": "30043",
@@ -1117,12 +1117,12 @@
       },
       "mostEfficient": {
         "stageSanityCost": 18,
-        "stageName": "S4-1",
-        "itemSanityCost": 57.66,
-        "dropRate": 0.31
+        "stageName": "5-5",
+        "itemSanityCost": 61.18,
+        "dropRate": 0.29
       }
     },
-    "sanityValue": 28.473
+    "sanityValue": 28.803
   },
   {
     "id": "30044",
@@ -1160,7 +1160,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 112.537
+    "sanityValue": 112.63
   },
   {
     "id": "30051",
@@ -1175,7 +1175,7 @@
         "dropRate": 1.94
       }
     },
-    "sanityValue": 2.275
+    "sanityValue": 2.671
   },
   {
     "id": "30052",
@@ -1207,7 +1207,7 @@
         "dropRate": 1.22
       }
     },
-    "sanityValue": 6.87
+    "sanityValue": 7.609
   },
   {
     "id": "30053",
@@ -1239,7 +1239,7 @@
         "dropRate": 0.45
       }
     },
-    "sanityValue": 27.216
+    "sanityValue": 29.297
   },
   {
     "id": "30054",
@@ -1277,7 +1277,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 101.94
+    "sanityValue": 106.415
   },
   {
     "id": "30061",
@@ -1292,7 +1292,7 @@
         "dropRate": 0.74
       }
     },
-    "sanityValue": 3.1
+    "sanityValue": 3.547
   },
   {
     "id": "30062",
@@ -1324,7 +1324,7 @@
         "dropRate": 0.92
       }
     },
-    "sanityValue": 9.345
+    "sanityValue": 10.236
   },
   {
     "id": "30063",
@@ -1351,12 +1351,12 @@
     "stages": {
       "mostEfficient": {
         "stageSanityCost": 18,
-        "stageName": "7-15",
-        "itemSanityCost": 53.99,
-        "dropRate": 0.33
+        "stageName": "9-10",
+        "itemSanityCost": 53.64,
+        "dropRate": 0.34
       }
     },
-    "sanityValue": 37.113
+    "sanityValue": 39.805
   },
   {
     "id": "30064",
@@ -1394,7 +1394,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 98.502
+    "sanityValue": 105.258
   },
   {
     "id": "30073",
@@ -1415,7 +1415,7 @@
         "dropRate": 0.37
       }
     },
-    "sanityValue": 23.865
+    "sanityValue": 24.376
   },
   {
     "id": "30074",
@@ -1453,7 +1453,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 79.089
+    "sanityValue": 78.722
   },
   {
     "id": "30083",
@@ -1466,9 +1466,15 @@
         "stageName": "3-2",
         "itemSanityCost": 40.56,
         "dropRate": 0.37
+      },
+      "mostEfficient": {
+        "stageSanityCost": 18,
+        "stageName": "4-7",
+        "itemSanityCost": 60.54,
+        "dropRate": 0.3
       }
     },
-    "sanityValue": 28.467
+    "sanityValue": 29.142
   },
   {
     "id": "30084",
@@ -1506,7 +1512,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 99.279
+    "sanityValue": 97.879
   },
   {
     "id": "30093",
@@ -1527,7 +1533,7 @@
         "dropRate": 0.35
       }
     },
-    "sanityValue": 30.419
+    "sanityValue": 30.645
   },
   {
     "id": "30094",
@@ -1565,7 +1571,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 92.451
+    "sanityValue": 94.254
   },
   {
     "id": "30103",
@@ -1574,19 +1580,19 @@
     "sortId": 100011,
     "stages": {
       "leastSanity": {
-        "stageSanityCost": 18,
-        "stageName": "R8-9",
-        "itemSanityCost": 52.25,
-        "dropRate": 0.34
+        "stageSanityCost": 21,
+        "stageName": "9-19",
+        "itemSanityCost": 51.53,
+        "dropRate": 0.41
       },
       "mostEfficient": {
         "stageSanityCost": 21,
         "stageName": "4-9",
-        "itemSanityCost": 70.08,
+        "itemSanityCost": 70.09,
         "dropRate": 0.3
       }
     },
-    "sanityValue": 36.183
+    "sanityValue": 35.666
   },
   {
     "id": "30104",
@@ -1624,7 +1630,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 94.369
+    "sanityValue": 99.771
   },
   {
     "id": "30115",
@@ -1662,7 +1668,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 265.057
+    "sanityValue": 276.835
   },
   {
     "id": "30125",
@@ -1693,7 +1699,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 241.766
+    "sanityValue": 245.878
   },
   {
     "id": "30135",
@@ -1731,7 +1737,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 271.182
+    "sanityValue": 275.079
   },
   {
     "id": "30145",
@@ -1785,11 +1791,11 @@
       "mostEfficient": {
         "stageSanityCost": 21,
         "stageName": "JT8-2",
-        "itemSanityCost": 62.79,
+        "itemSanityCost": 62.8,
         "dropRate": 0.33
       }
     },
-    "sanityValue": 32.007
+    "sanityValue": 32.532
   },
   {
     "id": "31014",
@@ -1827,7 +1833,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 84.383
+    "sanityValue": 85.053
   },
   {
     "id": "31023",
@@ -1843,12 +1849,12 @@
       },
       "mostEfficient": {
         "stageSanityCost": 18,
-        "stageName": "R8-7",
-        "itemSanityCost": 54.37,
-        "dropRate": 0.33
+        "stageName": "S5-8",
+        "itemSanityCost": 58.76,
+        "dropRate": 0.31
       }
     },
-    "sanityValue": 27.457
+    "sanityValue": 28.717
   },
   {
     "id": "31024",
@@ -1886,7 +1892,7 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 91.435
+    "sanityValue": 94.169
   },
   {
     "id": "31033",
@@ -1901,7 +1907,7 @@
         "dropRate": 0.53
       }
     },
-    "sanityValue": 22.125
+    "sanityValue": 22.859
   },
   {
     "id": "31034",
@@ -1939,25 +1945,31 @@
       }
     ],
     "yield": 1,
-    "sanityValue": 100.16
+    "sanityValue": 101.968
   },
   {
     "id": "31043",
-    "name": "Compound Cutting Fluid",
+    "name": "Semi-Synthetic Solvent",
     "tier": 3,
     "sortId": 100044,
     "stages": {
       "leastSanity": {
+        "stageSanityCost": 21,
+        "stageName": "9-18",
+        "itemSanityCost": 63.8,
+        "dropRate": 0.33
+      },
+      "mostEfficient": {
         "stageSanityCost": 18,
-        "stageName": "6-3",
-        "itemSanityCost": 174,
-        "dropRate": 0.1
+        "stageName": "9-4",
+        "itemSanityCost": 65.3,
+        "dropRate": 0.28
       }
     }
   },
   {
     "id": "31044",
-    "name": "Cutting Stock Solution",
+    "name": "Refined Solvent",
     "tier": 4,
     "sortId": 100043,
     "ingredients": [
@@ -1970,14 +1982,14 @@
       },
       {
         "id": "31043",
-        "name": "Compound Cutting Fluid",
+        "name": "Semi-Synthetic Solvent",
         "tier": 3,
         "quantity": 1,
         "sortId": 100044
       },
       {
         "id": "31053",
-        "name": "Semi-natural Solvent",
+        "name": "Compound Cutting Fluid",
         "tier": 3,
         "quantity": 1,
         "sortId": 100046
@@ -1990,31 +2002,27 @@
         "sortId": 100037
       }
     ],
-    "yield": 1
+    "yield": 1,
+    "sanityValue": 92.442
   },
   {
     "id": "31053",
-    "name": "Semi-natural Solvent",
+    "name": "Compound Cutting Fluid",
     "tier": 3,
     "sortId": 100046,
     "stages": {
-      "leastSanity": {
-        "stageSanityCost": 18,
-        "stageName": "7-14",
-        "itemSanityCost": 832.5,
-        "dropRate": 0.02
-      },
       "mostEfficient": {
-        "stageSanityCost": 21,
-        "stageName": "4-8",
-        "itemSanityCost": 2041.42,
-        "dropRate": 0.01
+        "stageSanityCost": 18,
+        "stageName": "9-6",
+        "itemSanityCost": 66.94,
+        "dropRate": 0.27
       }
-    }
+    },
+    "sanityValue": 34.649
   },
   {
     "id": "31054",
-    "name": "Refined Solvent",
+    "name": "Cutting Fluid Solution",
     "tier": 4,
     "sortId": 100045,
     "ingredients": [
@@ -2027,7 +2035,7 @@
       },
       {
         "id": "31053",
-        "name": "Semi-natural Solvent",
+        "name": "Compound Cutting Fluid",
         "tier": 3,
         "quantity": 1,
         "sortId": 100046
